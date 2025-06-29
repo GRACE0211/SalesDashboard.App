@@ -756,10 +756,18 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkGray;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Location = new System.Drawing.Point(0, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1089, 677);
+            this.panel1.Size = new System.Drawing.Size(1047, 641);
             this.panel1.TabIndex = 31;
+            this.panel1.Controls.Add(this.panel11);
+            this.panel1.Controls.Add(this.panel8);
+            this.panel1.Controls.Add(this.panel10);
+            this.panel1.Controls.Add(this.panel13);
+            this.panel1.Controls.Add(this.panel12);
+            this.panel1.Controls.Add(this.chartMonthlyRevenuePerProduct);
+            this.panel1.Controls.Add(this.chartSalesProducts);
+            this.panel1.Controls.Add(this.chartSalesCustomersOrders);
             // 
             // SalesChartPage_Ttl
             // 
@@ -776,10 +784,24 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.LightGray;
-            this.panel2.Location = new System.Drawing.Point(8, 7);
+            this.panel2.Location = new System.Drawing.Point(6, 7);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1070, 659);
             this.panel2.TabIndex = 31;
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.chartTtlOrdersKPI);
+            this.panel2.Controls.Add(this.labelTtlOrdersPct);
+            this.panel2.Controls.Add(this.chartTtlRevenueKPI);
+            this.panel2.Controls.Add(this.labelTtlRevenuePct);
+            this.panel2.Controls.Add(this.chartCustomerOrdersCountTopThree);
+            this.panel2.Controls.Add(this.chartProductsCountTopThree);
+            this.panel2.Controls.Add(this.chartTtlOrdersCount);
+            this.panel2.Controls.Add(this.chartMonthlyRevenueTtl);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel3);
+                
             // 
             // testPage
             // 

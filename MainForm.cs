@@ -830,20 +830,15 @@ namespace SalesDashboard
                 orderGrowthRate = 1;
             if (orderGrowthRate >= 0)
             {
-                pictureBoxRevenueArrow.Image = global::SalesDashboard.Properties.Resources.arrow_up;
-
-                labelRevenueGrowth.ForeColor = Color.Green;
-                if (global::SalesDashboard.Properties.Resources.arrow_up == null)
-                {
-                    MessageBox.Show("箭頭圖片未找到，請檢查資源文件。", "錯誤", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                pictureBoxOrdersArrow.Image = global::SalesDashboard.Properties.Resources.arrow_up;
+                labelOrderGrowth.ForeColor = Color.Green;
             }
             else
             {
-                pictureBoxRevenueArrow.Image = global::SalesDashboard.Properties.Resources.arrow_down;
-                labelRevenueGrowth.ForeColor = Color.Red;
+                pictureBoxOrdersArrow.Image = global::SalesDashboard.Properties.Resources.arrow_down;
+                labelOrderGrowth.ForeColor = Color.Red;
             }
-            labelRevenueGrowth.Text = $"營收月成長率：{Math.Abs(orderGrowthRate):P1}";
+            labelOrderGrowth.Text = $"訂單月成長率：{Math.Abs(orderGrowthRate):P1}";
 
             Color orderColor = orderGrowthRate >= 0 ? Color.Green : Color.Red;
             labelOrderGrowth.ForeColor = orderColor;

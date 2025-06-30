@@ -790,61 +790,77 @@ namespace SalesDashboard
             return count;
         }
 
-        
+
         private void UpdateMonthlyGrowthLabel(string username, List<string> selectedProducts, List<string> selectedCustomers)
         {
             DateTime selectedMonth = dateTimePickerChart.Value.Date;
             DateTime prevMonth = selectedMonth.AddMonths(-1);
 
-            // 營收
+            // 取得營收
             decimal currentMonthRevenue = GetRevenueForMonth(username, selectedMonth, selectedProducts, selectedCustomers);
             decimal prevMonthRevenue = GetRevenueForMonth(username, prevMonth, selectedProducts, selectedCustomers);
-            decimal revenueGrowthRate = 0;
-            if (prevMonthRevenue > 0)
-                revenueGrowthRate = (currentMonthRevenue - prevMonthRevenue) / prevMonthRevenue;
-            else if (currentMonthRevenue > 0)
-                revenueGrowthRate = 1;
-            if (revenueGrowthRate >= 0)
+
+            // 如果prevMonthRevenue為0（表示第一個月或前一月沒資料），直接顯示 "-"
+            if (prevMonthRevenue == 0)
             {
-                pictureBoxRevenueArrow.Image = global::SalesDashboard.Properties.Resources.arrow_up;
-                labelRevenueGrowth.ForeColor = Color.Green;
+                labelRevenueGrowth.Text = "營收月成長率：-";
+                pictureBoxRevenueArrow.Image = null;
+                labelRevenueGrowth.ForeColor = Color.Black;
             }
             else
             {
-                pictureBoxRevenueArrow.Image = global::SalesDashboard.Properties.Resources.arrow_down;
-                labelRevenueGrowth.ForeColor = Color.Red;
+                decimal revenueGrowthRate = (currentMonthRevenue - prevMonthRevenue) / prevMonthRevenue;
+                labelRevenueGrowth.Text = $"營收月成長率：{Math.Abs(revenueGrowthRate):P1}";
+                pictureBoxRevenueArrow.Image = revenueGrowthRate >= 0
+                    ? global::SalesDashboard.Properties.Resources.arrow_up
+                    : global::SalesDashboard.Properties.Resources.arrow_down;
+                labelRevenueGrowth.ForeColor = revenueGrowthRate >= 0 ? Color.Green : Color.Red;
             }
-            labelRevenueGrowth.Text = $"營收月成長率：{Math.Abs(revenueGrowthRate):P1}";
 
-            Color revenueColor = revenueGrowthRate >= 0 ? Color.Green : Color.Red;
+            labelRevenueLastMonth.Text = $"上月營收：${prevMonthRevenue:N0}"; // 顯示上月營收
+            labelRevenueCurrentMonth.Text = $"本月營收：${currentMonthRevenue:N0}"; // 顯示本月營收
 
-            labelRevenueGrowth.ForeColor = revenueColor;
-
-            // 訂單
+            // 訂單月成長率
             int currentMonthOrders = GetOrderCountForMonth(username, selectedMonth, selectedProducts, selectedCustomers);
             int prevMonthOrders = GetOrderCountForMonth(username, prevMonth, selectedProducts, selectedCustomers);
-            decimal orderGrowthRate = 0;
-            if (prevMonthOrders > 0)
-                orderGrowthRate = (currentMonthOrders - prevMonthOrders) / (decimal)prevMonthOrders;
-            else if (currentMonthOrders > 0)
-                orderGrowthRate = 1;
-            if (orderGrowthRate >= 0)
+
+            if (prevMonthOrders == 0)
             {
-                pictureBoxOrdersArrow.Image = global::SalesDashboard.Properties.Resources.arrow_up;
-                labelOrderGrowth.ForeColor = Color.Green;
+                labelOrderGrowth.Text = "訂單月成長率：-";
+                pictureBoxOrdersArrow.Image = null;
+                labelOrderGrowth.ForeColor = Color.Black;
             }
             else
             {
-                pictureBoxOrdersArrow.Image = global::SalesDashboard.Properties.Resources.arrow_down;
-                labelOrderGrowth.ForeColor = Color.Red;
+                decimal orderGrowthRate = (currentMonthOrders - prevMonthOrders) / (decimal)prevMonthOrders;
+                labelOrderGrowth.Text = $"訂單月成長率：{Math.Abs(orderGrowthRate):P1}";
+                pictureBoxOrdersArrow.Image = orderGrowthRate >= 0
+                    ? global::SalesDashboard.Properties.Resources.arrow_up
+                    : global::SalesDashboard.Properties.Resources.arrow_down;
+                labelOrderGrowth.ForeColor = orderGrowthRate >= 0 ? Color.Green : Color.Red;
             }
-            labelOrderGrowth.Text = $"訂單月成長率：{Math.Abs(orderGrowthRate):P1}";
 
-            Color orderColor = orderGrowthRate >= 0 ? Color.Green : Color.Red;
-            labelOrderGrowth.ForeColor = orderColor;
+            labelOrderLastMonth.Text = $"上月訂單量：{prevMonthOrders} 筆"; // 顯示上月訂單量
+            labelOrderCurrentMonth.Text = $"本月訂單量：{currentMonthOrders} 筆"; // 顯示本月訂單量
         }
 
-        
+        private void ShowCurrentFilters( List<string> selectedProducts, List<string> selectedCustomers)
+        {
+            labelRevenueCustomer.Text = "客戶：" + (selectedCustomers.Count > 0
+                ? string.Join("、", selectedCustomers)
+                : "全部");
+            labelOrderCustomer.Text = "客戶：" + (selectedCustomers.Count > 0
+                ? string.Join("、", selectedCustomers)
+                : "全部");
+            labelRevenueProduct.Text = "產品：" + (selectedProducts.Count > 0
+                ? string.Join("、", selectedProducts)
+                : "全部");
+            labelOrderProduct.Text = "產品：" + (selectedProducts.Count > 0
+                ? string.Join("、", selectedProducts)
+                : "全部");
+        }
+
+
 
         private void dateTimePickerChart_ValueChanged(object sender, EventArgs e)
         {
@@ -883,6 +899,7 @@ namespace SalesDashboard
             // 傳進查詢方法
             RefreshCharts(checkedProducts, checkedCustomers);
             UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
+            ShowCurrentFilters(checkedProducts, checkedCustomers);
         }
 
         private void checkedListBoxCustomers_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -904,6 +921,7 @@ namespace SalesDashboard
 
             RefreshCharts(checkedProducts, checkedCustomers);
             UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
+            ShowCurrentFilters(checkedProducts, checkedCustomers);
         }
 
         // 統一重畫圖表

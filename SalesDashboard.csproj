@@ -155,5 +155,11 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\trophy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\gold-medal.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

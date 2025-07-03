@@ -1,4 +1,6 @@
-﻿using MySql.Data.MySqlClient;
+﻿
+
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -6,11 +8,13 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Windows.Forms.DataVisualization.Charting;
 using ZstdSharp.Unsafe;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace SalesDashboard
@@ -39,6 +43,7 @@ namespace SalesDashboard
             dateTimePickerSearch_SalesEnd.Value = DateTime.Now;
             dateTimePickerChart.Value = new DateTime(2024, 12, 1);
             dateTimePickerChart.MaxDate = DateTime.Now; // 設定日期選擇器的最大日期為今天
+            tabControl1.TabPages.Remove(dataMgmtPage);
 
             if (_role == "sales")
             {
@@ -115,7 +120,7 @@ namespace SalesDashboard
             {
                 // 銷售人員
                 // 月份篩選
-                
+
                 LoadMonthlyProductsChart(_username, selectedProducts, selectedCustomers);
                 LoadMonthlyOrdersChartByCustomer(_username, selectedProducts, selectedCustomers);
                 LoadMonthlyRevenueDetailsChart(_username, selectedProducts, selectedCustomers);
@@ -127,13 +132,15 @@ namespace SalesDashboard
                 // 銷售人員
                 // 總計
                 //LoadKPIDoughnutChart(_username);
-                this.labelTtlOrdersPct.BringToFront();
-                this.labelTtlRevenuePct.BringToFront();
+                LoadTtlKPI(_username);
                 LoadProductsCountTopThree(_username);
                 LoadCustomerOrdersCountTopThree(_username);
                 LoadTotalOrdersCountChart(_username);
                 LoadTotalRevenueTtlChart(_username);
                 LoadBiggestLabel(_username);
+                LoadProductsGroupBySales(_username);
+                LoadCustomersGroupBySales(_username);
+
             }
         }
 
@@ -426,8 +433,10 @@ namespace SalesDashboard
 
 
         // ------------------ SalesChartPage_Monthly -- tabPage3 ------------------
-        // 圓餅圖 -- 計算某月某產品的總銷售量
-        private DataTable GetMonthlyProductsData(string username,List<string>selectedProducts,List<string>selectedCustomers)
+
+
+        // tabPage3, 右中圓餅圖 -- 計算某月某產品的總銷售量
+        private DataTable GetMonthlyProductsData(string username, List<string> selectedProducts, List<string> selectedCustomers)
         {
             DataTable dataTable = new DataTable();
             DateTime searchMonth = dateTimePickerChart.Value.Date; // 取得選擇的月份
@@ -470,8 +479,8 @@ namespace SalesDashboard
 
         private void LoadMonthlyProductsChart(string username, List<string> selectedProducts, List<string> selectedCustomers)
         {
-            DataTable dt = GetMonthlyProductsData(username,selectedProducts,selectedCustomers);
-            if(dt.Rows.Count == 0)
+            DataTable dt = GetMonthlyProductsData(username, selectedProducts, selectedCustomers);
+            if (dt.Rows.Count == 0)
             {
                 // 如果沒有資料，清空圖表並顯示提示
                 chartSalesProducts.Titles.Clear();
@@ -512,7 +521,7 @@ namespace SalesDashboard
 
         }
 
-        // 圓餅圖 -- 計算某月某客戶的訂單數量
+        // tabPage3, 右上橫條圖 -- 計算某月某客戶的訂單數量
         private DataTable GetMonthlyOrdersData(string username, List<string> selectedProducts, List<string> selectedCustomers)
         {
             DataTable dataTable = new DataTable();
@@ -590,7 +599,7 @@ namespace SalesDashboard
         }
 
 
-        // 長條圖 -- 取得某月的銷售數據
+        // tabPage3, 最下面長條圖 -- 取得某月的銷售數據
         private DataTable GetMonthlyRevenueDetails(string username, List<string> selectedProducts, List<string> selectedCustomers)
         {
             DataTable dataTable = new DataTable();
@@ -651,7 +660,7 @@ namespace SalesDashboard
             series.ChartType = SeriesChartType.Column;
             series.IsValueShownAsLabel = true; // 顯示數值標籤
             series.Label = "#VALY"; // 標籤格式為 "客戶名稱: 銷售量"
-            series.Font = new Font("微軟正黑體", 9, FontStyle.Bold); // 設定標籤字體樣式
+            series.Font = new Font("微軟正黑體", 9); // 設定標籤字體樣式
             foreach (DataRow row in dt.Rows)
             {
                 string customer = row["customer_name"].ToString();
@@ -664,6 +673,23 @@ namespace SalesDashboard
                 series.Points[idx].Label = $"${revenueValue:N0}"; // 設定標籤格式為 "產品名稱: 銷售量"
                 series.Points[idx].LegendText = $"{customer} - {product}: {revenueValue:N0}"; // 設定圖例文本
             }
+
+            int maxIndex = 0;
+            double maxValue = double.MinValue;
+            for (int i = 0; i < series.Points.Count; i++)
+            {
+                if (series.Points[i].YValues[0] > maxValue)
+                {
+                    var val = series.Points[i].YValues[0];
+                    if (val > maxValue)
+                    {
+                        maxValue = val;
+                        maxIndex = i;
+                    }
+                }
+            }
+            series.Points[maxIndex].Color = Color.RoyalBlue; // 將最大值的點設置為紅色
+            series.Points[maxIndex].Font = new Font("微軟正黑體", 10, FontStyle.Bold);
         }
 
         //private void LoadMonthlyTotalLabel(string username)
@@ -711,6 +737,7 @@ namespace SalesDashboard
         //    labelMonthlyOrders.Text = $"{dateTimePickerChart.Value.ToString("yyyy年MM月")}總訂單量 - {monthlyOrders} 筆";
         //}
 
+        // 
         private decimal GetRevenueForMonth(string username, DateTime month, List<string> selectedProducts, List<string> selectedCustomers)
         {
             decimal revenue = 0;
@@ -795,7 +822,263 @@ namespace SalesDashboard
             return count;
         }
 
+        
 
+        // tabPage3, 左上的dataGridView -- 訂單的日期/客戶/商品
+        private void GetMonthlyOrdersRowData(string username, List<string> selectedProducts, List<string> selectedCustomers)
+        {
+
+            DataTable dataTable = new DataTable();
+            DateTime searchMonth = dateTimePickerChart.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerChart.Value.Date; // 取得選擇的月份
+            string productFilter = selectedProducts.Count > 0
+                ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")"
+                : "";
+            string customerFilter = selectedCustomers.Count > 0
+                ? "AND c.name IN (" + string.Join(",", selectedCustomers.Select((_, i) => $"@c{i}")) + ")"
+                : "";
+
+            string query = $@"
+            SELECT DISTINCT DATE(o.order_date) as 日期, 
+            SUBSTRING(c.name,3,1) as 客戶,
+            p.name as 產品,
+            concat(o.amount,' * $',p.price,' = $',o.amount*p.price) as 總價
+            FROM orders o
+            LEFT JOIN products p ON o.product_id = p.product_id
+            LEFT JOIN customers c ON o.customer_id = c.customer_id
+            LEFT JOIN users u ON o.sales_user_id = u.user_id
+            WHERE u.username = @username
+             AND YEAR(o.order_date) = @searchYear
+             AND MONTH(o.order_date) = @searchMonth
+             {productFilter}
+             {customerFilter}
+             ;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@searchMonth", searchMonth.Month); // 添加月份參數
+                cmd.Parameters.AddWithValue("@searchYear", searchYear.Year); // 添加年份參數
+                for (int i = 0; i < selectedProducts.Count; i++)
+                    cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
+                for (int i = 0; i < selectedCustomers.Count; i++)
+                    cmd.Parameters.AddWithValue($"@c{i}", selectedCustomers[i]);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
+            }
+            dataGridViewMonthlyOrders.DataSource = dataTable; // 將查詢結果綁定到 DataGridView
+            dataGridViewMonthlyOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // 自動調整列寬
+            dataGridViewMonthlyOrders.ColumnHeadersDefaultCellStyle.Font = new Font("微軟正黑體", 9F);
+            dataGridViewMonthlyOrders.DefaultCellStyle.Font = new Font("微軟正黑體", 9);
+
+        }
+
+        // tabPage3, 趨勢圖表 -- 點擊產品跳出產品數量趨勢圖
+
+        private void chartSalesProducts_MouseClick(object sender, MouseEventArgs e)
+        {
+            var hit = chartSalesProducts.HitTest(e.X, e.Y);
+            if (hit.ChartElementType == ChartElementType.DataPoint)
+            {
+                string product = chartSalesProducts.Series[0].Points[hit.PointIndex].AxisLabel;
+                LoadSalesProductsTrend(product, _username);
+                chartSalesOrdersTrend.Visible = false;
+                chartSalesProductTrend.Visible = true;
+                chartSalesRevenueTrend.Visible = false;
+            }
+        }
+
+        public void LoadSalesProductsTrend(string productName, string username)
+        {
+            chartSalesProductTrend.Series.Clear();
+            chartSalesProductTrend.Titles.Clear();
+            chartSalesProductTrend.Titles.Add($"{productName} 銷售趨勢圖");
+            chartSalesProductTrend.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+            chartSalesProductTrend.Series.Add("ProductsCount");
+            chartSalesProductTrend.Series["ProductsCount"].ChartType = SeriesChartType.Line;
+            chartSalesProductTrend.Series["ProductsCount"].IsValueShownAsLabel = true;
+            chartSalesProductTrend.Series["ProductsCount"].Font = new Font("微軟正黑體", 9);
+            chartSalesProductTrend.Series["ProductsCount"].Color = Color.RoyalBlue;
+
+            // 補齊月份（假設2024-12起到現在）
+            var months = GetAllMonths("2024-12", DateTime.Today.ToString("yyyy-MM"));
+
+            // 查詢
+            Dictionary<string, int> monthData = new Dictionary<string, int>();
+            string query = @"
+        SELECT DATE_FORMAT(o.order_date, '%Y-%m') as month, IFNULL(SUM(o.amount),0) as products_count
+        FROM orders o
+        LEFT JOIN products p ON o.product_id = p.product_id
+        LEFT JOIN users u ON o.sales_user_id = u.user_id
+        WHERE p.name = @productName AND u.username = @username
+        GROUP BY month
+        ORDER BY month;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@productName", productName);
+                cmd.Parameters.AddWithValue("@username", username);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string month = reader.GetString(0);
+                        int productsCount = reader.IsDBNull(1) ? 0 : Convert.ToInt32(reader.GetDecimal(1));
+                        monthData[month] = productsCount;
+                    }
+                }
+            }
+            // 補0
+            foreach (var m in months)
+                chartSalesProductTrend.Series["ProductsCount"].Points.AddXY(m, monthData.ContainsKey(m) ? monthData[m] : 0);
+        }
+
+        private List<string> GetAllMonths(string start, string end)
+        {
+            var result = new List<string>();
+            var startDt = DateTime.Parse(start + "-01");
+            var endDt = DateTime.Parse(end + "-01");
+            while (startDt <= endDt)
+            {
+                result.Add(startDt.ToString("yyyy-MM"));
+                startDt = startDt.AddMonths(1);
+            }
+            return result;
+        }
+
+        // tabPage3, 趨勢圖表 -- 點擊客戶訂單跳出訂單趨勢圖
+        private void chartSalesCustomersOrders_MouseClick(object sender, MouseEventArgs e)
+        {
+            var hit = chartSalesCustomersOrders.HitTest(e.X, e.Y);
+            if (hit.ChartElementType == ChartElementType.DataPoint)
+            {
+                string customerName = chartSalesCustomersOrders.Series[0].Points[hit.PointIndex].AxisLabel;
+                LoadCustomerOrderTrend(customerName, _username);
+                chartSalesProductTrend.Visible = false;
+                chartSalesOrdersTrend.Visible = true;
+                chartSalesRevenueTrend.Visible = false;
+            }
+        }
+
+
+        public void LoadCustomerOrderTrend(string customerName, string username)
+        {
+            chartSalesOrdersTrend.Series.Clear();
+            chartSalesOrdersTrend.Titles.Clear();
+            chartSalesOrdersTrend.Titles.Add($"{customerName} 訂單趨勢圖");
+            chartSalesOrdersTrend.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+            chartSalesOrdersTrend.Series.Add("OrdersCount");
+            chartSalesOrdersTrend.Series["OrdersCount"].ChartType = SeriesChartType.Line;
+            chartSalesOrdersTrend.Series["OrdersCount"].IsValueShownAsLabel = true;
+            chartSalesOrdersTrend.Series["OrdersCount"].Font = new Font("微軟正黑體", 9);
+            chartSalesOrdersTrend.Series["OrdersCount"].Color = Color.RoyalBlue;
+            var months = GetAllMonths("2024-12", DateTime.Today.ToString("yyyy-MM"));
+            Dictionary<string, int> monthData = new Dictionary<string, int>();
+
+            string query = @"
+                SELECT DATE_FORMAT(o.order_date, '%Y-%m') as month, 
+                ifnull(COUNT(*),0) as order_count
+                FROM orders o
+                LEFT JOIN customers c ON o.customer_id = c.customer_id
+                LEFT JOIN users u ON o.sales_user_id = u.user_id
+                WHERE c.name = @customerName AND u.username = @username
+                GROUP BY month
+                ORDER BY month;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@customerName", customerName);
+                cmd.Parameters.AddWithValue("@username", username);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string month = reader.GetString(0);
+                        int orderCount = reader.GetInt32(1);
+                        monthData[month] = orderCount;
+                    }
+                }
+            }
+            foreach (var m in months)
+                chartSalesOrdersTrend.Series["OrdersCount"].Points.AddXY(m, monthData.ContainsKey(m) ? monthData[m] : 0);
+        }
+
+        // tabPage3, 趨勢圖表 -- 點擊產品營收跳出趨勢圖
+
+        private void chartMonthlyRevenuePerProduct_MouseClick(object sender, MouseEventArgs e)
+        {
+            var hit = chartMonthlyRevenuePerProduct.HitTest(e.X, e.Y);
+            if (hit.ChartElementType == ChartElementType.DataPoint)
+            {
+                string customerProduct = chartMonthlyRevenuePerProduct.Series[0].Points[hit.PointIndex].AxisLabel;
+                LoadRevenueTrend(customerProduct,_username);
+                chartSalesOrdersTrend.Visible = false;
+                chartSalesProductTrend.Visible = false;
+                chartSalesRevenueTrend.Visible = true;
+            }
+        }
+
+        private void LoadRevenueTrend(string customerProduct,string username)
+        {
+            chartSalesRevenueTrend.Series.Clear();
+            chartSalesRevenueTrend.Titles.Clear();
+            chartSalesRevenueTrend.Titles.Add($"{customerProduct} 營收趨勢圖");
+            chartSalesRevenueTrend.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+            chartSalesRevenueTrend.Series.Add("Revenue");
+            chartSalesRevenueTrend.Series["Revenue"].ChartType = SeriesChartType.Line;
+            chartSalesRevenueTrend.Series["Revenue"].IsValueShownAsLabel = true;
+            chartSalesRevenueTrend.Series["Revenue"].Font = new Font("微軟正黑體", 9);
+            chartSalesRevenueTrend.Series["Revenue"].Color = Color.RoyalBlue;
+            
+            string[] parts = customerProduct.Split(new[] { " - " }, StringSplitOptions.None);
+            string customerName = parts[0].Trim();
+            string productName = parts[1].Trim();
+
+            var months = GetAllMonths("2024-12", DateTime.Today.ToString("yyyy-MM"));
+            Dictionary<string, decimal> monthData = new Dictionary<string, decimal>();
+
+            string query = $@"
+                SELECT DATE_FORMAT(o.order_date, '%Y-%m') as month, 
+                IFNULL(SUM(o.amount * p.price),0) as revenue
+                FROM orders o
+                LEFT JOIN products p ON o.product_id = p.product_id
+                LEFT JOIN customers c ON o.customer_id = c.customer_id
+                LEFT JOIN users u ON o.sales_user_id = u.user_id
+                WHERE c.name = @customerName 
+                  AND p.name = @productName
+                  and u.username = @username
+                GROUP BY month
+                ORDER BY month;";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@customerName", customerName);
+                cmd.Parameters.AddWithValue("@productName", productName);
+                cmd.Parameters.AddWithValue("@username", username);
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string month = reader.GetString(0);
+                        decimal revenueValue = reader.IsDBNull(1) ? 0 : reader.GetDecimal(1);
+                        monthData[month] = revenueValue;
+                    }
+                }
+            }
+            foreach (var m in months)
+                chartSalesRevenueTrend.Series["Revenue"].Points.AddXY(m, monthData.ContainsKey(m) ? monthData[m] : 0);
+        }
+
+
+
+
+
+        // tabPage3, 中間的兩個panel -- 計算成長率(本月和上個月比較)
         private void UpdateMonthlyGrowthLabel(string username, List<string> selectedProducts, List<string> selectedCustomers)
         {
             DateTime selectedMonth = dateTimePickerChart.Value.Date;
@@ -852,7 +1135,7 @@ namespace SalesDashboard
 
 
 
-        // MainForm_Load 設定預設內容
+        // MainForm_Load 設定預設內容, for panel 的 ToolTip, 滑鼠移入會顯示完整內容
         private void MainForm_Load(object sender, EventArgs e)
         {
             toolTip2.SetToolTip(labelOrderCustomer, "客戶：全部");
@@ -861,7 +1144,7 @@ namespace SalesDashboard
             toolTip2.SetToolTip(labelRevenueProduct, "商品：全部");
         }
 
-        // 每次勾選呼叫這個
+        // tabPage3, 中間的panel -- 負責動態顯示checkListBox所勾選的內容
         private void ShowCurrentFilters(List<string> products, List<string> customers)
         {
             string customerText = customers.Count == 0 ? "全部" :
@@ -897,24 +1180,31 @@ namespace SalesDashboard
         }
 
 
-
+        // dateTimePicker 時間改的話就呼叫
         private void dateTimePickerChart_ValueChanged(object sender, EventArgs e)
         {
+            // 取得當前選擇的年月
+            int year = dateTimePickerChart.Value.Year;
+            int month = dateTimePickerChart.Value.Month;
             // 取得當前已勾選的產品、客戶
-            List<string> selectedProducts = checkedListBoxProducts.CheckedItems.Cast<string>().ToList();
-            List<string> selectedCustomers = checkedListBoxCustomers.CheckedItems.Cast<string>().ToList();
+            List<string> checkedProducts = checkedListBoxProducts.CheckedItems.Cast<string>().ToList();
+            List<string> checkedCustomers = checkedListBoxCustomers.CheckedItems.Cast<string>().ToList();
 
             // 三個圖表都重畫（依你的需求）
-            RefreshCharts(selectedProducts, selectedCustomers);
+            RefreshCharts(checkedProducts, checkedCustomers);
 
             // 若有顯示本月總覽 Label，也可以重抓
             //LoadMonthlyTotalLabel(_username);
-            UpdateMonthlyGrowthLabel(_username, selectedProducts, selectedCustomers);
+            UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
+            GetMonthlyOrdersRowData(_username, checkedProducts, checkedCustomers);
         }
 
-
+        // 若有勾選，就加入List
         private void checkedListBoxProducts_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            // 取得當前選擇的年月
+            int year = dateTimePickerChart.Value.Year;
+            int month = dateTimePickerChart.Value.Month;
             // 預測本次操作後的產品勾選清單
             List<string> checkedProducts = checkedListBoxProducts.CheckedItems.Cast<string>().ToList();
             string currentProduct = checkedListBoxProducts.Items[e.Index].ToString();
@@ -936,10 +1226,14 @@ namespace SalesDashboard
             RefreshCharts(checkedProducts, checkedCustomers);
             UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
             ShowCurrentFilters(checkedProducts, checkedCustomers);
+            GetMonthlyOrdersRowData(_username, checkedProducts, checkedCustomers);
         }
 
         private void checkedListBoxCustomers_ItemCheck(object sender, ItemCheckEventArgs e)
         {
+            // 取得當前選擇的年月
+            int year = dateTimePickerChart.Value.Year;
+            int month = dateTimePickerChart.Value.Month;
             List<string> checkedCustomers = checkedListBoxCustomers.CheckedItems.Cast<string>().ToList();
             string currentCustomer = checkedListBoxCustomers.Items[e.Index].ToString();
             if (e.NewValue == CheckState.Checked)
@@ -958,6 +1252,7 @@ namespace SalesDashboard
             RefreshCharts(checkedProducts, checkedCustomers);
             UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
             ShowCurrentFilters(checkedProducts, checkedCustomers);
+            GetMonthlyOrdersRowData(_username, checkedProducts, checkedCustomers);
         }
 
         // 統一重畫圖表
@@ -970,6 +1265,8 @@ namespace SalesDashboard
 
 
         // ------------------ SalesChartPage_Ttl -- tabPage4 ------------------
+
+
         // tabPage4, 左上兩個label以及兩個甜甜圈圖 -- 取得該銷售員總銷售收入
         //private void LoadKPIDoughnutChart(string username)
         //{
@@ -1017,11 +1314,11 @@ namespace SalesDashboard
         //    var seriesRev = chartTtlRevenueKPI.Series.Add("RevenueKPI");
         //    seriesRev.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
         //    seriesRev.Points.AddXY($"{totalRevenue:P0}", totalRevenue);
-        //    seriesRev.Points.AddXY("未達成", Math.Max(0,targetRevenue - totalRevenue));
+        //    seriesRev.Points.AddXY("未達成", Math.Max(0, targetRevenue - totalRevenue));
         //    seriesRev.IsValueShownAsLabel = true;
-        //    foreach(var pt in seriesRev.Points)
+        //    foreach (var pt in seriesRev.Points)
         //    {
-        //        if(pt.AxisLabel == "未達成")
+        //        if (pt.AxisLabel == "未達成")
         //        {
         //            pt.Label = ""; // 空白區塊不顯示標籤
         //        }
@@ -1031,7 +1328,7 @@ namespace SalesDashboard
         //        }
         //    }
         //    seriesRev.Label = percentageText; // 設定標籤為百分比格式
-        //    seriesRev["PieStartAngle"]= "270"; // 設定圓餅圖的起始角度為 270 度，這樣第一個區塊會從頂部開始
+        //    seriesRev["PieStartAngle"] = "270"; // 設定圓餅圖的起始角度為 270 度，這樣第一個區塊會從頂部開始
         //    seriesRev.Points[0].Color = Color.Orange; // 設定達成區塊的顏色為橙色
         //    seriesRev.Points[1].Color = Color.FromArgb(51, 47, 41); // 設定未達成區塊的顏色為淺灰色
 
@@ -1050,9 +1347,9 @@ namespace SalesDashboard
         //    seriesOrd.Points.AddXY($"{totalOrders}", totalOrders);
         //    seriesOrd.Points.AddXY("未達成", Math.Max(0, targetOrder - totalOrders));
         //    seriesOrd.IsValueShownAsLabel = true;
-        //    foreach(var pt in seriesOrd.Points)
+        //    foreach (var pt in seriesOrd.Points)
         //    {
-        //        if(pt.AxisLabel == "未達成")
+        //        if (pt.AxisLabel == "未達成")
         //        {
         //            pt.Label = ""; // 空白區塊不顯示標籤
         //        }
@@ -1069,7 +1366,7 @@ namespace SalesDashboard
 
 
         //    labelTtlRevenuePatio.Text = $"({totalRevenue:N0} / {targetRevenue:N0})";
-        //    labelTtlOrdersPatio.Text = $"({totalOrders} / {targetOrder})"; 
+        //    labelTtlOrdersPatio.Text = $"({totalOrders} / {targetOrder})";
         //    labelTtlRevenuePct.Text = $"{revenueAchievementRate:P0}"; // 更新 Label 顯示達成率
         //    labelTtlOrdersPct.Text = $"{OrdersAchievementRate:P0}"; // 更新 Label 顯示達成率
         //    // 標題
@@ -1078,6 +1375,178 @@ namespace SalesDashboard
         //    chartTtlOrdersKPI.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
         //}
 
+        // tabPage4, 左上兩個panel -- KPI進度條
+        private void LoadTtlKPI(string username)
+        {
+            const decimal targetRevenue = 100000m; // 10萬元
+            const int targetOrder = 50;
+
+            // 一起查兩個 KPI
+            string query = @"
+                SELECT 
+                    IFNULL(SUM(o.amount * p.price), 0) AS total_revenue,
+                    COUNT(*) AS total_orders
+                FROM orders o
+                LEFT JOIN products p ON o.product_id = p.product_id
+                WHERE o.sales_user_id = (SELECT user_id FROM users WHERE username = @username);";
+
+            decimal totalRevenue = 0;
+            int totalOrders = 0;
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@username", username);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        totalRevenue = reader["total_revenue"] != DBNull.Value ? Convert.ToDecimal(reader["total_revenue"]) : 0m;
+                        totalOrders = reader["total_orders"] != DBNull.Value ? Convert.ToInt32(reader["total_orders"]) : 0;
+                    }
+                }
+            }
+
+            progressSalesBarTtlOrders.Minimum = 0;
+            progressSalesBarTtlOrders.Maximum = 50;
+            progressSalesBarTtlOrders.Value = totalOrders; // 更新訂單進度條
+
+            progressSalesBarTtlRevenue.Minimum = 0;
+            progressSalesBarTtlRevenue.Maximum = 100000;
+            progressSalesBarTtlRevenue.Value = (int)(totalRevenue); // 更新銷售金額進度條
+
+            decimal revenueAchievementRate = targetRevenue == 0 ? 0 : totalRevenue / targetRevenue;
+            string percentageText = $"{revenueAchievementRate:P0}"; // 百分比格式
+
+            decimal OrdersAchievementRate = targetOrder == 0 ? 0 : (decimal)totalOrders / targetOrder;
+            string OrdersPercentageText = $"{OrdersAchievementRate:P0}"; // 百分比格式
+
+
+            this.labelTtlOrdersPct.BringToFront();
+            this.labelTtlRevenuePct.BringToFront();
+            labelTtlRevenue.Text = $"${totalRevenue:N0}";
+            labelTtlOrders.Text = $"{totalOrders} 筆";
+            labelTtlRevenuePct.Text = $"{revenueAchievementRate:P0}"; // 更新 Label 顯示達成率
+            labelTtlOrdersPct.Text = $"{OrdersAchievementRate:P0}"; // 更新 Label 顯示達成率
+            labelTtlRevenuePatio.Text = $"({totalRevenue:N0} / {targetRevenue:N0})";
+            labelTtlOrdersPatio.Text = $"({totalOrders} / {targetOrder})";
+        }
+
+        // tabPage4, 左中兩個圓餅圖 -- 客戶/產品銷售占比
+        private DataTable GetProductsGroupBySalesData(string username)
+        {
+            string query = $@"
+                select sum(o.amount*p.price) as ttl_revenue,p.name
+                from orders o
+                left join products p on o.product_id = p.product_id
+                left join customers c on o.customer_id = c.customer_id
+                left join users u on o.sales_user_id = u.user_id
+                where u.username = @username
+                group by p.product_id;"; // 按銷售量降序排列
+            DataTable dataTable = new DataTable();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@username", username);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
+            }
+            return dataTable; // 返回填充好的 DataTable
+        }
+
+        private void LoadProductsGroupBySales(string username)
+        {
+            DataTable dt = GetProductsGroupBySalesData(username);
+
+            // 先算總營收
+            decimal totalRevenue = 0m;
+            foreach (DataRow row in dt.Rows)
+            {
+                totalRevenue += Convert.ToDecimal(row["ttl_revenue"]);
+            }
+
+            chartProductPie.Titles.Clear();
+            chartProductPie.Titles.Add("產品銷售占比");
+            chartProductPie.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+            chartProductPie.Series.Clear();
+
+            var series = chartProductPie.Series.Add("Products");
+            series.ChartType = SeriesChartType.Pie;
+            series.IsValueShownAsLabel = true;
+            series.Font = new Font("微軟正黑體", 9, FontStyle.Bold);
+
+            foreach (DataRow row in dt.Rows)
+            {
+                string product = row["name"].ToString();
+                decimal revenueValue = Convert.ToDecimal(row["ttl_revenue"]);
+                double percent = totalRevenue == 0 ? 0 : (double)(revenueValue / totalRevenue) * 100;
+
+                // 加進 pie chart
+                int idx = series.Points.AddXY(product, revenueValue);
+
+                // 圓餅圖標籤格式：50%
+                series.Points[idx].Label = $"{percent:F1}%";
+
+                // 圖例也可以加百分比
+                series.Points[idx].LegendText = $"{product}: {percent:F1}%";
+            }
+        }
+
+        private DataTable GetCustomersGroupBySalesData(string username)
+        {
+            string query = $@"
+                select sum(o.amount*p.price) as ttl_revenue,c.name
+                from orders o
+                left join products p on o.product_id = p.product_id
+                left join customers c on o.customer_id = c.customer_id
+                left join users u on o.sales_user_id = u.user_id
+                where u.username = @username
+                group by c.customer_id;"; // 按銷售量降序排列
+            DataTable dataTable = new DataTable();
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@username", username);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
+            }
+            return dataTable; // 返回填充好的 DataTable
+        }
+
+        private void LoadCustomersGroupBySales(string username)
+        {
+            DataTable dt = GetCustomersGroupBySalesData(username);
+            // 先算總營收
+            decimal totalRevenue = 0m;
+            foreach (DataRow row in dt.Rows)
+            {
+                totalRevenue += Convert.ToDecimal(row["ttl_revenue"]);
+            }
+            chartCustomerPie.Titles.Clear();
+            chartCustomerPie.Titles.Add("客戶銷售占比");
+            chartCustomerPie.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
+            chartCustomerPie.Series.Clear();
+            var series = chartCustomerPie.Series.Add("Customers");
+            series.ChartType = SeriesChartType.Pie;
+            series.IsValueShownAsLabel = true;
+            series.Font = new Font("微軟正黑體", 9, FontStyle.Bold);
+            foreach (DataRow row in dt.Rows)
+            {
+                string customer = row["name"].ToString();
+                decimal revenueValue = Convert.ToDecimal(row["ttl_revenue"]);
+                double percent = totalRevenue == 0 ? 0 : (double)(revenueValue / totalRevenue) * 100;
+                // 加進 pie chart
+                int idx = series.Points.AddXY(customer, revenueValue);
+                // 圓餅圖標籤格式：50%
+                series.Points[idx].Label = $"{percent:F1}%";
+                // 圖例也可以加百分比
+                series.Points[idx].LegendText = $"{customer}: {percent:F1}%";
+            }
+        }
 
         // tabPage4, 右下長條圖 -- 取得產品銷售量前3名
         private DataTable GetProductsCountTopThree(string username)
@@ -1102,6 +1571,7 @@ namespace SalesDashboard
             return dataTable; // 返回填充好的 DataTable
         }
 
+        // tabPage4, 右下兩個橫條圖 -- 列出客戶訂單量/產品銷量前三名
         private void LoadProductsCountTopThree(string username)
         {
             DataTable dt = GetProductsCountTopThree(username);
@@ -1183,7 +1653,7 @@ namespace SalesDashboard
                 from orders o
                 where o.sales_user_id = (select user_id from users where username = @username)
                 group by months;";
-            DataTable dataTable = new DataTable();  
+            DataTable dataTable = new DataTable();
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 connection.Open();
@@ -1217,7 +1687,7 @@ namespace SalesDashboard
             }
         }
 
-        //tabPage4, 右上長條圖 -- 列出每月銷售收入
+        //tabPage4, 右上折線圖 -- 列出每月銷售收入
         private DataTable GetTotalRevenueTtlData(string username)
         {
             string query = $@"
@@ -1289,7 +1759,7 @@ namespace SalesDashboard
                 group by p.product_id,o.sales_user_id
                 order by ttl_revenue desc limit 1;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
-                {
+            {
                 connection.Open();
                 MySqlCommand cmdP = new MySqlCommand(Pquery, connection);
                 cmdP.Parameters.AddWithValue("@username", username);
@@ -1300,7 +1770,7 @@ namespace SalesDashboard
                 // 取得產品銷售量最大值
                 using (var reader = cmdP.ExecuteReader())
                 {
-                    if(reader.Read())
+                    if (reader.Read())
                     {
                         string productName = reader["product_name"].ToString();
                         string totalAmount = reader["total_amount"].ToString();
@@ -1324,8 +1794,8 @@ namespace SalesDashboard
                         labelBiggestCustomer.Text = "無";
                     }
                 }
-                    // 取得銷售收入最大值
-                using(var reader = cmdR.ExecuteReader())
+                // 取得銷售收入最大值
+                using (var reader = cmdR.ExecuteReader())
                 {
                     if (reader.Read())
                     {
@@ -1340,7 +1810,5 @@ namespace SalesDashboard
                 }
             }
         }
-
-        
     }
 }

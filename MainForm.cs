@@ -48,10 +48,14 @@ namespace SalesDashboard
             if (_role == "sales")
             {
                 tabControl1.TabPages.Remove(AdminSearchPage); // 移除 AdminSearchPage (原本就存在SalesSearchPage所以不用Add)
+                tabControl1.TabPages.Remove(AdminChartPage_SalesNProduct); // 移除 AdminChartPage_SalesNProduct
+                tabControl1.TabPages.Remove(AdminChartPage_Ttl); // 移除 AdminChartPage_Ttl
             }
             else if (role == "admin")
             {
                 tabControl1.TabPages.Remove(SalesSearchPage); // 移除 SalesSearchPage (原本就存在AdminSearchPage所以不用Add)
+                tabControl1.TabPages.Remove(SalesChartPage_Monthly); // 移除 SalesChartPage_Monthly (原本就存在SalesChartPage_Ttl所以不用Add)
+                tabControl1.TabPages.Remove(SalesChartPage_Ttl); // 移除 SalesChartPage_Ttl (原本就存在SalesSearchPage所以不用Add)
             }
             // 右上角顯示目前登入者
             lblCurrentUser.Text = $"目前登入: {_username}";
@@ -132,7 +136,7 @@ namespace SalesDashboard
                 // 銷售人員
                 // 總計
                 //LoadKPIDoughnutChart(_username);
-                LoadTtlKPI(_username);
+                LoadSalesTtlKPI(_username);
                 LoadProductsCountTopThree(_username);
                 LoadCustomerOrdersCountTopThree(_username);
                 LoadTotalOrdersCountChart(_username);
@@ -141,6 +145,28 @@ namespace SalesDashboard
                 LoadProductsGroupBySales(_username);
                 LoadCustomersGroupBySales(_username);
 
+            }
+            else if(tabControl1.SelectedTab == AdminChartPage_SalesNProduct)
+            {
+                // 管理員
+                // 月份篩選
+                
+            }
+            else if (tabControl1.SelectedTab == AdminChartPage_Ttl)
+            {
+                // 管理員
+                // 總計
+                //LoadTtlKPI_admin();
+                //LoadProductsCountTopThree_admin();
+                //LoadCustomerOrdersCountTopThree_admin();
+                //LoadTotalOrdersCountChart_admin();
+                //LoadTotalRevenueTtlChart_admin();
+                //LoadBiggestLabel_admin();
+                //LoadProductsGroupBySales_admin();
+                //LoadCustomersGroupBySales_admin();
+
+                LoadAdminBiggestLabel();
+                LoadAdminTtlKPI();
             }
         }
 
@@ -1376,7 +1402,7 @@ namespace SalesDashboard
         //}
 
         // tabPage4, 左上兩個panel -- KPI進度條
-        private void LoadTtlKPI(string username)
+        private void LoadSalesTtlKPI(string username)
         {
             const decimal targetRevenue = 100000m; // 10萬元
             const int targetOrder = 50;
@@ -1409,13 +1435,13 @@ namespace SalesDashboard
                 }
             }
 
-            progressSalesBarTtlOrders.Minimum = 0;
-            progressSalesBarTtlOrders.Maximum = 50;
-            progressSalesBarTtlOrders.Value = totalOrders; // 更新訂單進度條
+            progressBarSalesTtlOrders.Minimum = 0;
+            progressBarSalesTtlOrders.Maximum = 50;
+            progressBarSalesTtlOrders.Value = totalOrders; // 更新訂單進度條
 
-            progressSalesBarTtlRevenue.Minimum = 0;
-            progressSalesBarTtlRevenue.Maximum = 100000;
-            progressSalesBarTtlRevenue.Value = (int)(totalRevenue); // 更新銷售金額進度條
+            progressBarSalesTtlRevenue.Minimum = 0;
+            progressBarSalesTtlRevenue.Maximum = 100000;
+            progressBarSalesTtlRevenue.Value = (int)(totalRevenue); // 更新銷售金額進度條
 
             decimal revenueAchievementRate = targetRevenue == 0 ? 0 : totalRevenue / targetRevenue;
             string percentageText = $"{revenueAchievementRate:P0}"; // 百分比格式
@@ -1424,14 +1450,14 @@ namespace SalesDashboard
             string OrdersPercentageText = $"{OrdersAchievementRate:P0}"; // 百分比格式
 
 
-            this.labelTtlOrdersPct.BringToFront();
-            this.labelTtlRevenuePct.BringToFront();
-            labelTtlRevenue.Text = $"${totalRevenue:N0}";
-            labelTtlOrders.Text = $"{totalOrders} 筆";
-            labelTtlRevenuePct.Text = $"{revenueAchievementRate:P0}"; // 更新 Label 顯示達成率
-            labelTtlOrdersPct.Text = $"{OrdersAchievementRate:P0}"; // 更新 Label 顯示達成率
-            labelTtlRevenuePatio.Text = $"({totalRevenue:N0} / {targetRevenue:N0})";
-            labelTtlOrdersPatio.Text = $"({totalOrders} / {targetOrder})";
+            this.labelSalesTtlOrdersPct.BringToFront();
+            this.labelSalesTtlRevenuePct.BringToFront();
+            labelSalesTtlRevenue.Text = $"${totalRevenue:N0}";
+            labelSalesTtlOrders.Text = $"{totalOrders} 筆";
+            labelSalesTtlRevenuePct.Text = $"{revenueAchievementRate:P0}"; // 更新 Label 顯示達成率
+            labelSalesTtlOrdersPct.Text = $"{OrdersAchievementRate:P0}"; // 更新 Label 顯示達成率
+            labelSalesTtlRevenuePatio.Text = $"({totalRevenue:N0} / {targetRevenue:N0})";
+            labelSalesTtlOrdersPatio.Text = $"({totalOrders} / {targetOrder})";
         }
 
         // tabPage4, 左中兩個圓餅圖 -- 客戶/產品銷售占比
@@ -1810,5 +1836,165 @@ namespace SalesDashboard
                 }
             }
         }
+
+
+
+        // tabPage6, 兩個label,progressBar -- 總營業額、總訂單量、KPI
+        private void LoadAdminTtlKPI()
+        {
+            const decimal targetRevenue = 500000m; // 50萬元
+            const int targetOrder = 100;
+
+            string Tquery = $@"
+                select sum(o.amount * p.price) as total_revenue,
+                count(*) as total_orders
+                from orders o
+                left join products p on o.product_id = p.product_id;
+                ";
+
+            decimal totalRevenue = 0;
+            int totalOrders = 0;
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmdT = new MySqlCommand(Tquery, connection);
+
+                using (var reader = cmdT.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        totalRevenue = reader["total_revenue"] != DBNull.Value ? Convert.ToDecimal(reader["total_revenue"]) : 0m;
+                        totalOrders = reader["total_orders"] != DBNull.Value ? Convert.ToInt32(reader["total_orders"]) : 0;
+                        
+                    }
+                }
+            }
+
+            progressBarAdminTtlOrders.Minimum = 0;
+            progressBarAdminTtlOrders.Maximum = 100;
+            progressBarAdminTtlOrders.Value = totalOrders; // 更新訂單進度條
+
+            progressBarAdminTtlRevenue.Minimum = 0;
+            progressBarAdminTtlRevenue.Maximum = 500000;
+            progressBarAdminTtlRevenue.Value = (int)(totalRevenue); // 更新銷售金額進度條
+
+            decimal revenueAchievementRate = targetRevenue == 0 ? 0 : totalRevenue / targetRevenue;
+            string percentageText = $"{revenueAchievementRate:P0}"; // 百分比格式
+
+            decimal OrdersAchievementRate = targetOrder == 0 ? 0 : (decimal)totalOrders / targetOrder;
+            string OrdersPercentageText = $"{OrdersAchievementRate:P0}"; // 百分比格式
+
+
+            labelAdminTotalRevenue.Text = $"${totalRevenue:N0}";
+            labelAdminTotalOrders.Text = $"{totalOrders} 筆";
+            labelAdminTtlRevenuePct.Text = $"{revenueAchievementRate:P0}"; // 更新 Label 顯示達成率
+            labelAdminTtlOrdersPct.Text = $"{OrdersAchievementRate:P0}"; // 更新 Label 顯示達成率
+            labelAdminTtlRevenuePatio.Text = $"({totalRevenue:N0} / {targetRevenue:N0})";
+            labelAdminTtlOrdersPatio.Text = $"({totalOrders} / {targetOrder})";
+
+        }
+
+
+        // tabPage6, 六個label -- 取得管理員總銷售收入、訂單數量、最佳銷售員、產品銷售量最大值、客戶訂單數量最大值、銷售收入最大值
+        private void LoadAdminBiggestLabel()
+        {
+
+            string Squery = $@"
+                select sum(o.amount*p.price) as total_amount,u.username as username
+                from orders o
+                left join products p on o.product_id = p.product_id
+                left join users u on o.sales_user_id = u.user_id
+                group by o.sales_user_id
+                order by total_amount desc
+                limit 1;";
+            string Pquery = $@"
+                select p.name as product_name, sum(o.amount) as total_amount
+                from orders o
+                left join products p on o.product_id = p.product_id
+                group by o.product_id
+                order by total_amount desc
+                limit 1;";
+            string Cquery = $@"
+                select c.name as customer_name, sum(o.amount*p.price) as ttl_revenue
+                from orders o
+                left join products p on o.product_id = p.product_id
+                left join customers c on o.customer_id = c.customer_id
+                group by o.customer_id
+                order by ttl_revenue desc
+                limit 1;";
+            string Rquery = $@"
+                select p.name as product_name,sum(o.amount*p.price) as ttl_revenue
+                from orders o
+                left join products p on o.product_id = p.product_id
+                group by p.product_id
+                order by ttl_revenue desc
+                limit 1;";
+
+            
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmdS = new MySqlCommand(Squery, connection);
+                MySqlCommand cmdP = new MySqlCommand(Pquery, connection);
+                MySqlCommand cmdC = new MySqlCommand(Cquery, connection);
+                MySqlCommand cmdR = new MySqlCommand(Rquery, connection);
+
+                
+
+                using (var reader = cmdS.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string userName = reader["username"].ToString();
+                        string totalAmount = Convert.ToDecimal(reader["total_amount"]).ToString("N0");
+                        labelAdminBestSales.Text = $"{userName} (${totalAmount})";
+                    }
+                }
+
+                // 取得產品銷售量最大值
+                using (var reader = cmdP.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string productName = reader["product_name"].ToString();
+                        string totalAmount = reader["total_amount"].ToString();
+                        labelAdminBiggestSelling.Text = $"{productName} ({totalAmount}件)";
+                    }
+                    else
+                    {
+                        labelAdminBiggestSelling.Text = "無";
+                    }
+                }
+                // 取得客戶訂單數量最大值
+                using (var reader = cmdC.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string customerName = reader["customer_name"].ToString();
+                        labelAdminBiggestCustomer.Text = $"{customerName}";
+                    }
+                    else
+                    {
+                        labelAdminBiggestCustomer.Text = "無";
+                    }
+                }
+                // 取得銷售收入最大值
+                using (var reader = cmdR.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string productName = reader["product_name"].ToString();
+                        string productRevenue = Convert.ToDecimal(reader["ttl_revenue"]).ToString("N0");
+                        labelAdminBiggestRevenue.Text = $"{productName} - ${productRevenue}";
+                    }
+                    else
+                    {
+                        labelAdminBiggestRevenue.Text = "無";
+                    }
+                }
+            }
+        }
     }
+
 }

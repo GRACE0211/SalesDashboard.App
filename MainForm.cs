@@ -154,6 +154,7 @@ namespace SalesDashboard
                 LoadAdminGetMonthlySalesRevenue();
                 LoadMonthlyProductsSelling();
                 LoadAdminMonthlyLabel();
+                UpdateAdminMonthlyGrowthLabel_Sales();
             }
             else if (tabControl1.SelectedTab == AdminChartPage_Ttl)
             {
@@ -764,89 +765,7 @@ namespace SalesDashboard
         //}
 
         // 
-        private decimal GetRevenueForMonth(string username, DateTime month, List<string> selectedProducts, List<string> selectedCustomers)
-        {
-            decimal revenue = 0;
-            string productFilter = selectedProducts.Count > 0
-                ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")"
-                : "";
-            string customerFilter = selectedCustomers.Count > 0
-                ? "AND c.name IN (" + string.Join(",", selectedCustomers.Select((_, i) => $"@c{i}")) + ")"
-                : "";
-
-            string query = $@"
-                SELECT SUM(o.amount * p.price) as total_revenue
-                FROM orders o
-                LEFT JOIN products p ON o.product_id = p.product_id
-                LEFT JOIN customers c ON o.customer_id = c.customer_id
-                LEFT JOIN users u ON o.sales_user_id = u.user_id
-                WHERE YEAR(o.order_date) = @year
-                  AND MONTH(o.order_date) = @month
-                  AND u.username = @username
-                  {productFilter}
-                  {customerFilter}";
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@year", month.Year);
-                cmd.Parameters.AddWithValue("@month", month.Month);
-
-                for (int i = 0; i < selectedProducts.Count; i++)
-                    cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
-                for (int i = 0; i < selectedCustomers.Count; i++)
-                    cmd.Parameters.AddWithValue($"@c{i}", selectedCustomers[i]);
-
-                var result = cmd.ExecuteScalar();
-                revenue = result != DBNull.Value && result != null ? Convert.ToDecimal(result) : 0m;
-            }
-            return revenue;
-        }
-
-
-
-        private int GetOrderCountForMonth(string username, DateTime month, List<string> selectedProducts, List<string> selectedCustomers)
-        {
-            int count = 0;
-            string productFilter = selectedProducts.Count > 0
-                ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")"
-                : "";
-            string customerFilter = selectedCustomers.Count > 0
-                ? "AND c.name IN (" + string.Join(",", selectedCustomers.Select((_, i) => $"@c{i}")) + ")"
-                : "";
-
-            string query = $@"
-                SELECT COUNT(*) as order_count
-                FROM orders o
-                LEFT JOIN products p ON o.product_id = p.product_id
-                LEFT JOIN customers c ON o.customer_id = c.customer_id
-                LEFT JOIN users u ON o.sales_user_id = u.user_id
-                WHERE YEAR(o.order_date) = @year
-                  AND MONTH(o.order_date) = @month
-                  AND u.username = @username
-                  {productFilter}
-                  {customerFilter}";
-
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@year", month.Year);
-                cmd.Parameters.AddWithValue("@month", month.Month);
-
-                for (int i = 0; i < selectedProducts.Count; i++)
-                    cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
-                for (int i = 0; i < selectedCustomers.Count; i++)
-                    cmd.Parameters.AddWithValue($"@c{i}", selectedCustomers[i]);
-
-                var result = cmd.ExecuteScalar();
-                count = result != DBNull.Value && result != null ? Convert.ToInt32(result) : 0;
-            }
-            return count;
-        }
+        
 
 
 
@@ -1105,14 +1024,14 @@ namespace SalesDashboard
 
 
         // tabPage3, 中間的兩個panel -- 計算成長率(本月和上個月比較)
-        private void UpdateMonthlyGrowthLabel(string username, List<string> selectedProducts, List<string> selectedCustomers)
+        private void UpdateSalesMonthlyGrowthLabel(string username, List<string> selectedProducts, List<string> selectedCustomers)
         {
             DateTime selectedMonth = dateTimePickerChart.Value.Date;
             DateTime prevMonth = selectedMonth.AddMonths(-1);
 
             // 取得營收
-            decimal currentMonthRevenue = GetRevenueForMonth(username, selectedMonth, selectedProducts, selectedCustomers);
-            decimal prevMonthRevenue = GetRevenueForMonth(username, prevMonth, selectedProducts, selectedCustomers);
+            decimal currentMonthRevenue = GetRevenueForMonth_salesPage(username, selectedMonth, selectedProducts, selectedCustomers);
+            decimal prevMonthRevenue = GetRevenueForMonth_salesPage(username, prevMonth, selectedProducts, selectedCustomers);
 
             // 如果prevMonthRevenue為0（表示第一個月或前一月沒資料），直接顯示 "-"
             if (prevMonthRevenue == 0)
@@ -1135,8 +1054,8 @@ namespace SalesDashboard
             labelRevenueCurrentMonth.Text = $"本月營收：${currentMonthRevenue:N0}"; // 顯示本月營收
 
             // 訂單月成長率
-            int currentMonthOrders = GetOrderCountForMonth(username, selectedMonth, selectedProducts, selectedCustomers);
-            int prevMonthOrders = GetOrderCountForMonth(username, prevMonth, selectedProducts, selectedCustomers);
+            int currentMonthOrders = GetOrderCountForMonth_salesPage(username, selectedMonth, selectedProducts, selectedCustomers);
+            int prevMonthOrders = GetOrderCountForMonth_salesPage(username, prevMonth, selectedProducts, selectedCustomers);
 
             if (prevMonthOrders == 0)
             {
@@ -1158,6 +1077,90 @@ namespace SalesDashboard
             labelOrderCurrentMonth.Text = $"本月訂單量：{currentMonthOrders} 筆"; // 顯示本月訂單量
         }
 
+
+        private decimal GetRevenueForMonth_salesPage(string username, DateTime month, List<string> selectedProducts, List<string> selectedCustomers)
+        {
+            decimal revenue = 0;
+            string productFilter = selectedProducts.Count > 0
+                ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")"
+                : "";
+            string customerFilter = selectedCustomers.Count > 0
+                ? "AND c.name IN (" + string.Join(",", selectedCustomers.Select((_, i) => $"@c{i}")) + ")"
+                : "";
+
+            string query = $@"
+                SELECT SUM(o.amount * p.price) as total_revenue
+                FROM orders o
+                LEFT JOIN products p ON o.product_id = p.product_id
+                LEFT JOIN customers c ON o.customer_id = c.customer_id
+                LEFT JOIN users u ON o.sales_user_id = u.user_id
+                WHERE YEAR(o.order_date) = @year
+                  AND MONTH(o.order_date) = @month
+                  AND u.username = @username
+                  {productFilter}
+                  {customerFilter}";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@year", month.Year);
+                cmd.Parameters.AddWithValue("@month", month.Month);
+
+                for (int i = 0; i < selectedProducts.Count; i++)
+                    cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
+                for (int i = 0; i < selectedCustomers.Count; i++)
+                    cmd.Parameters.AddWithValue($"@c{i}", selectedCustomers[i]);
+
+                var result = cmd.ExecuteScalar();
+                revenue = result != DBNull.Value && result != null ? Convert.ToDecimal(result) : 0m;
+            }
+            return revenue;
+        }
+
+
+
+        private int GetOrderCountForMonth_salesPage(string username, DateTime month, List<string> selectedProducts, List<string> selectedCustomers)
+        {
+            int count = 0;
+            string productFilter = selectedProducts.Count > 0
+                ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")"
+                : "";
+            string customerFilter = selectedCustomers.Count > 0
+                ? "AND c.name IN (" + string.Join(",", selectedCustomers.Select((_, i) => $"@c{i}")) + ")"
+                : "";
+
+            string query = $@"
+                SELECT COUNT(*) as order_count
+                FROM orders o
+                LEFT JOIN products p ON o.product_id = p.product_id
+                LEFT JOIN customers c ON o.customer_id = c.customer_id
+                LEFT JOIN users u ON o.sales_user_id = u.user_id
+                WHERE YEAR(o.order_date) = @year
+                  AND MONTH(o.order_date) = @month
+                  AND u.username = @username
+                  {productFilter}
+                  {customerFilter}";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@year", month.Year);
+                cmd.Parameters.AddWithValue("@month", month.Month);
+
+                for (int i = 0; i < selectedProducts.Count; i++)
+                    cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
+                for (int i = 0; i < selectedCustomers.Count; i++)
+                    cmd.Parameters.AddWithValue($"@c{i}", selectedCustomers[i]);
+
+                var result = cmd.ExecuteScalar();
+                count = result != DBNull.Value && result != null ? Convert.ToInt32(result) : 0;
+            }
+            return count;
+        }
 
 
 
@@ -1221,7 +1224,7 @@ namespace SalesDashboard
 
             // 若有顯示本月總覽 Label，也可以重抓
             //LoadMonthlyTotalLabel(_username);
-            UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
+            UpdateSalesMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
             GetMonthlyOrdersRowData(_username, checkedProducts, checkedCustomers);
         }
 
@@ -1250,7 +1253,7 @@ namespace SalesDashboard
 
             // 傳進查詢方法
             RefreshCharts(checkedProducts, checkedCustomers);
-            UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
+            UpdateSalesMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
             ShowCurrentFilters(checkedProducts, checkedCustomers);
             GetMonthlyOrdersRowData(_username, checkedProducts, checkedCustomers);
         }
@@ -1276,7 +1279,7 @@ namespace SalesDashboard
             List<string> checkedProducts = checkedListBoxProducts.CheckedItems.Cast<string>().ToList();
 
             RefreshCharts(checkedProducts, checkedCustomers);
-            UpdateMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
+            UpdateSalesMonthlyGrowthLabel(_username, checkedProducts, checkedCustomers);
             ShowCurrentFilters(checkedProducts, checkedCustomers);
             GetMonthlyOrdersRowData(_username, checkedProducts, checkedCustomers);
         }
@@ -2544,6 +2547,77 @@ namespace SalesDashboard
             labelAdminRevenueTitle.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}總營收:";
             labelAdminSalesTitle.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}營收王:";
             labelAdminProductTitle.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}銷售王:";
+            labelAdminSalesGrowthTitleC.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}營收";
+            string prevMonth = dateTimePickerAdmin.Value.AddMonths(-1).ToString("yyyy年MM月");
+            labelAdminSalesGrowthTitleP.Text = $"{prevMonth}營收";
+        }
+
+        // tabPage5, 成長率panel -- 各個sales的銷售成長率
+        private void UpdateAdminMonthlyGrowthLabel_Sales()
+        {
+            DateTime selectedMonth = dateTimePickerAdmin.Value.Date;
+            DateTime prevMonth = selectedMonth.AddMonths(-1);
+
+            // 假設這三個帳號是業務
+            string[] sales = { "salesA", "salesB", "salesC" };
+
+            // 儲存 label/arrow 的對應
+            Label[] currentLabels = { labelSalesACurrentMonth, labelSalesBCurrentMonth, labelSalesCCurrentMonth };
+            Label[] lastLabels = { labelSalesALastMonth, labelSalesBLastMonth, labelSalesCLastMonth };
+            Label[] growthLabels = { labelSalesAGrowth, labelSalesBGrowth, labelSalesCGrowth };
+            PictureBox[] arrows = { pictureBoxARevenueArrow, pictureBoxBRevenueArrow, pictureBoxCRevenueArrow };
+
+            for (int i = 0; i < sales.Length; i++)
+            {
+                decimal currentRevenue = GetSalesRevenueForMonth_adminPage(sales[i], selectedMonth);
+                decimal prevRevenue = GetSalesRevenueForMonth_adminPage(sales[i], prevMonth);
+
+                currentLabels[i].Text = $"${currentRevenue:N0}";
+                lastLabels[i].Text = $"${prevRevenue:N0}";
+
+                if (prevRevenue == 0)
+                {
+                    growthLabels[i].Text = " - %";
+                    arrows[i].Image = null;
+                    growthLabels[i].ForeColor = Color.Black;
+                }
+                else
+                {
+                    decimal growth = (currentRevenue - prevRevenue) / prevRevenue;
+                    growthLabels[i].Text = $"{Math.Abs(growth):P1}";
+                    arrows[i].Image = growth >= 0
+                        ? global::SalesDashboard.Properties.Resources.arrow_up
+                        : global::SalesDashboard.Properties.Resources.arrow_down;
+                    growthLabels[i].ForeColor = growth >= 0 ? Color.Green : Color.Red;
+                }
+            }
+        }
+
+        private decimal GetSalesRevenueForMonth_adminPage(string username, DateTime month)
+        {
+            decimal revenue = 0m;
+            string query = $@"
+        select sum(o.amount*p.price) as ttl_revenue
+        from orders o
+        left join products p on o.product_id = p.product_id
+        left join users u on o.sales_user_id = u.user_id
+        where year(o.order_date) = @searchYear 
+          and month(o.order_date) = @searchMonth
+          and u.username = @username;
+    ";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@searchYear", month.Year);
+                cmd.Parameters.AddWithValue("@searchMonth", month.Month);
+                cmd.Parameters.AddWithValue("@username", username);
+
+                var result = cmd.ExecuteScalar();
+                revenue = result != DBNull.Value && result != null ? Convert.ToDecimal(result) : 0m;
+            }
+            return revenue;
         }
 
 
@@ -2553,7 +2627,7 @@ namespace SalesDashboard
             LoadAdminGetMonthlySalesRevenue();
             LoadAdminMonthlyLabel();
             LoadMonthlyProductsSelling();
+            UpdateAdminMonthlyGrowthLabel_Sales();
         }
-
     }
 }

@@ -1,4 +1,4 @@
-﻿
+
 
 using MySql.Data.MySqlClient;
 using System;
@@ -2647,6 +2647,7 @@ namespace SalesDashboard
             }
         }
 
+        // for tabPage5, salesTabPage的成長率panel -- 計算sales某月的總營收
         private decimal GetSalesRevenueForMonth_adminPage(string username, DateTime month)
         {
             decimal revenue = 0m;
@@ -2674,7 +2675,7 @@ namespace SalesDashboard
             return revenue;
         }
 
-        // 訂單bar
+        // 訂單bar -- 計算sales的訂單量排名
         private DataTable GetSalesMonthlyOrdersData()
         {
             DataTable dataTable = new DataTable();
@@ -2821,7 +2822,7 @@ namespace SalesDashboard
         }
 
 
-
+        // for tabPage5, productTabPage的成長率panel -- 計算某月產品的訂單量
         private int GetProductAmountForMonth_adminPage(DateTime month, List<string> selectedProducts)
         {
             int count = 0;
@@ -2835,7 +2836,7 @@ namespace SalesDashboard
                 LEFT JOIN products p ON o.product_id = p.product_id
                 WHERE YEAR(o.order_date) = @year
                   AND MONTH(o.order_date) = @month
-          {productFilter}";
+                {productFilter}";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -2891,6 +2892,8 @@ namespace SalesDashboard
             }
             return dataTable; // 返回填充好的 DataTable
         }
+
+        // 勾選哪些產品就秀出哪些產品的折線圖
         private void LoadProductRevenueLineChart(List<string> selectedProducts)
         {
             DataTable dt = GetMonthlyProductRevenueData(selectedProducts);  // 傳參數
@@ -2910,10 +2913,10 @@ namespace SalesDashboard
             chartAdminMonthlyProductRevenue.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
 
             var months = dt.AsEnumerable()
-                           .Select(r => r.Field<string>("ym"))
-                           .Distinct()
-                           .OrderBy(x => x)
-                           .ToList();
+                .Select(r => r.Field<string>("ym"))
+                .Distinct()
+                .OrderBy(x => x)
+                .ToList();
 
             foreach (var product in selectedProducts)
             {
@@ -2930,6 +2933,7 @@ namespace SalesDashboard
                 }
             }
         }
+
 
         private void checkedListBoxProducts_admin_ItemCheck(object sender, ItemCheckEventArgs e)
         {
@@ -3032,6 +3036,7 @@ namespace SalesDashboard
             LoadAdminMonthlyKPI();
         }
 
+        // 
         private void LoadAdminSalesMonthlyRevenueLine()
         {
 

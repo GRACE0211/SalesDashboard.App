@@ -323,7 +323,7 @@
             this.chartAdminMonthlyProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel26 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
-            this.dateTimePickerAdmin = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerAdmin_SP = new System.Windows.Forms.DateTimePicker();
             this.AdminChartPage_Ttl = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
             this.chartAdminMonthlySalesRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -365,11 +365,9 @@
             this.label19 = new System.Windows.Forms.Label();
             this.AdminChartPage_region = new System.Windows.Forms.TabPage();
             this.panel36 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.chartAdminMonthlyRevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartCustomerRegionTtlRader = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel31 = new System.Windows.Forms.Panel();
-            this.panel37 = new System.Windows.Forms.Panel();
             this.dateTimePickerAdmin_region = new System.Windows.Forms.DateTimePicker();
             this.chartAdminMonthlyTop3RevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.checkedListBoxRegion_region_admin = new System.Windows.Forms.CheckedListBox();
@@ -385,6 +383,7 @@
             this.toolTipSPie = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipPPie = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipAdmin = new System.Windows.Forms.ToolTip(this.components);
+            this.label27 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.dataMgmtPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -485,11 +484,9 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.AdminChartPage_region.SuspendLayout();
-            this.panel36.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).BeginInit();
             this.panel31.SuspendLayout();
-            this.panel37.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyTop3RevenueByRegion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductRevenuePctByRegion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionMthRader)).BeginInit();
@@ -2097,9 +2094,9 @@
             this.labelAdminRevenueTitle.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.labelAdminRevenueTitle.Location = new System.Drawing.Point(17, 14);
             this.labelAdminRevenueTitle.Name = "labelAdminRevenueTitle";
-            this.labelAdminRevenueTitle.Size = new System.Drawing.Size(62, 21);
+            this.labelAdminRevenueTitle.Size = new System.Drawing.Size(126, 21);
             this.labelAdminRevenueTitle.TabIndex = 0;
-            this.labelAdminRevenueTitle.Text = "總營收:";
+            this.labelAdminRevenueTitle.Text = "○年○月總營收:";
             // 
             // labelAdminMTtlRevenue
             // 
@@ -2924,7 +2921,7 @@
             // 
             this.panel26.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panel26.Controls.Add(this.label25);
-            this.panel26.Controls.Add(this.dateTimePickerAdmin);
+            this.panel26.Controls.Add(this.dateTimePickerAdmin_SP);
             this.panel26.Location = new System.Drawing.Point(8, 7);
             this.panel26.Name = "panel26";
             this.panel26.Size = new System.Drawing.Size(315, 60);
@@ -2940,18 +2937,18 @@
             this.label25.TabIndex = 30;
             this.label25.Text = "請選擇月份:";
             // 
-            // dateTimePickerAdmin
+            // dateTimePickerAdmin_SP
             // 
-            this.dateTimePickerAdmin.CustomFormat = "yyyy/MM";
-            this.dateTimePickerAdmin.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerAdmin.Location = new System.Drawing.Point(158, 16);
-            this.dateTimePickerAdmin.MaxDate = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
-            this.dateTimePickerAdmin.MinDate = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
-            this.dateTimePickerAdmin.Name = "dateTimePickerAdmin";
-            this.dateTimePickerAdmin.Size = new System.Drawing.Size(126, 27);
-            this.dateTimePickerAdmin.TabIndex = 29;
-            this.dateTimePickerAdmin.Value = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
-            this.dateTimePickerAdmin.ValueChanged += new System.EventHandler(this.dateTimePickerAdmin_ValueChanged);
+            this.dateTimePickerAdmin_SP.CustomFormat = "yyyy/MM";
+            this.dateTimePickerAdmin_SP.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePickerAdmin_SP.Location = new System.Drawing.Point(158, 16);
+            this.dateTimePickerAdmin_SP.MaxDate = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
+            this.dateTimePickerAdmin_SP.MinDate = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
+            this.dateTimePickerAdmin_SP.Name = "dateTimePickerAdmin_SP";
+            this.dateTimePickerAdmin_SP.Size = new System.Drawing.Size(126, 27);
+            this.dateTimePickerAdmin_SP.TabIndex = 29;
+            this.dateTimePickerAdmin_SP.Value = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
+            this.dateTimePickerAdmin_SP.ValueChanged += new System.EventHandler(this.dateTimePickerAdmin_ValueChanged);
             // 
             // AdminChartPage_Ttl
             // 
@@ -3431,21 +3428,10 @@
             // panel36
             // 
             this.panel36.BackColor = System.Drawing.Color.White;
-            this.panel36.Controls.Add(this.dateTimePicker1);
             this.panel36.Location = new System.Drawing.Point(10, 341);
             this.panel36.Name = "panel36";
             this.panel36.Size = new System.Drawing.Size(182, 323);
             this.panel36.TabIndex = 3;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(9, 102);
-            this.dateTimePicker1.MaxDate = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
-            this.dateTimePicker1.MinDate = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(165, 27);
-            this.dateTimePicker1.TabIndex = 0;
-            this.dateTimePicker1.Value = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
             // 
             // chartAdminMonthlyRevenueByRegion
             // 
@@ -3498,7 +3484,9 @@
             // panel31
             // 
             this.panel31.BackColor = System.Drawing.Color.Silver;
-            this.panel31.Controls.Add(this.panel37);
+            this.panel31.Controls.Add(this.label27);
+            this.panel31.Controls.Add(this.dateTimePickerAdmin_region);
+            this.panel31.Controls.Add(this.chartAdminMonthlyTop3RevenueByRegion);
             this.panel31.Controls.Add(this.checkedListBoxRegion_region_admin);
             this.panel31.Controls.Add(this.checkedListBoxRegion_product_admin);
             this.panel31.Controls.Add(this.chartProductRevenuePctByRegion);
@@ -3508,23 +3496,13 @@
             this.panel31.Size = new System.Drawing.Size(1070, 328);
             this.panel31.TabIndex = 0;
             // 
-            // panel37
-            // 
-            this.panel37.BackColor = System.Drawing.Color.White;
-            this.panel37.Controls.Add(this.dateTimePickerAdmin_region);
-            this.panel37.Controls.Add(this.chartAdminMonthlyTop3RevenueByRegion);
-            this.panel37.Location = new System.Drawing.Point(8, 8);
-            this.panel37.Name = "panel37";
-            this.panel37.Size = new System.Drawing.Size(189, 312);
-            this.panel37.TabIndex = 35;
-            // 
             // dateTimePickerAdmin_region
             // 
-            this.dateTimePickerAdmin_region.Location = new System.Drawing.Point(11, 10);
+            this.dateTimePickerAdmin_region.Location = new System.Drawing.Point(52, 35);
             this.dateTimePickerAdmin_region.MaxDate = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
             this.dateTimePickerAdmin_region.MinDate = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
             this.dateTimePickerAdmin_region.Name = "dateTimePickerAdmin_region";
-            this.dateTimePickerAdmin_region.Size = new System.Drawing.Size(165, 27);
+            this.dateTimePickerAdmin_region.Size = new System.Drawing.Size(145, 27);
             this.dateTimePickerAdmin_region.TabIndex = 0;
             this.dateTimePickerAdmin_region.Value = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
             this.dateTimePickerAdmin_region.ValueChanged += new System.EventHandler(this.dateTimePickerAdmin_region_ValueChanged);
@@ -3551,14 +3529,14 @@
             legend29.Name = "Legend1";
             legend29.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chartAdminMonthlyTop3RevenueByRegion.Legends.Add(legend29);
-            this.chartAdminMonthlyTop3RevenueByRegion.Location = new System.Drawing.Point(3, 49);
+            this.chartAdminMonthlyTop3RevenueByRegion.Location = new System.Drawing.Point(9, 68);
             this.chartAdminMonthlyTop3RevenueByRegion.Name = "chartAdminMonthlyTop3RevenueByRegion";
             series29.ChartArea = "ChartArea1";
             series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
             series29.Legend = "Legend1";
             series29.Name = "Series1";
             this.chartAdminMonthlyTop3RevenueByRegion.Series.Add(series29);
-            this.chartAdminMonthlyTop3RevenueByRegion.Size = new System.Drawing.Size(185, 262);
+            this.chartAdminMonthlyTop3RevenueByRegion.Size = new System.Drawing.Size(188, 252);
             this.chartAdminMonthlyTop3RevenueByRegion.TabIndex = 1;
             this.chartAdminMonthlyTop3RevenueByRegion.Text = "chart1";
             // 
@@ -3574,7 +3552,7 @@
             "桃園",
             "臺中",
             "高雄"});
-            this.checkedListBoxRegion_region_admin.Location = new System.Drawing.Point(538, 176);
+            this.checkedListBoxRegion_region_admin.Location = new System.Drawing.Point(536, 176);
             this.checkedListBoxRegion_region_admin.Name = "checkedListBoxRegion_region_admin";
             this.checkedListBoxRegion_region_admin.Size = new System.Drawing.Size(70, 144);
             this.checkedListBoxRegion_region_admin.TabIndex = 34;
@@ -3698,6 +3676,16 @@
             this.LogoutButton.Text = "登出";
             this.LogoutButton.UseVisualStyleBackColor = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.Location = new System.Drawing.Point(5, 8);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(110, 24);
+            this.label27.TabIndex = 35;
+            this.label27.Text = "請選擇月份:";
             // 
             // MainForm
             // 
@@ -3839,11 +3827,10 @@
             this.panel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.AdminChartPage_region.ResumeLayout(false);
-            this.panel36.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).EndInit();
             this.panel31.ResumeLayout(false);
-            this.panel37.ResumeLayout(false);
+            this.panel31.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyTop3RevenueByRegion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductRevenuePctByRegion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionMthRader)).EndInit();
@@ -4026,7 +4013,7 @@
         private System.Windows.Forms.ToolTip toolTipPPie;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAdminMonthlySalesRevenue;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAdminTtlRevenue;
-        private System.Windows.Forms.DateTimePicker dateTimePickerAdmin;
+        private System.Windows.Forms.DateTimePicker dateTimePickerAdmin_SP;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPageSales;
         private System.Windows.Forms.TabPage tabPageProduct;
@@ -4116,8 +4103,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAdminMonthlyRevenueByRegion;
         private System.Windows.Forms.Panel panel36;
         private System.Windows.Forms.DateTimePicker dateTimePickerAdmin_region;
-        private System.Windows.Forms.Panel panel37;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAdminMonthlyTop3RevenueByRegion;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Label label27;
     }
 }

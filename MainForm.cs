@@ -1218,7 +1218,7 @@ namespace SalesDashboard
                 checkedListBoxRegion_product_admin.SetItemChecked(i, true); // 預設全選產品
             }
             var checkedRegion_product = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
-            
+
 
             for (int i = 0; i < checkedListBoxRegion_region_admin.Items.Count; i++)
             {
@@ -1336,7 +1336,7 @@ namespace SalesDashboard
         }
 
 
-        // ------------------ SalesChartPage_Ttl -- tabPage4 ------------------
+        // ------------------ SalesChartPage_Ttl -- tabPage4 ------------------------------------
 
 
         // tabPage4, 左上兩個label以及兩個甜甜圈圖 -- 取得該銷售員總銷售收入
@@ -1506,7 +1506,7 @@ namespace SalesDashboard
             labelSalesTtlOrdersPatio.Text = $"({totalOrders} / {targetOrder})";
         }
 
-        // tabPage4, 左中兩個圓餅圖 -- 客戶/產品銷售占比
+        // tabPage4, 左中右圓餅圖 -- 業務自己的產品銷售占比
         private DataTable GetProductsGroupBySalesData(string username)
         {
             string query = $@"
@@ -1567,6 +1567,7 @@ namespace SalesDashboard
             }
         }
 
+        // tabPage4, 左中左圓餅圖 -- 業務自己的客戶銷售占比
         private DataTable GetCustomersGroupBySalesData(string username)
         {
             string query = $@"
@@ -1888,6 +1889,8 @@ namespace SalesDashboard
 
 
 
+        // ------------------ SalesChartPage_Ttl -- tabPage6 ------------------------------------
+
         // tabPage6, 兩個label,progressBar -- 總營業額、總訂單量、KPI
         private void LoadAdminTtlKPI()
         {
@@ -2196,7 +2199,7 @@ namespace SalesDashboard
         }
 
 
-        // tabPage6, 右上長條圖 -- 每月營收,業務占比
+        // tabPage6, 右下長條圖 -- 每月營收,業務占比
 
         private DataTable GetAdminSalesMonthlyRevenueData()
         {
@@ -2340,12 +2343,14 @@ namespace SalesDashboard
 
         }
 
+        // ------------------ AdminChartPage_Sales/Product -- tabPage5 ------------------------------------
+
         // tabPage5, 左下DataGridView -- 取得所有訂單資料
         private void LoadAdminDataGridView()
         {
             DataTable dataTable = new DataTable();
-            DateTime searchMonth = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
-            DateTime searchYear = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
+            DateTime searchMonth = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
 
             string query = $@"
                 select u.username as sales,
@@ -2375,12 +2380,12 @@ namespace SalesDashboard
         }
 
 
-        // tabPage5 -> tabpage業務, 業務銷售佔比PIE
+        // tabPage5 -> tabpage業務, 左下圓餅圖 -- 業務銷售佔比PIE
         private DataTable AdminGetMonthlySalesRevenue()
         {
             DataTable dataTable = new DataTable();
-            DateTime searchMonth = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
-            DateTime searchYear = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
+            DateTime searchMonth = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
 
             string query = $@"
                 select u.username as sales_user,sum(o.amount*p.price) as ttl_revenue
@@ -2415,7 +2420,7 @@ namespace SalesDashboard
 
             chartAdminSalesMonthlyRevenue.Series.Clear();
             chartAdminSalesMonthlyRevenue.Titles.Clear();
-            chartAdminSalesMonthlyRevenue.Titles.Add($"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}業務銷售占比"); // 設定圖表標題
+            chartAdminSalesMonthlyRevenue.Titles.Add($"{dateTimePickerAdmin_SP.Value.ToString("yyyy年MM月")}業務銷售占比"); // 設定圖表標題
             chartAdminSalesMonthlyRevenue.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold);
             var series = chartAdminSalesMonthlyRevenue.Series.Add("SalesUsers");
             series.ChartType = SeriesChartType.Pie;
@@ -2437,14 +2442,12 @@ namespace SalesDashboard
             series.ToolTip = $"#VALX: $#VALY";
         }
 
-
-        // tabPage5, <產品> Bar, 計算每月各產品銷售量
-
+        // tabPage5 -> tabpage產品, 左下bar -- 某院的產品銷售數量排名
         private DataTable GetMonthlyProductsSellingData()
         {
             DataTable dataTable = new DataTable();
-            DateTime searchMonth = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
-            DateTime searchYear = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
+            DateTime searchMonth = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
 
             string query = $@"
                 select p.name as product_name, sum(o.amount) as o_count
@@ -2483,7 +2486,7 @@ namespace SalesDashboard
                 return;
             }
             chartAdminMonthlyProducts.Titles.Clear();
-            chartAdminMonthlyProducts.Titles.Add($"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}產品銷售量"); // 設定圖表標題
+            chartAdminMonthlyProducts.Titles.Add($"{dateTimePickerAdmin_SP.Value.ToString("yyyy年MM月")}產品銷售量"); // 設定圖表標題
             chartAdminMonthlyProducts.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
             chartAdminMonthlyProducts.Series.Clear();
             var series = chartAdminMonthlyProducts.Series.Add("Products");
@@ -2505,11 +2508,11 @@ namespace SalesDashboard
         }
 
 
-        // tabPage5, 三個label -- 每月營收、業務營收王、產品銷售王 
+        // tabPage5 -> 最左邊的三個label -- 每月營收、業務營收王、產品銷售王 
         private void LoadAdminMonthlyLabel()
         {
-            DateTime searchMonth = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
-            DateTime searchYear = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
+            DateTime searchMonth = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
 
             // 載入月份總營收
             string Tquery = $@"
@@ -2598,18 +2601,19 @@ namespace SalesDashboard
                 }
             }
 
-            labelAdminRevenueTitle.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}總營收:";
-            labelAdminSalesTitle.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}營收王:";
-            labelAdminProductTitle.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}銷售王:";
-            labelAdminSalesGrowthTitleC.Text = $"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}營收";
-            string prevMonth = dateTimePickerAdmin.Value.AddMonths(-1).ToString("yyyy年MM月");
+            labelAdminRevenueTitle.Text = $"{dateTimePickerAdmin_SP.Value.ToString("yyyy年MM月")}總營收:";
+            labelAdminSalesTitle.Text = $"{dateTimePickerAdmin_SP.Value.ToString("yyyy年MM月")}營收王:";
+            labelAdminProductTitle.Text = $"{dateTimePickerAdmin_SP.Value.ToString("yyyy年MM月")}銷售王:";
+            labelAdminSalesGrowthTitleC.Text = $"{dateTimePickerAdmin_SP.Value.ToString("yyyy年MM月")}營收";
+            // 上個月營收標題
+            string prevMonth = dateTimePickerAdmin_SP.Value.AddMonths(-1).ToString("yyyy年MM月");
             labelAdminSalesGrowthTitleP.Text = $"{prevMonth}營收";
         }
 
-        // tabPage5, salesTabPage的成長率panel -- 各個sales的銷售成長率
+        // tabPage5 -> tabpage業務, 上左成長率panel -- 各個sales的銷售成長率
         private void UpdateAdminMonthlyGrowthLabel_Sales()
         {
-            DateTime selectedMonth = dateTimePickerAdmin.Value.Date;
+            DateTime selectedMonth = dateTimePickerAdmin_SP.Value.Date;
             DateTime prevMonth = selectedMonth.AddMonths(-1);
 
             // 假設這三個帳號是業務
@@ -2647,6 +2651,7 @@ namespace SalesDashboard
             }
         }
 
+        // tabPage5 -> for tabpage業務, 上左成長率panel -- 計算sales某月的總營收
         private decimal GetSalesRevenueForMonth_adminPage(string username, DateTime month)
         {
             decimal revenue = 0m;
@@ -2674,12 +2679,12 @@ namespace SalesDashboard
             return revenue;
         }
 
-        // 訂單bar
+        // tabPage5 -> tabpage業務, 上右的bar -- 計算sales的訂單量排名
         private DataTable GetSalesMonthlyOrdersData()
         {
             DataTable dataTable = new DataTable();
-            DateTime searchMonth = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
-            DateTime searchYear = dateTimePickerAdmin.Value.Date; // 取得選擇的月份
+            DateTime searchMonth = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_SP.Value.Date; // 取得選擇的月份
             string query = $@"
                 select count(o.sales_user_id) as o_count,u.username
                 from orders o
@@ -2713,7 +2718,7 @@ namespace SalesDashboard
                 return;
             }
             chartAdminSalesMonthlyOrders.Titles.Clear();
-            chartAdminSalesMonthlyOrders.Titles.Add($"{dateTimePickerAdmin.Value.ToString("yyyy年MM月")}業務訂單數量"); // 設定圖表標題
+            chartAdminSalesMonthlyOrders.Titles.Add($"{dateTimePickerAdmin_SP.Value.ToString("yyyy年MM月")}業務訂單數量"); // 設定圖表標題
             chartAdminSalesMonthlyOrders.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
             chartAdminSalesMonthlyOrders.Series.Clear();
             var series = chartAdminSalesMonthlyOrders.Series.Add("Sales");
@@ -2734,10 +2739,10 @@ namespace SalesDashboard
             }
         }
 
-        // tabPage5, productTabPage的成長率panel -- 各個product的銷售/訂單成長率
+        // tabPage5 -> tabpage產品, 上面的成長率panel -- 各個product的銷售/訂單成長率
         private void UpdateAdminMonthlyGrowthLabel_Product(List<string> selectedProducts)
         {
-            DateTime selectedMonth = dateTimePickerAdmin.Value.Date;
+            DateTime selectedMonth = dateTimePickerAdmin_SP.Value.Date;
             DateTime prevMonth = selectedMonth.AddMonths(-1);
 
             // 取得營收
@@ -2788,7 +2793,7 @@ namespace SalesDashboard
             labelAdminOrderCurrentMonth.Text = $"本月銷售量: {currentMonthOrders} 件"; // 顯示本月銷售量
         }
 
-
+        // for tabPage5, productTabPage的成長率panel -- 計算某月產品的訂單量
         private decimal GetProductRevenueForMonth_adminPage(DateTime month, List<string> selectedProducts)
         {
             decimal revenue = 0;
@@ -2802,7 +2807,7 @@ namespace SalesDashboard
                 LEFT JOIN products p ON o.product_id = p.product_id
                 WHERE YEAR(o.order_date) = @year
                   AND MONTH(o.order_date) = @month
-          {productFilter}";
+                  {productFilter}";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -2821,7 +2826,7 @@ namespace SalesDashboard
         }
 
 
-
+        // for tabPage5, productTabPage的成長率panel -- 計算某月產品的訂單量
         private int GetProductAmountForMonth_adminPage(DateTime month, List<string> selectedProducts)
         {
             int count = 0;
@@ -2835,7 +2840,7 @@ namespace SalesDashboard
                 LEFT JOIN products p ON o.product_id = p.product_id
                 WHERE YEAR(o.order_date) = @year
                   AND MONTH(o.order_date) = @month
-          {productFilter}";
+                {productFilter}";
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -2853,7 +2858,7 @@ namespace SalesDashboard
             return count;
         }
 
-        // tabPage5, adminProductTabPage的折線圖 -- 每月產品營收趨勢
+        // tabPage5 -> tabpage產品, 中間折線圖 -- 每月產品營收趨勢
         private DataTable GetMonthlyProductRevenueData(List<string> selectedProducts)
         {
             DataTable dataTable = new DataTable();
@@ -2891,14 +2896,14 @@ namespace SalesDashboard
             }
             return dataTable; // 返回填充好的 DataTable
         }
+
+        // 勾選哪些產品就秀出哪些產品的折線圖
         private void LoadProductRevenueLineChart(List<string> selectedProducts)
         {
             DataTable dt = GetMonthlyProductRevenueData(selectedProducts);  // 傳參數
             if (dt.Rows.Count == 0)
             {
                 // 如果沒有資料，清空圖表並顯示提示
-                chartAdminMonthlyProductRevenue.Titles.Clear();
-                chartAdminMonthlyProductRevenue.Titles.Add("無資料顯示!!");
                 chartAdminMonthlyProductRevenue.Titles[0].Font = new Font("微軟正黑體", 14, FontStyle.Bold); // 設定標題字體樣式
                 chartAdminMonthlyProductRevenue.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
                 chartAdminMonthlyProductRevenue.Series.Clear();
@@ -2906,14 +2911,14 @@ namespace SalesDashboard
             }
             chartAdminMonthlyProductRevenue.Series.Clear();
             chartAdminMonthlyProductRevenue.Titles.Clear();
-            chartAdminMonthlyProductRevenue.Titles.Add($"產品月收趨勢圖"); // 設定圖表標題
+            chartAdminMonthlyProductRevenue.Titles.Add($"產品月營收趨勢圖"); // 設定圖表標題
             chartAdminMonthlyProductRevenue.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
 
             var months = dt.AsEnumerable()
-                           .Select(r => r.Field<string>("ym"))
-                           .Distinct()
-                           .OrderBy(x => x)
-                           .ToList();
+                .Select(r => r.Field<string>("ym"))
+                .Distinct()
+                .OrderBy(x => x)
+                .ToList();
 
             foreach (var product in selectedProducts)
             {
@@ -2931,11 +2936,12 @@ namespace SalesDashboard
             }
         }
 
+
         private void checkedListBoxProducts_admin_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // 取得當前選擇的年月
-            int year = dateTimePickerAdmin.Value.Year;
-            int month = dateTimePickerAdmin.Value.Month;
+            int year = dateTimePickerAdmin_SP.Value.Year;
+            int month = dateTimePickerAdmin_SP.Value.Month;
             // 預測本次操作後的產品勾選清單
             List<string> checkedProducts = checkedListBoxProducts_admin.CheckedItems.Cast<string>().ToList();
             string currentProduct = checkedListBoxProducts_admin.Items[e.Index].ToString();
@@ -2970,11 +2976,13 @@ namespace SalesDashboard
             toolTipAdmin.SetToolTip(labelAdminProductRevenue, "商品：" + productFullText);
         }
 
+
+        // tabPage5, adminTabPage的progressBar, KPI -- 每月營收目標達成率
         private void LoadAdminMonthlyKPI()
         {
             const decimal targetRevenue = 50000m; // 50萬元
-            int year = dateTimePickerAdmin.Value.Year;
-            int month = dateTimePickerAdmin.Value.Month;
+            int year = dateTimePickerAdmin_SP.Value.Year;
+            int month = dateTimePickerAdmin_SP.Value.Month;
 
             string query = $@"
                 select sum(o.amount * p.price) as total_revenue
@@ -3032,6 +3040,9 @@ namespace SalesDashboard
             LoadAdminMonthlyKPI();
         }
 
+        
+
+        // tabPage5,業務tabPage, 中間折線圖 -- 每月業務員營收趨勢
         private void LoadAdminSalesMonthlyRevenueLine()
         {
 
@@ -3043,7 +3054,7 @@ namespace SalesDashboard
             // 3. 清空舊資料
             chartAdminMonthlyTtlRevenue.Series.Clear();
             chartAdminMonthlyTtlRevenue.Titles.Clear();
-            chartAdminMonthlyTtlRevenue.Titles.Add("業務員每月營收"); // 設定圖表標題
+            chartAdminMonthlyTtlRevenue.Titles.Add("業務員月營收趨勢圖"); // 設定圖表標題
             chartAdminMonthlyTtlRevenue.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
 
             // 4. 為每個業務員建立一個 Line Series
@@ -3075,6 +3086,8 @@ namespace SalesDashboard
 
         }
 
+
+        // tabPage5,業務tabPage, 右下折線圖 -- 每月營收趨勢
         private void LoadAdminTtlRevenueChart_sales()
         {
             DataTable dt = GetAdminTtlRevenueData();
@@ -3103,6 +3116,7 @@ namespace SalesDashboard
 
         }
 
+        // tabPage5,產品tabPage, 右下折線圖 -- 每月營收趨勢
         private void LoadAdminTtlRevenueChart_product()
         {
             DataTable dt = GetAdminTtlRevenueData();
@@ -3132,6 +3146,7 @@ namespace SalesDashboard
 
         }
 
+        // tabPage5, 左下3個按鈕 -- 切換到業務員的月報表頁面
         private void SwitchToSalesPage(string username)
         {
 
@@ -3140,6 +3155,7 @@ namespace SalesDashboard
             List<string> checkedProducts = checkedListBoxProducts_sales.CheckedItems.Cast<string>().ToList();
             List<string> checkedCustomers = checkedListBoxCustomers_sales.CheckedItems.Cast<string>().ToList();
 
+            // 如果已經存在 SalesChartPage_Monthly，則先移除再添加
             if (tabControl1.TabPages.Contains(SalesChartPage_Monthly))
             {
                 tabControl1.TabPages.Remove(SalesChartPage_Monthly);
@@ -3154,7 +3170,7 @@ namespace SalesDashboard
             ShowSalesCurrentFilters(checkedProducts, checkedCustomers);
         }
 
-        // 呼叫
+        // 呼叫, 因為 salesTabPage的method都是在登入時傳入username參數, 所以這邊要在觸發按鈕時傳入username參數
         private void buttonSalesA_Click(object sender, EventArgs e)
         {
             SwitchToSalesPage("salesA");
@@ -3168,7 +3184,11 @@ namespace SalesDashboard
             SwitchToSalesPage("salesC");
         }
 
-        // tabPage7, 雷達圖 -- 根據地區統計總營收
+
+
+        // ------------------ AdminChartPage_Region -- tabPage7 ------------------------------------
+
+        // tabPage7, 右下雷達圖 -- 根據地區統計總營收
         private DataTable GetCustomerRegionTtlData()
         {
             string query = @"
@@ -3226,8 +3246,12 @@ namespace SalesDashboard
 
         }
 
+        // tabPage7, 右上雷達圖 -- 根據地區以及篩選的產品統計月營收
         private DataTable GetCustomerRegionMthDataByProduct(List<string> selectedProducts)
         {
+
+            DateTime searchMonth = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
             var productFilter = selectedProducts.Count > 0 ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")" : "";
             string query = $@"
                 select SUBSTRING_INDEX(c.address,'市',1) as region,
@@ -3236,7 +3260,7 @@ namespace SalesDashboard
                 from orders o
                 left join customers c on o.customer_id = c.customer_id
                 left join products p on o.product_id = p.product_id
-                WHERE 1=1
+                WHERE year(o.order_date) = @searchYear and month(o.order_date) = @searchMonth
                 {productFilter}
                 group by region; 
             ";
@@ -3246,6 +3270,8 @@ namespace SalesDashboard
                 MySqlCommand cmd = new MySqlCommand(query, connection);
                 for (int i = 0; i < selectedProducts.Count; i++)
                     cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
+                cmd.Parameters.AddWithValue("@searchYear", searchYear.Year);
+                cmd.Parameters.AddWithValue("@searchMonth", searchMonth.Month);
                 MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
@@ -3286,24 +3312,161 @@ namespace SalesDashboard
             }
         }
 
-        private void checkedListBoxRegion_product_admin_ItemCheck(object sender, ItemCheckEventArgs e)
+        
+
+        // tabPage7, 上面左邊bar -- 根據地區統計總營收前3名(搭配產品以及地區篩選)
+        private DataTable GetMonthlyTop3RevenueByRegionData(List<string> selectedProducts, List<string> selectedRegion)
         {
-            // 預測本次操作後的產品勾選清單
-            List<string> checkedProducts = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
-            string currentProduct = checkedListBoxRegion_product_admin.Items[e.Index].ToString();
-            if (e.NewValue == CheckState.Checked)
+            DateTime searchMonth = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
+            var productFilter = selectedProducts.Count > 0 ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")" : "";
+            var regionFilter = selectedRegion.Count > 0 ? "AND SUBSTRING_INDEX(c.address,'市',1) IN (" + string.Join(",", selectedRegion.Select((_, i) => $"@c{i}")) + ")" : "";
+
+
+            string query = $@"
+            SELECT 
+                date_format(o.order_date,'%Y-%m') as ym,
+                SUBSTRING_INDEX(c.address,'市',1) as region,
+                IFNULL(SUM(o.amount * p.price), 0) AS total_revenue
+                from orders o
+            LEFT JOIN customers c ON o.customer_id = c.customer_id
+            left join products p on o.product_id = p.product_id
+            where year(o.order_date) = @searchYear and month(o.order_date) = @searchMonth
+            {productFilter}
+            {regionFilter}
+            GROUP BY ym, region
+            ORDER BY ym, total_revenue desc limit 3;
+            ";
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
-                if (!checkedProducts.Contains(currentProduct))
-                    checkedProducts.Add(currentProduct);
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                cmd.Parameters.AddWithValue("@searchYear", searchYear.Year);
+                cmd.Parameters.AddWithValue("@searchMonth", searchMonth.Month);
+                for (int i = 0; i < selectedProducts.Count; i++)
+                    cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
+                for (int i = 0; i < selectedRegion.Count; i++)
+                    cmd.Parameters.AddWithValue($"@c{i}", selectedRegion[i]);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
+                return dataTable; // 返回填充好的 DataTable
             }
-            else
+        }
+
+        private void LoadMonthlyTop3RevenueByRegionChart(List<string> selectedProducts, List<string> selectedRegion)
+        {
+            DataTable dt = GetMonthlyTop3RevenueByRegionData(selectedProducts, selectedRegion);
+            if (dt.Rows.Count == 0)
             {
-                if (checkedProducts.Contains(currentProduct))
-                    checkedProducts.Remove(currentProduct);
+                // 如果沒有資料，清空圖表並顯示提示
+                chartAdminMonthlyTop3RevenueByRegion.Titles.Clear();
+                chartAdminMonthlyTop3RevenueByRegion.Titles.Add("無資料顯示!!");
+                chartAdminMonthlyTop3RevenueByRegion.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
+                chartAdminMonthlyTop3RevenueByRegion.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
+                chartAdminMonthlyTop3RevenueByRegion.Series.Clear();
+                return;
+            }
+            chartAdminMonthlyTop3RevenueByRegion.Titles.Clear();
+            chartAdminMonthlyTop3RevenueByRegion.Titles.Add($"{dateTimePickerChart.Value.ToString("yyyy年MM月")}營收排名"); // 設定圖表標題
+            chartAdminMonthlyTop3RevenueByRegion.Titles[0].Font = new Font("微軟正黑體", 10, FontStyle.Bold); // 設定標題字體樣式
+            chartAdminMonthlyTop3RevenueByRegion.Series.Clear();
+            var series = chartAdminMonthlyTop3RevenueByRegion.Series.Add("Region");
+            series.ChartType = SeriesChartType.Bar;
+            series.IsValueShownAsLabel = true; // 顯示數值標籤
+
+            series.Label = "#VALY"; // 標籤格式為 "客戶名稱: 銷售量"
+            series.Font = new Font("微軟正黑體", 10, FontStyle.Bold); // 設定標籤字體樣式
+            foreach (DataPoint pt in series.Points)
+            {
+                pt.Label = $"{pt.AxisLabel}: {pt.YValues[0]}"; // 設定標籤格式為 "客戶名稱: 銷售量"
+            }
+            for (int i = dt.Rows.Count - 1; i >= 0; i--)
+            {
+                var row = dt.Rows[i];
+                string region = row["region"].ToString();
+                int revenue = Convert.ToInt32(row["total_revenue"]);
+                int idx = series.Points.AddXY(region, revenue);
+                series.Points[idx].LegendText = $"{region}: {revenue:N0}";
+                series.Font = new Font("微軟正黑體", 10, FontStyle.Bold);
             }
 
-            // 傳進查詢方法
-            LoadCustomerRegionMthRadarChart(checkedProducts);
+
+        }
+
+        private DataTable GetProductRevenuePctByRegionData(List<string> selectedRegion)
+        {
+            DateTime searchMonth = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
+            DateTime searchYear = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
+            var regionFilter = selectedRegion.Count > 0 ? "AND SUBSTRING_INDEX(c.address,'市',1) IN (" + string.Join(",", selectedRegion.Select((_, i) => $"@c{i}")) + ")" : "";
+            string query = $@"
+                select p.name,
+                    sum(o.amount*p.price) as total_revenue
+                from orders o
+                left join customers c on o.customer_id = c.customer_id
+                left join products p on o.product_id = p.product_id
+                where year(o.order_date) = @searchYear and month(o.order_date) = @searchMonth
+                    {regionFilter}
+                group by p.name;
+                ";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                cmd.Parameters.AddWithValue("@searchYear", searchYear.Year);
+                cmd.Parameters.AddWithValue("@searchMonth", searchMonth.Month);
+                for (int i = 0; i < selectedRegion.Count; i++)
+                    cmd.Parameters.AddWithValue($"@c{i}", selectedRegion[i]);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
+                return dataTable; // 返回填充好的 DataTable
+            }
+        }
+
+        private void LoadProductRevenuePctByRegionChart(List<string> selectedRegion)
+        {
+            DataTable dt = GetProductRevenuePctByRegionData(selectedRegion);
+            if (dt.Rows.Count == 0)
+            {
+                // 如果沒有資料，清空圖表並顯示提示
+                chartProductRevenuePctByRegion.Titles.Clear();
+                chartProductRevenuePctByRegion.Titles.Add("無資料顯示!!");
+                chartProductRevenuePctByRegion.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
+                chartProductRevenuePctByRegion.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
+                chartProductRevenuePctByRegion.Series.Clear();
+                return;
+            }
+            chartProductRevenuePctByRegion.Series.Clear();
+            chartProductRevenuePctByRegion.Titles.Clear();
+            chartProductRevenuePctByRegion.Titles.Add($"各產品營收佔比"); // 設定圖表標題
+            chartProductRevenuePctByRegion.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
+            var series = chartProductRevenuePctByRegion.Series.Add("Total Revenue");
+            series.ChartType = SeriesChartType.Pie;
+            series.IsValueShownAsLabel = true; // 顯示數值標籤
+            series.Font = new Font("微軟正黑體", 10, FontStyle.Bold); // 設定標籤字體樣式
+            foreach (DataRow row in dt.Rows)
+            {
+                string productName = row["name"].ToString();
+                decimal revenueValue = Convert.ToDecimal(row["total_revenue"]);
+                int idx = series.Points.AddXY(productName, revenueValue);
+                series.Points[idx].Label = "#PERCENT{P1}"; // 只顯示百分比
+                series.Points[idx].ToolTip = $"{productName}: ${revenueValue:N0}"; // Tooltip 顯示詳細
+                series.Points[idx].LegendText = $"{productName}: ${revenueValue:N0}"; // 圖例
+            }
+
+        }
+
+
+
+        private void dateTimePickerAdmin_region_ValueChanged(object sender, EventArgs e)
+        {
+            List<string> selectedProducts = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
+            List<string> selectedRegion = checkedListBoxRegion_region_admin.CheckedItems.Cast<string>().ToList();
+            LoadProductRevenuePctByRegionChart(selectedRegion);
+            LoadCustomerRegionMthRadarChart(selectedProducts);
+            LoadMonthlyTop3RevenueByRegionChart(selectedProducts, selectedRegion);
         }
 
         private void checkedListBoxRegion_region_admin_ItemCheck(object sender, ItemCheckEventArgs e)
@@ -3321,13 +3484,35 @@ namespace SalesDashboard
                 if (checkedRegion.Contains(currentRegion))
                     checkedRegion.Remove(currentRegion);
             }
-
+            List<string> checkedProducts = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
             // 傳進查詢方法
-            LoadCustomerRegionMthRadarChart(checkedRegion);
+
+            LoadProductRevenuePctByRegionChart(checkedRegion);
+            LoadMonthlyTop3RevenueByRegionChart(checkedProducts, checkedRegion);
+        }
+        private void checkedListBoxRegion_product_admin_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // 預測本次操作後的產品勾選清單
+            List<string> checkedProducts = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
+            string currentProduct = checkedListBoxRegion_product_admin.Items[e.Index].ToString();
+            if (e.NewValue == CheckState.Checked)
+            {
+                if (!checkedProducts.Contains(currentProduct))
+                    checkedProducts.Add(currentProduct);
+            }
+            else
+            {
+                if (checkedProducts.Contains(currentProduct))
+                    checkedProducts.Remove(currentProduct);
+            }
+            List<string> checkedRegion = checkedListBoxRegion_region_admin.CheckedItems.Cast<string>().ToList();
+            // 傳進查詢方法
+            LoadCustomerRegionMthRadarChart(checkedProducts);
+            LoadMonthlyTop3RevenueByRegionChart(checkedProducts, checkedRegion);
         }
 
 
-
+        // tabPage7, 下面中間折線圖 -- 各地區每月營收趨勢
         private DataTable GetMonthlyRevenueByRegionData()
         {
             string query = @"
@@ -3417,90 +3602,7 @@ namespace SalesDashboard
 
         }
 
-        private DataTable GetMonthlyTop3RevenueByRegionData(List<string> selectedProducts, List<string> selectedRegion)
-        {
-            DateTime searchMonth = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
-            DateTime searchYear = dateTimePickerAdmin_region.Value.Date; // 取得選擇的月份
-            var productFilter = selectedProducts.Count > 0 ? "AND p.name IN (" + string.Join(",", selectedProducts.Select((_, i) => $"@p{i}")) + ")" : "";
-            var regionFilter = selectedRegion.Count > 0 ? "AND SUBSTRING_INDEX(c.address,'市',1) IN (" + string.Join(",", selectedRegion.Select((_, i) => $"@c{i}")) + ")" : "";
-
-
-            string query = $@"
-            SELECT 
-                date_format(o.order_date,'%Y-%m') as ym,
-                SUBSTRING_INDEX(c.address,'市',1) as region,
-                IFNULL(SUM(o.amount * p.price), 0) AS total_revenue
-                from orders o
-            LEFT JOIN customers c ON o.customer_id = c.customer_id
-            left join products p on o.product_id = p.product_id
-            where year(o.order_date) = @searchYear and month(o.order_date) = @searchMonth
-            {productFilter}
-            {regionFilter}
-            GROUP BY ym, region
-            ORDER BY ym, total_revenue desc limit 3;
-            ";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                cmd.Parameters.AddWithValue("@searchYear", searchYear.Year);
-                cmd.Parameters.AddWithValue("@searchMonth", searchMonth.Month);
-                for (int i = 0; i < selectedProducts.Count; i++)
-                    cmd.Parameters.AddWithValue($"@p{i}", selectedProducts[i]);
-                for (int i = 0; i < selectedRegion.Count; i++)  
-                    cmd.Parameters.AddWithValue($"@c{i}", selectedRegion[i]);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
-                return dataTable; // 返回填充好的 DataTable
-            }
-        }
-
-        private void LoadMonthlyTop3RevenueByRegionChart(List<string> selectedProducts, List<string> selectedRegion)
-        {
-            DataTable dt = GetMonthlyTop3RevenueByRegionData(selectedProducts, selectedRegion);
-            if (dt.Rows.Count == 0)
-            {
-                // 如果沒有資料，清空圖表並顯示提示
-                chartAdminMonthlyTop3RevenueByRegion.Titles.Clear();
-                chartAdminMonthlyTop3RevenueByRegion.Titles.Add("無資料顯示!!");
-                chartAdminMonthlyTop3RevenueByRegion.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
-                chartAdminMonthlyTop3RevenueByRegion.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
-                chartAdminMonthlyTop3RevenueByRegion.Series.Clear();
-                return;
-            }
-            chartAdminMonthlyTop3RevenueByRegion.Titles.Clear();
-            chartAdminMonthlyTop3RevenueByRegion.Titles.Add($"{dateTimePickerChart.Value.ToString("yyyy年MM月")}營收排名"); // 設定圖表標題
-            chartAdminMonthlyTop3RevenueByRegion.Titles[0].Font = new Font("微軟正黑體", 10, FontStyle.Bold); // 設定標題字體樣式
-            chartAdminMonthlyTop3RevenueByRegion.Series.Clear();
-            var series = chartAdminMonthlyTop3RevenueByRegion.Series.Add("Region");
-            series.ChartType = SeriesChartType.Bar;
-            series.IsValueShownAsLabel = true; // 顯示數值標籤
-            
-            series.Label = "#VALY"; // 標籤格式為 "客戶名稱: 銷售量"
-            series.Font = new Font("微軟正黑體", 10, FontStyle.Bold); // 設定標籤字體樣式
-            foreach (DataPoint pt in series.Points)
-            {
-                pt.Label = $"{pt.AxisLabel}: {pt.YValues[0]}"; // 設定標籤格式為 "客戶名稱: 銷售量"
-            }
-            foreach (DataRow row in dt.Rows)
-            {
-                string region = row["region"].ToString();
-                int revenue = Convert.ToInt32(row["total_revenue"]);
-                int idx = series.Points.AddXY(region, revenue);
-                series.Points[idx].LegendText = $"{region}: {revenue:N0}"; // 設定標籤格式為 "客戶名稱: 銷售量"
-                series.Font = new Font("微軟正黑體", 10, FontStyle.Bold); // 設定標籤字體樣式
-            }
-
-        }
-
-        private void dateTimePickerAdmin_region_ValueChanged(object sender, EventArgs e)
-        {
-            List<string> selectedProducts = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
-            List<string> selectedRegion = checkedListBoxRegion_region_admin.CheckedItems.Cast<string>().ToList();
-
-            LoadMonthlyTop3RevenueByRegionChart(selectedProducts, selectedRegion);
-        }
+        
 
 
     }

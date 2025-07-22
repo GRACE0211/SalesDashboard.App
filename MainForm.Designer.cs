@@ -122,6 +122,9 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea31 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend31 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea32 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend32 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dataMgmtPage = new System.Windows.Forms.TabPage();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -364,10 +367,16 @@
             this.labelAdminTotalRevenue = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.AdminChartPage_region = new System.Windows.Forms.TabPage();
+            this.chartRegionTtlRevenuePct = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel36 = new System.Windows.Forms.Panel();
+            this.labelAdminRRegion = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.labelAdminRTtlRevenue = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
             this.chartAdminMonthlyRevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartCustomerRegionTtlRader = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel31 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
             this.dateTimePickerAdmin_region = new System.Windows.Forms.DateTimePicker();
             this.chartAdminMonthlyTop3RevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.checkedListBoxRegion_region_admin = new System.Windows.Forms.CheckedListBox();
@@ -383,7 +392,6 @@
             this.toolTipSPie = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipPPie = new System.Windows.Forms.ToolTip(this.components);
             this.toolTipAdmin = new System.Windows.Forms.ToolTip(this.components);
-            this.label27 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.dataMgmtPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -484,6 +492,9 @@
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             this.AdminChartPage_region.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRegionTtlRevenuePct)).BeginInit();
+            this.panel36.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).BeginInit();
             this.panel31.SuspendLayout();
@@ -3415,6 +3426,7 @@
             // AdminChartPage_region
             // 
             this.AdminChartPage_region.BackColor = System.Drawing.Color.DimGray;
+            this.AdminChartPage_region.Controls.Add(this.chartRegionTtlRevenuePct);
             this.AdminChartPage_region.Controls.Add(this.panel36);
             this.AdminChartPage_region.Controls.Add(this.chartAdminMonthlyRevenueByRegion);
             this.AdminChartPage_region.Controls.Add(this.chartCustomerRegionTtlRader);
@@ -3425,59 +3437,123 @@
             this.AdminChartPage_region.TabIndex = 7;
             this.AdminChartPage_region.Text = "統計圖表(地區) - admin";
             // 
+            // chartRegionTtlRevenuePct
+            // 
+            chartArea27.Name = "ChartArea1";
+            this.chartRegionTtlRevenuePct.ChartAreas.Add(chartArea27);
+            legend27.Enabled = false;
+            legend27.Name = "Legend1";
+            this.chartRegionTtlRevenuePct.Legends.Add(legend27);
+            this.chartRegionTtlRevenuePct.Location = new System.Drawing.Point(521, 464);
+            this.chartRegionTtlRevenuePct.Name = "chartRegionTtlRevenuePct";
+            series27.ChartArea = "ChartArea1";
+            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series27.Legend = "Legend1";
+            series27.Name = "Series1";
+            this.chartRegionTtlRevenuePct.Series.Add(series27);
+            this.chartRegionTtlRevenuePct.Size = new System.Drawing.Size(229, 200);
+            this.chartRegionTtlRevenuePct.TabIndex = 4;
+            this.chartRegionTtlRevenuePct.Text = "chart1";
+            // 
             // panel36
             // 
             this.panel36.BackColor = System.Drawing.Color.White;
-            this.panel36.Location = new System.Drawing.Point(10, 341);
+            this.panel36.Controls.Add(this.labelAdminRRegion);
+            this.panel36.Controls.Add(this.pictureBox13);
+            this.panel36.Controls.Add(this.labelAdminRTtlRevenue);
+            this.panel36.Controls.Add(this.label30);
+            this.panel36.Location = new System.Drawing.Point(521, 341);
             this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(182, 323);
+            this.panel36.Size = new System.Drawing.Size(229, 117);
             this.panel36.TabIndex = 3;
+            // 
+            // labelAdminRRegion
+            // 
+            this.labelAdminRRegion.AutoSize = true;
+            this.labelAdminRRegion.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelAdminRRegion.Location = new System.Drawing.Point(54, 45);
+            this.labelAdminRRegion.Name = "labelAdminRRegion";
+            this.labelAdminRRegion.Size = new System.Drawing.Size(86, 31);
+            this.labelAdminRRegion.TabIndex = 7;
+            this.labelAdminRRegion.Text = "臺北市";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::SalesDashboard.Properties.Resources.gold_medal;
+            this.pictureBox13.Location = new System.Drawing.Point(16, 45);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 6;
+            this.pictureBox13.TabStop = false;
+            // 
+            // labelAdminRTtlRevenue
+            // 
+            this.labelAdminRTtlRevenue.AutoSize = true;
+            this.labelAdminRTtlRevenue.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelAdminRTtlRevenue.ForeColor = System.Drawing.Color.Gray;
+            this.labelAdminRTtlRevenue.Location = new System.Drawing.Point(54, 75);
+            this.labelAdminRTtlRevenue.Name = "labelAdminRTtlRevenue";
+            this.labelAdminRTtlRevenue.Size = new System.Drawing.Size(127, 26);
+            this.labelAdminRTtlRevenue.TabIndex = 1;
+            this.labelAdminRTtlRevenue.Text = "($ 100,000)";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.DimGray;
+            this.label30.Location = new System.Drawing.Point(12, 13);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(118, 19);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "總營收最高地區:";
             // 
             // chartAdminMonthlyRevenueByRegion
             // 
-            chartArea27.AxisX.MajorGrid.Enabled = false;
-            chartArea27.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea27.Name = "ChartArea1";
-            this.chartAdminMonthlyRevenueByRegion.ChartAreas.Add(chartArea27);
-            legend27.Name = "Legend1";
-            this.chartAdminMonthlyRevenueByRegion.Legends.Add(legend27);
-            this.chartAdminMonthlyRevenueByRegion.Location = new System.Drawing.Point(198, 341);
+            chartArea28.AxisX.MajorGrid.Enabled = false;
+            chartArea28.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea28.Name = "ChartArea1";
+            this.chartAdminMonthlyRevenueByRegion.ChartAreas.Add(chartArea28);
+            legend28.Name = "Legend1";
+            this.chartAdminMonthlyRevenueByRegion.Legends.Add(legend28);
+            this.chartAdminMonthlyRevenueByRegion.Location = new System.Drawing.Point(8, 341);
             this.chartAdminMonthlyRevenueByRegion.Name = "chartAdminMonthlyRevenueByRegion";
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series27.Legend = "Legend1";
-            series27.Name = "Series1";
-            this.chartAdminMonthlyRevenueByRegion.Series.Add(series27);
+            series28.ChartArea = "ChartArea1";
+            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series28.Legend = "Legend1";
+            series28.Name = "Series1";
+            this.chartAdminMonthlyRevenueByRegion.Series.Add(series28);
             this.chartAdminMonthlyRevenueByRegion.Size = new System.Drawing.Size(507, 323);
             this.chartAdminMonthlyRevenueByRegion.TabIndex = 2;
             this.chartAdminMonthlyRevenueByRegion.Text = "chart1";
             // 
             // chartCustomerRegionTtlRader
             // 
-            chartArea28.AxisX.IsLabelAutoFit = false;
-            chartArea28.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            chartArea28.AxisY.IsLabelAutoFit = false;
-            chartArea28.AxisY.LabelStyle.Angle = 10;
-            chartArea28.AxisY.LabelStyle.Enabled = false;
-            chartArea28.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea28.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
-            chartArea28.AxisY.LineColor = System.Drawing.Color.Silver;
-            chartArea28.AxisY.LineWidth = 2;
-            chartArea28.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea28.AxisY.MajorGrid.LineWidth = 2;
-            chartArea28.Name = "ChartArea1";
-            this.chartCustomerRegionTtlRader.ChartAreas.Add(chartArea28);
-            legend28.Name = "Legend1";
-            this.chartCustomerRegionTtlRader.Legends.Add(legend28);
-            this.chartCustomerRegionTtlRader.Location = new System.Drawing.Point(711, 341);
+            chartArea29.AxisX.IsLabelAutoFit = false;
+            chartArea29.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            chartArea29.AxisY.IsLabelAutoFit = false;
+            chartArea29.AxisY.LabelStyle.Angle = 10;
+            chartArea29.AxisY.LabelStyle.Enabled = false;
+            chartArea29.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea29.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
+            chartArea29.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea29.AxisY.LineWidth = 2;
+            chartArea29.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea29.AxisY.MajorGrid.LineWidth = 2;
+            chartArea29.Name = "ChartArea1";
+            this.chartCustomerRegionTtlRader.ChartAreas.Add(chartArea29);
+            legend29.Enabled = false;
+            legend29.Name = "Legend1";
+            this.chartCustomerRegionTtlRader.Legends.Add(legend29);
+            this.chartCustomerRegionTtlRader.Location = new System.Drawing.Point(756, 341);
             this.chartCustomerRegionTtlRader.Name = "chartCustomerRegionTtlRader";
             this.chartCustomerRegionTtlRader.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series28.ChartArea = "ChartArea1";
-            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
-            series28.Legend = "Legend1";
-            series28.Name = "Series1";
-            this.chartCustomerRegionTtlRader.Series.Add(series28);
-            this.chartCustomerRegionTtlRader.Size = new System.Drawing.Size(367, 323);
+            series29.ChartArea = "ChartArea1";
+            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
+            series29.Legend = "Legend1";
+            series29.Name = "Series1";
+            this.chartCustomerRegionTtlRader.Series.Add(series29);
+            this.chartCustomerRegionTtlRader.Size = new System.Drawing.Size(322, 323);
             this.chartCustomerRegionTtlRader.TabIndex = 0;
             this.chartCustomerRegionTtlRader.Text = " ";
             // 
@@ -3496,6 +3572,16 @@
             this.panel31.Size = new System.Drawing.Size(1070, 328);
             this.panel31.TabIndex = 0;
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.Location = new System.Drawing.Point(5, 8);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(110, 24);
+            this.label27.TabIndex = 35;
+            this.label27.Text = "請選擇月份:";
+            // 
             // dateTimePickerAdmin_region
             // 
             this.dateTimePickerAdmin_region.Location = new System.Drawing.Point(52, 35);
@@ -3509,33 +3595,33 @@
             // 
             // chartAdminMonthlyTop3RevenueByRegion
             // 
-            chartArea29.AxisX.IsLabelAutoFit = false;
-            chartArea29.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea29.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea29.AxisX.MajorGrid.Enabled = false;
-            chartArea29.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea29.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea29.AxisY.Interval = 5000D;
-            chartArea29.AxisY.IsLabelAutoFit = false;
-            chartArea29.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea29.AxisY.LineColor = System.Drawing.Color.White;
-            chartArea29.AxisY.MajorGrid.Enabled = false;
-            chartArea29.AxisY.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea29.Name = "ChartArea1";
-            this.chartAdminMonthlyTop3RevenueByRegion.ChartAreas.Add(chartArea29);
-            legend29.Enabled = false;
-            legend29.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend29.IsTextAutoFit = false;
-            legend29.Name = "Legend1";
-            legend29.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chartAdminMonthlyTop3RevenueByRegion.Legends.Add(legend29);
+            chartArea30.AxisX.IsLabelAutoFit = false;
+            chartArea30.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea30.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea30.AxisX.MajorGrid.Enabled = false;
+            chartArea30.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea30.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea30.AxisY.Interval = 5000D;
+            chartArea30.AxisY.IsLabelAutoFit = false;
+            chartArea30.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea30.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea30.AxisY.MajorGrid.Enabled = false;
+            chartArea30.AxisY.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea30.Name = "ChartArea1";
+            this.chartAdminMonthlyTop3RevenueByRegion.ChartAreas.Add(chartArea30);
+            legend30.Enabled = false;
+            legend30.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend30.IsTextAutoFit = false;
+            legend30.Name = "Legend1";
+            legend30.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartAdminMonthlyTop3RevenueByRegion.Legends.Add(legend30);
             this.chartAdminMonthlyTop3RevenueByRegion.Location = new System.Drawing.Point(9, 68);
             this.chartAdminMonthlyTop3RevenueByRegion.Name = "chartAdminMonthlyTop3RevenueByRegion";
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series29.Legend = "Legend1";
-            series29.Name = "Series1";
-            this.chartAdminMonthlyTop3RevenueByRegion.Series.Add(series29);
+            series30.ChartArea = "ChartArea1";
+            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series30.Legend = "Legend1";
+            series30.Name = "Series1";
+            this.chartAdminMonthlyTop3RevenueByRegion.Series.Add(series30);
             this.chartAdminMonthlyTop3RevenueByRegion.Size = new System.Drawing.Size(188, 252);
             this.chartAdminMonthlyTop3RevenueByRegion.TabIndex = 1;
             this.chartAdminMonthlyTop3RevenueByRegion.Text = "chart1";
@@ -3578,51 +3664,51 @@
             // 
             // chartProductRevenuePctByRegion
             // 
-            chartArea30.AxisX.MajorGrid.Enabled = false;
-            chartArea30.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea30.Name = "ChartArea1";
-            this.chartProductRevenuePctByRegion.ChartAreas.Add(chartArea30);
-            legend30.Name = "Legend1";
-            this.chartProductRevenuePctByRegion.Legends.Add(legend30);
+            chartArea31.AxisX.MajorGrid.Enabled = false;
+            chartArea31.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea31.Name = "ChartArea1";
+            this.chartProductRevenuePctByRegion.ChartAreas.Add(chartArea31);
+            legend31.Name = "Legend1";
+            this.chartProductRevenuePctByRegion.Legends.Add(legend31);
             this.chartProductRevenuePctByRegion.Location = new System.Drawing.Point(203, 8);
             this.chartProductRevenuePctByRegion.Name = "chartProductRevenuePctByRegion";
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series30.Legend = "Legend1";
-            series30.Name = "Series1";
-            this.chartProductRevenuePctByRegion.Series.Add(series30);
+            series31.ChartArea = "ChartArea1";
+            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series31.Legend = "Legend1";
+            series31.Name = "Series1";
+            this.chartProductRevenuePctByRegion.Series.Add(series31);
             this.chartProductRevenuePctByRegion.Size = new System.Drawing.Size(416, 312);
             this.chartProductRevenuePctByRegion.TabIndex = 4;
             this.chartProductRevenuePctByRegion.Text = "chart2";
             // 
             // chartCustomerRegionMthRader
             // 
-            chartArea31.AxisX.IsLabelAutoFit = false;
-            chartArea31.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            chartArea31.AxisX.LineColor = System.Drawing.Color.Silver;
-            chartArea31.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea31.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea31.AxisY.IsLabelAutoFit = false;
-            chartArea31.AxisY.LabelStyle.Angle = 10;
-            chartArea31.AxisY.LabelStyle.Enabled = false;
-            chartArea31.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea31.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
-            chartArea31.AxisY.LineColor = System.Drawing.Color.Silver;
-            chartArea31.AxisY.LineWidth = 2;
-            chartArea31.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea31.AxisY.MajorGrid.LineWidth = 2;
-            chartArea31.Name = "ChartArea1";
-            this.chartCustomerRegionMthRader.ChartAreas.Add(chartArea31);
-            legend31.Name = "Legend1";
-            this.chartCustomerRegionMthRader.Legends.Add(legend31);
+            chartArea32.AxisX.IsLabelAutoFit = false;
+            chartArea32.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            chartArea32.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea32.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea32.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea32.AxisY.IsLabelAutoFit = false;
+            chartArea32.AxisY.LabelStyle.Angle = 10;
+            chartArea32.AxisY.LabelStyle.Enabled = false;
+            chartArea32.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea32.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
+            chartArea32.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea32.AxisY.LineWidth = 2;
+            chartArea32.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea32.AxisY.MajorGrid.LineWidth = 2;
+            chartArea32.Name = "ChartArea1";
+            this.chartCustomerRegionMthRader.ChartAreas.Add(chartArea32);
+            legend32.Name = "Legend1";
+            this.chartCustomerRegionMthRader.Legends.Add(legend32);
             this.chartCustomerRegionMthRader.Location = new System.Drawing.Point(625, 8);
             this.chartCustomerRegionMthRader.Name = "chartCustomerRegionMthRader";
             this.chartCustomerRegionMthRader.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
-            series31.Legend = "Legend1";
-            series31.Name = "Series1";
-            this.chartCustomerRegionMthRader.Series.Add(series31);
+            series32.ChartArea = "ChartArea1";
+            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
+            series32.Legend = "Legend1";
+            series32.Name = "Series1";
+            this.chartCustomerRegionMthRader.Series.Add(series32);
             this.chartCustomerRegionMthRader.Size = new System.Drawing.Size(437, 312);
             this.chartCustomerRegionMthRader.TabIndex = 3;
             this.chartCustomerRegionMthRader.Text = "chart1";
@@ -3676,16 +3762,6 @@
             this.LogoutButton.Text = "登出";
             this.LogoutButton.UseVisualStyleBackColor = true;
             this.LogoutButton.Click += new System.EventHandler(this.LogoutButton_Click);
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label27.Location = new System.Drawing.Point(5, 8);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(110, 24);
-            this.label27.TabIndex = 35;
-            this.label27.Text = "請選擇月份:";
             // 
             // MainForm
             // 
@@ -3827,6 +3903,10 @@
             this.panel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
             this.AdminChartPage_region.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartRegionTtlRevenuePct)).EndInit();
+            this.panel36.ResumeLayout(false);
+            this.panel36.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).EndInit();
             this.panel31.ResumeLayout(false);
@@ -4105,5 +4185,10 @@
         private System.Windows.Forms.DateTimePicker dateTimePickerAdmin_region;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartAdminMonthlyTop3RevenueByRegion;
         private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label labelAdminRTtlRevenue;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.PictureBox pictureBox13;
+        private System.Windows.Forms.Label labelAdminRRegion;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartRegionTtlRevenuePct;
     }
 }

@@ -40,7 +40,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label1.Location = new System.Drawing.Point(74, 83);
+            this.label1.Location = new System.Drawing.Point(59, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(43, 19);
             this.label1.TabIndex = 0;
@@ -48,24 +48,26 @@
             // 
             // UsernameTextBox
             // 
-            this.UsernameTextBox.Location = new System.Drawing.Point(123, 82);
+            this.UsernameTextBox.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.UsernameTextBox.Location = new System.Drawing.Point(106, 73);
             this.UsernameTextBox.Name = "UsernameTextBox";
-            this.UsernameTextBox.Size = new System.Drawing.Size(181, 22);
+            this.UsernameTextBox.Size = new System.Drawing.Size(113, 27);
             this.UsernameTextBox.TabIndex = 2;
             // 
             // PasswordTextBox
             // 
-            this.PasswordTextBox.Location = new System.Drawing.Point(123, 122);
+            this.PasswordTextBox.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.PasswordTextBox.Location = new System.Drawing.Point(106, 113);
             this.PasswordTextBox.Name = "PasswordTextBox";
             this.PasswordTextBox.PasswordChar = '*';
-            this.PasswordTextBox.Size = new System.Drawing.Size(181, 22);
+            this.PasswordTextBox.Size = new System.Drawing.Size(113, 27);
             this.PasswordTextBox.TabIndex = 4;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label2.Location = new System.Drawing.Point(74, 123);
+            this.label2.Location = new System.Drawing.Point(59, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 19);
             this.label2.TabIndex = 3;
@@ -76,9 +78,9 @@
             this.LoginButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LoginButton.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoginButton.Location = new System.Drawing.Point(147, 166);
+            this.LoginButton.Location = new System.Drawing.Point(125, 154);
             this.LoginButton.Name = "LoginButton";
-            this.LoginButton.Size = new System.Drawing.Size(107, 43);
+            this.LoginButton.Size = new System.Drawing.Size(74, 43);
             this.LoginButton.TabIndex = 5;
             this.LoginButton.Text = "Login";
             this.LoginButton.UseVisualStyleBackColor = false;
@@ -88,7 +90,7 @@
             // 
             this.checkBox1.AutoSize = true;
             this.checkBox1.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkBox1.Location = new System.Drawing.Point(310, 124);
+            this.checkBox1.Location = new System.Drawing.Point(225, 115);
             this.checkBox1.Name = "checkBox1";
             this.checkBox1.Size = new System.Drawing.Size(79, 21);
             this.checkBox1.TabIndex = 6;
@@ -101,7 +103,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.InactiveCaption;
-            this.ClientSize = new System.Drawing.Size(452, 275);
+            this.ClientSize = new System.Drawing.Size(341, 254);
             this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.LoginButton);
             this.Controls.Add(this.PasswordTextBox);

@@ -188,6 +188,8 @@ namespace SalesDashboard
                 LoadCustomerRegionTtlRadarChart();
                 LoadMonthlyRevenueByRegionChart();
                 LoadMonthlyTop3RevenueByRegionChart(selectedRProducts_admin, selectedRRegion_admin);
+                LoadAdminRegionTtlLabel();
+                LoadRegionTtlRevenuePctChart();
             }
 
         }
@@ -3040,7 +3042,7 @@ namespace SalesDashboard
             LoadAdminMonthlyKPI();
         }
 
-        
+
 
         // tabPage5,業務tabPage, 中間折線圖 -- 每月業務員營收趨勢
         private void LoadAdminSalesMonthlyRevenueLine()
@@ -3312,7 +3314,7 @@ namespace SalesDashboard
             }
         }
 
-        
+
 
         // tabPage7, 上面左邊bar -- 根據地區統計總營收前3名(搭配產品以及地區篩選)
         private DataTable GetMonthlyTop3RevenueByRegionData(List<string> selectedProducts, List<string> selectedRegion)
@@ -3602,7 +3604,101 @@ namespace SalesDashboard
 
         }
 
-        
+        private void LoadAdminRegionTtlLabel()
+        {
+
+            // 載入月份總營收
+            string Tquery = $@"
+                select 
+                    SUBSTRING_INDEX(c.address,'市',1) as region,
+                    sum(o.amount*p.price) as total_revenue
+                from orders o
+                left join customers c on o.customer_id = c.customer_id
+                left join products p on o.product_id = p.product_id
+                group by region
+                order by total_revenue desc limit 1;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmdT = new MySqlCommand(Tquery, connection);
+                // 取得每月銷售收入
+                using (var reader = cmdT.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        string totalRevenue = Convert.ToDecimal(reader["total_revenue"]).ToString("N0");
+                        string region = reader["region"].ToString();
+                        labelAdminRRegion.Text = $"{region}市";
+                        labelAdminRTtlRevenue.Text = $"(${totalRevenue})";
+                    }
+                    else
+                    {
+                        labelAdminRRegion.Text = "-";
+                        labelAdminRTtlRevenue.Text = "$ - ";
+                    }
+                }
+
+
+            }
+
+
+        }
+
+        private DataTable GetRegionTtlRevenuePctData()
+        {
+            string query = $@"
+                select SUBSTRING_INDEX(c.address,'市',1) as region,
+                sum(o.amount*p.price) as total_revenue
+                from orders o
+                left join customers c on o.customer_id = c.customer_id
+                left join products p on o.product_id = p.product_id
+                group by region;
+            ";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable); // 將查詢結果填充到 DataTable
+                return dataTable; // 返回填充好的 DataTable
+            }
+        }
+
+        private void LoadRegionTtlRevenuePctChart()
+        {
+            DataTable dt = GetRegionTtlRevenuePctData();
+            if (dt.Rows.Count == 0)
+            {
+                // 如果沒有資料，清空圖表並顯示提示
+                chartRegionTtlRevenuePct.Titles.Clear();
+                chartRegionTtlRevenuePct.Titles.Add("無資料顯示!!");
+                chartRegionTtlRevenuePct.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
+                chartRegionTtlRevenuePct.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
+                chartRegionTtlRevenuePct.Series.Clear();
+                return;
+            }
+            chartRegionTtlRevenuePct.Series.Clear();
+            chartRegionTtlRevenuePct.Titles.Clear();
+            chartRegionTtlRevenuePct.Titles.Add($"各產品營收佔比"); // 設定圖表標題
+            chartRegionTtlRevenuePct.Titles[0].Font = new Font("微軟正黑體", 12, FontStyle.Bold); // 設定標題字體樣式
+            var series = chartRegionTtlRevenuePct.Series.Add("Total Revenue");
+            series.ChartType = SeriesChartType.Pie;
+            series.IsValueShownAsLabel = true; // 顯示數值標籤
+            series.Font = new Font("微軟正黑體", 10, FontStyle.Bold); // 設定標籤字體樣式
+            foreach (DataRow row in dt.Rows)
+            {
+                string region = row["region"].ToString();
+                decimal revenueValue = Convert.ToDecimal(row["total_revenue"]);
+                int idx = series.Points.AddXY(region, revenueValue);
+                series.Points[idx].Label = "#PERCENT{P1}"; // 只顯示百分比
+                series.Points[idx].ToolTip = $"{region}: ${revenueValue:N0}"; // Tooltip 顯示詳細
+                series.Points[idx].LegendText = $"{region}: ${revenueValue:N0}"; // 圖例
+            }
+
+        }
 
 
     }

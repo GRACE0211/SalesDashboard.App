@@ -29,102 +29,102 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea11 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend11 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series11 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea12 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend12 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series12 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea13 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend13 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series13 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea14 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend14 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series14 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea15 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend15 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series15 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea16 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend16 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series16 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea17 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend17 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series17 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea18 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend18 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series18 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea19 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend19 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series19 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea20 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend20 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series20 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea21 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend21 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series21 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea22 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend22 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series22 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea23 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend23 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series23 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea24 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend24 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series24 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea25 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend25 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series25 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea26 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend26 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series26 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea27 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend27 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series27 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea28 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend28 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series28 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea29 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend29 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series29 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea30 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend30 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series30 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea31 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend31 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series31 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea32 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend32 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series32 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea33 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend33 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series33 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea34 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend34 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series34 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea35 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend35 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series35 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea36 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend36 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series36 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea37 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend37 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series37 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea38 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend38 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series38 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea39 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend39 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series39 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea40 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend40 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series40 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea41 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend41 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series41 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea42 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend42 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series42 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea43 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend43 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series43 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea44 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend44 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series44 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea45 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend45 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series45 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea46 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend46 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series46 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea47 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend47 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series47 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea48 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend48 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series48 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea49 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend49 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series49 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea50 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend50 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series50 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea51 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend51 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series51 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea52 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend52 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series52 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea53 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend53 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series53 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea54 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend54 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series54 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea55 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend55 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series55 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea56 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend56 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series56 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea57 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend57 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series57 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea58 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend58 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series58 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea59 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend59 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series59 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea60 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend60 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series60 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea61 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend61 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series61 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea62 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend62 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series62 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea63 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend63 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series63 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea64 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend64 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series64 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.dataMgmtPage = new System.Windows.Forms.TabPage();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -178,13 +178,19 @@
             this.label10 = new System.Windows.Forms.Label();
             this.SalesChartPage_Monthly = new System.Windows.Forms.TabPage();
             this.panelSalesMonthly = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dataGridViewMonthlyOrders = new System.Windows.Forms.DataGridView();
+            this.panel37 = new System.Windows.Forms.Panel();
+            this.panelPie = new System.Windows.Forms.Panel();
+            this.chartSalesProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelColumn = new System.Windows.Forms.Panel();
+            this.chartMonthlyRevenuePerProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panelBar = new System.Windows.Forms.Panel();
+            this.chartSalesCustomersOrders = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonReset = new System.Windows.Forms.Button();
+            this.chartSalesOrdersTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartSalesRevenueTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartSalesProductTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartSalesOrdersTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.dataGridViewMonthlyOrders = new System.Windows.Forms.DataGridView();
             this.panelUpdateMonthlyGrowthRevenue = new System.Windows.Forms.Panel();
             this.labelSalesRevenueLastMonth = new System.Windows.Forms.Label();
             this.labelSalesRevenueCurrentMonth = new System.Windows.Forms.Label();
@@ -206,9 +212,6 @@
             this.label15 = new System.Windows.Forms.Label();
             this.pictureBoxSalesOrdersArrow = new System.Windows.Forms.PictureBox();
             this.labelSalesOrderGrowth = new System.Windows.Forms.Label();
-            this.chartMonthlyRevenuePerProduct = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartSalesProducts = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartSalesCustomersOrders = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.SalesChartPage_Ttl = new System.Windows.Forms.TabPage();
             this.panelTotal = new System.Windows.Forms.Panel();
             this.chartProductPie = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -311,7 +314,6 @@
             this.labelAdminRevenueLastMonth = new System.Windows.Forms.Label();
             this.labelAdminRevenueCurrentMonth = new System.Windows.Forms.Label();
             this.labelAdminProductRevenue = new System.Windows.Forms.Label();
-            this.label38 = new System.Windows.Forms.Label();
             this.pictureBoxAdminRevenueArrow = new System.Windows.Forms.PictureBox();
             this.labelAdminProductsRevenueGrowth = new System.Windows.Forms.Label();
             this.checkedListBoxProducts_admin = new System.Windows.Forms.CheckedListBox();
@@ -319,7 +321,6 @@
             this.labelAdminOrderLastMonth = new System.Windows.Forms.Label();
             this.labelAdminOrderCurrentMonth = new System.Windows.Forms.Label();
             this.labelAdminProductOrder = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
             this.pictureBoxAdminOrdersArrow = new System.Windows.Forms.PictureBox();
             this.labelAdminProductsOrderGrowth = new System.Windows.Forms.Label();
             this.chartAdminTtlRevenue_product = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -327,6 +328,23 @@
             this.panel26 = new System.Windows.Forms.Panel();
             this.label25 = new System.Windows.Forms.Label();
             this.dateTimePickerAdmin_SP = new System.Windows.Forms.DateTimePicker();
+            this.AdminChartPage_region = new System.Windows.Forms.TabPage();
+            this.chartRegionTtlRevenuePct = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel36 = new System.Windows.Forms.Panel();
+            this.labelAdminRRegion = new System.Windows.Forms.Label();
+            this.pictureBox13 = new System.Windows.Forms.PictureBox();
+            this.labelAdminRTtlRevenue = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.chartAdminMonthlyRevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartCustomerRegionTtlRader = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel31 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.dateTimePickerAdmin_region = new System.Windows.Forms.DateTimePicker();
+            this.chartAdminMonthlyTop3RevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.checkedListBoxRegion_region_admin = new System.Windows.Forms.CheckedListBox();
+            this.checkedListBoxRegion_product_admin = new System.Windows.Forms.CheckedListBox();
+            this.chartProductRevenuePctByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartCustomerRegionMthRader = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.AdminChartPage_Ttl = new System.Windows.Forms.TabPage();
             this.panel14 = new System.Windows.Forms.Panel();
             this.chartAdminMonthlySalesRevenue = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -366,23 +384,6 @@
             this.progressBarAdminTtlRevenue = new System.Windows.Forms.ProgressBar();
             this.labelAdminTotalRevenue = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.AdminChartPage_region = new System.Windows.Forms.TabPage();
-            this.chartRegionTtlRevenuePct = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel36 = new System.Windows.Forms.Panel();
-            this.labelAdminRRegion = new System.Windows.Forms.Label();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.labelAdminRTtlRevenue = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.chartAdminMonthlyRevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartCustomerRegionTtlRader = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.panel31 = new System.Windows.Forms.Panel();
-            this.label27 = new System.Windows.Forms.Label();
-            this.dateTimePickerAdmin_region = new System.Windows.Forms.DateTimePicker();
-            this.chartAdminMonthlyTop3RevenueByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.checkedListBoxRegion_region_admin = new System.Windows.Forms.CheckedListBox();
-            this.checkedListBoxRegion_product_admin = new System.Windows.Forms.CheckedListBox();
-            this.chartProductRevenuePctByRegion = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.chartCustomerRegionMthRader = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.labelMonthlyOrders = new System.Windows.Forms.Label();
             this.labelMonthlyRevenue = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -405,20 +406,23 @@
             this.paneladmin.SuspendLayout();
             this.SalesChartPage_Monthly.SuspendLayout();
             this.panelSalesMonthly.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMonthlyOrders)).BeginInit();
+            this.panel37.SuspendLayout();
+            this.panelPie.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesProducts)).BeginInit();
+            this.panelColumn.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyRevenuePerProduct)).BeginInit();
+            this.panelBar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesCustomersOrders)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesRevenueTrend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesProductTrend)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).BeginInit();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMonthlyOrders)).BeginInit();
             this.panelUpdateMonthlyGrowthRevenue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSalesRevenueArrow)).BeginInit();
             this.panel10.SuspendLayout();
             this.panelUpdateMonthlyGrowthOrders.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSalesOrdersArrow)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyRevenuePerProduct)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesCustomersOrders)).BeginInit();
             this.SalesChartPage_Ttl.SuspendLayout();
             this.panelTotal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartProductPie)).BeginInit();
@@ -472,6 +476,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminTtlRevenue_product)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyProducts)).BeginInit();
             this.panel26.SuspendLayout();
+            this.AdminChartPage_region.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartRegionTtlRevenuePct)).BeginInit();
+            this.panel36.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).BeginInit();
+            this.panel31.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyTop3RevenueByRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProductRevenuePctByRegion)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionMthRader)).BeginInit();
             this.AdminChartPage_Ttl.SuspendLayout();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlySalesRevenue)).BeginInit();
@@ -491,16 +505,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             this.panel15.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            this.AdminChartPage_region.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartRegionTtlRevenuePct)).BeginInit();
-            this.panel36.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).BeginInit();
-            this.panel31.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyTop3RevenueByRegion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartProductRevenuePctByRegion)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionMthRader)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -511,8 +515,8 @@
             this.tabControl1.Controls.Add(this.SalesChartPage_Monthly);
             this.tabControl1.Controls.Add(this.SalesChartPage_Ttl);
             this.tabControl1.Controls.Add(this.AdminChartPage_SalesNProduct);
-            this.tabControl1.Controls.Add(this.AdminChartPage_Ttl);
             this.tabControl1.Controls.Add(this.AdminChartPage_region);
+            this.tabControl1.Controls.Add(this.AdminChartPage_Ttl);
             this.tabControl1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabControl1.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.tabControl1.Location = new System.Drawing.Point(0, 10);
@@ -655,6 +659,7 @@
             // 
             // SalesSearchPage
             // 
+            this.SalesSearchPage.BackColor = System.Drawing.Color.LightGray;
             this.SalesSearchPage.Controls.Add(this.panel30);
             this.SalesSearchPage.Controls.Add(this.dateTimePickerSearch_SalesStart);
             this.SalesSearchPage.Controls.Add(this.dateTimePickerSearch_SalesEnd);
@@ -675,10 +680,10 @@
             this.SalesSearchPage.Size = new System.Drawing.Size(1085, 671);
             this.SalesSearchPage.TabIndex = 3;
             this.SalesSearchPage.Text = "查詢與列表";
-            this.SalesSearchPage.UseVisualStyleBackColor = true;
             // 
             // panel30
             // 
+            this.panel30.BackColor = System.Drawing.Color.LightGray;
             this.panel30.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel30.Controls.Add(this.dataGridView3);
             this.panel30.Location = new System.Drawing.Point(38, 178);
@@ -690,6 +695,7 @@
             // 
             this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.GridColor = System.Drawing.Color.White;
             this.dataGridView3.Location = new System.Drawing.Point(7, 7);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.RowTemplate.Height = 24;
@@ -842,6 +848,7 @@
             // 
             // AdminSearchPage
             // 
+            this.AdminSearchPage.BackColor = System.Drawing.Color.LightGray;
             this.AdminSearchPage.Controls.Add(this.panel29);
             this.AdminSearchPage.Controls.Add(this.chkComb_AdminSearch);
             this.AdminSearchPage.Controls.Add(this.chkShaver_AdminSearch);
@@ -865,7 +872,6 @@
             this.AdminSearchPage.Size = new System.Drawing.Size(1085, 671);
             this.AdminSearchPage.TabIndex = 1;
             this.AdminSearchPage.Text = "查詢與列表";
-            this.AdminSearchPage.UseVisualStyleBackColor = true;
             // 
             // panel29
             // 
@@ -878,7 +884,7 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(7, 6);
             this.dataGridView2.Name = "dataGridView2";
@@ -1086,109 +1092,15 @@
             // panelSalesMonthly
             // 
             this.panelSalesMonthly.BackColor = System.Drawing.Color.DarkGray;
-            this.panelSalesMonthly.Controls.Add(this.textBox1);
-            this.panelSalesMonthly.Controls.Add(this.panel1);
-            this.panelSalesMonthly.Controls.Add(this.panel11);
+            this.panelSalesMonthly.Controls.Add(this.dataGridViewMonthlyOrders);
+            this.panelSalesMonthly.Controls.Add(this.panel37);
             this.panelSalesMonthly.Controls.Add(this.panelUpdateMonthlyGrowthRevenue);
             this.panelSalesMonthly.Controls.Add(this.panel10);
             this.panelSalesMonthly.Controls.Add(this.panelUpdateMonthlyGrowthOrders);
-            this.panelSalesMonthly.Controls.Add(this.chartMonthlyRevenuePerProduct);
-            this.panelSalesMonthly.Controls.Add(this.chartSalesProducts);
-            this.panelSalesMonthly.Controls.Add(this.chartSalesCustomersOrders);
-            this.panelSalesMonthly.Location = new System.Drawing.Point(0, 2);
+            this.panelSalesMonthly.Location = new System.Drawing.Point(0, 0);
             this.panelSalesMonthly.Name = "panelSalesMonthly";
             this.panelSalesMonthly.Size = new System.Drawing.Size(1085, 675);
             this.panelSalesMonthly.TabIndex = 31;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.Tan;
-            this.textBox1.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.textBox1.Location = new System.Drawing.Point(8, 422);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(267, 242);
-            this.textBox1.TabIndex = 41;
-            this.textBox1.Text = " comments...";
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.chartSalesRevenueTrend);
-            this.panel1.Controls.Add(this.chartSalesProductTrend);
-            this.panel1.Controls.Add(this.chartSalesOrdersTrend);
-            this.panel1.Location = new System.Drawing.Point(8, 209);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(534, 207);
-            this.panel1.TabIndex = 40;
-            // 
-            // chartSalesRevenueTrend
-            // 
-            chartArea1.AxisX.MajorGrid.Enabled = false;
-            chartArea1.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea1.Name = "ChartArea1";
-            this.chartSalesRevenueTrend.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chartSalesRevenueTrend.Legends.Add(legend1);
-            this.chartSalesRevenueTrend.Location = new System.Drawing.Point(0, 0);
-            this.chartSalesRevenueTrend.Name = "chartSalesRevenueTrend";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartSalesRevenueTrend.Series.Add(series1);
-            this.chartSalesRevenueTrend.Size = new System.Drawing.Size(535, 207);
-            this.chartSalesRevenueTrend.TabIndex = 41;
-            this.chartSalesRevenueTrend.Text = "chart1";
-            // 
-            // chartSalesProductTrend
-            // 
-            chartArea2.AxisX.MajorGrid.Enabled = false;
-            chartArea2.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea2.Name = "ChartArea1";
-            this.chartSalesProductTrend.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chartSalesProductTrend.Legends.Add(legend2);
-            this.chartSalesProductTrend.Location = new System.Drawing.Point(0, 0);
-            this.chartSalesProductTrend.Name = "chartSalesProductTrend";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartSalesProductTrend.Series.Add(series2);
-            this.chartSalesProductTrend.Size = new System.Drawing.Size(534, 207);
-            this.chartSalesProductTrend.TabIndex = 41;
-            this.chartSalesProductTrend.Text = "chart1";
-            this.chartSalesProductTrend.Visible = false;
-            // 
-            // chartSalesOrdersTrend
-            // 
-            chartArea3.AxisX.MajorGrid.Enabled = false;
-            chartArea3.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea3.Name = "ChartArea1";
-            this.chartSalesOrdersTrend.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartSalesOrdersTrend.Legends.Add(legend3);
-            this.chartSalesOrdersTrend.Location = new System.Drawing.Point(0, 0);
-            this.chartSalesOrdersTrend.Name = "chartSalesOrdersTrend";
-            series3.ChartArea = "ChartArea1";
-            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartSalesOrdersTrend.Series.Add(series3);
-            this.chartSalesOrdersTrend.Size = new System.Drawing.Size(534, 207);
-            this.chartSalesOrdersTrend.TabIndex = 39;
-            this.chartSalesOrdersTrend.Text = "chart1";
-            this.chartSalesOrdersTrend.Visible = false;
-            // 
-            // panel11
-            // 
-            this.panel11.BackColor = System.Drawing.Color.LightGray;
-            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel11.Controls.Add(this.dataGridViewMonthlyOrders);
-            this.panel11.Location = new System.Drawing.Point(8, 8);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(295, 195);
-            this.panel11.TabIndex = 38;
             // 
             // dataGridViewMonthlyOrders
             // 
@@ -1197,13 +1109,220 @@
             this.dataGridViewMonthlyOrders.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.dataGridViewMonthlyOrders.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridViewMonthlyOrders.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewMonthlyOrders.Location = new System.Drawing.Point(5, 10);
+            this.dataGridViewMonthlyOrders.Location = new System.Drawing.Point(782, 8);
             this.dataGridViewMonthlyOrders.Name = "dataGridViewMonthlyOrders";
             this.dataGridViewMonthlyOrders.ReadOnly = true;
             this.dataGridViewMonthlyOrders.RowHeadersVisible = false;
             this.dataGridViewMonthlyOrders.RowTemplate.Height = 24;
-            this.dataGridViewMonthlyOrders.Size = new System.Drawing.Size(283, 176);
+            this.dataGridViewMonthlyOrders.Size = new System.Drawing.Size(296, 178);
             this.dataGridViewMonthlyOrders.TabIndex = 0;
+            // 
+            // panel37
+            // 
+            this.panel37.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel37.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel37.Controls.Add(this.panelPie);
+            this.panel37.Controls.Add(this.panelColumn);
+            this.panel37.Controls.Add(this.panelBar);
+            this.panel37.Controls.Add(this.panel1);
+            this.panel37.Location = new System.Drawing.Point(8, 192);
+            this.panel37.Name = "panel37";
+            this.panel37.Size = new System.Drawing.Size(1070, 470);
+            this.panel37.TabIndex = 41;
+            // 
+            // panelPie
+            // 
+            this.panelPie.BackColor = System.Drawing.Color.Transparent;
+            this.panelPie.Controls.Add(this.chartSalesProducts);
+            this.panelPie.Location = new System.Drawing.Point(6, 211);
+            this.panelPie.Name = "panelPie";
+            this.panelPie.Size = new System.Drawing.Size(408, 251);
+            this.panelPie.TabIndex = 45;
+            // 
+            // chartSalesProducts
+            // 
+            this.chartSalesProducts.BorderlineWidth = 0;
+            chartArea33.Name = "ChartArea1";
+            this.chartSalesProducts.ChartAreas.Add(chartArea33);
+            legend33.AutoFitMinFontSize = 10;
+            legend33.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            legend33.IsTextAutoFit = false;
+            legend33.Name = "Legend1";
+            this.chartSalesProducts.Legends.Add(legend33);
+            this.chartSalesProducts.Location = new System.Drawing.Point(7, 7);
+            this.chartSalesProducts.Name = "chartSalesProducts";
+            series33.ChartArea = "ChartArea1";
+            series33.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series33.IsValueShownAsLabel = true;
+            series33.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
+            series33.LabelBorderWidth = 10;
+            series33.LabelForeColor = System.Drawing.Color.White;
+            series33.Legend = "Legend1";
+            series33.Name = "Series1";
+            this.chartSalesProducts.Series.Add(series33);
+            this.chartSalesProducts.Size = new System.Drawing.Size(393, 236);
+            this.chartSalesProducts.TabIndex = 0;
+            this.chartSalesProducts.Text = "chart1";
+            this.chartSalesProducts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chartSalesProducts_MouseClick);
+            // 
+            // panelColumn
+            // 
+            this.panelColumn.BackColor = System.Drawing.Color.Transparent;
+            this.panelColumn.Controls.Add(this.chartMonthlyRevenuePerProduct);
+            this.panelColumn.Location = new System.Drawing.Point(261, 6);
+            this.panelColumn.Name = "panelColumn";
+            this.panelColumn.Size = new System.Drawing.Size(801, 205);
+            this.panelColumn.TabIndex = 44;
+            // 
+            // chartMonthlyRevenuePerProduct
+            // 
+            chartArea34.AxisX.MajorGrid.Enabled = false;
+            chartArea34.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea34.AxisY.Interval = 1000D;
+            chartArea34.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea34.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea34.AxisY.Minimum = 0D;
+            chartArea34.AxisY.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea34.Name = "ChartArea1";
+            this.chartMonthlyRevenuePerProduct.ChartAreas.Add(chartArea34);
+            legend34.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend34.IsTextAutoFit = false;
+            legend34.Name = "Legend1";
+            this.chartMonthlyRevenuePerProduct.Legends.Add(legend34);
+            this.chartMonthlyRevenuePerProduct.Location = new System.Drawing.Point(8, 7);
+            this.chartMonthlyRevenuePerProduct.Name = "chartMonthlyRevenuePerProduct";
+            series34.ChartArea = "ChartArea1";
+            series34.Legend = "Legend1";
+            series34.Name = "Series1";
+            this.chartMonthlyRevenuePerProduct.Series.Add(series34);
+            this.chartMonthlyRevenuePerProduct.Size = new System.Drawing.Size(785, 192);
+            this.chartMonthlyRevenuePerProduct.TabIndex = 1;
+            this.chartMonthlyRevenuePerProduct.Text = "chart2";
+            this.chartMonthlyRevenuePerProduct.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chartMonthlyRevenuePerProduct_MouseClick);
+            // 
+            // panelBar
+            // 
+            this.panelBar.BackColor = System.Drawing.Color.Transparent;
+            this.panelBar.Controls.Add(this.chartSalesCustomersOrders);
+            this.panelBar.Location = new System.Drawing.Point(6, 6);
+            this.panelBar.Name = "panelBar";
+            this.panelBar.Size = new System.Drawing.Size(257, 205);
+            this.panelBar.TabIndex = 43;
+            // 
+            // chartSalesCustomersOrders
+            // 
+            chartArea35.AxisX.Interval = 1D;
+            chartArea35.AxisX.MajorGrid.Enabled = false;
+            chartArea35.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea35.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
+            chartArea35.AxisY.Interval = 1D;
+            chartArea35.AxisY.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
+            chartArea35.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea35.Name = "ChartArea1";
+            this.chartSalesCustomersOrders.ChartAreas.Add(chartArea35);
+            legend35.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend35.IsTextAutoFit = false;
+            legend35.Name = "Legend1";
+            this.chartSalesCustomersOrders.Legends.Add(legend35);
+            this.chartSalesCustomersOrders.Location = new System.Drawing.Point(7, 7);
+            this.chartSalesCustomersOrders.Name = "chartSalesCustomersOrders";
+            this.chartSalesCustomersOrders.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series35.ChartArea = "ChartArea1";
+            series35.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            series35.IsValueShownAsLabel = true;
+            series35.LabelForeColor = System.Drawing.Color.White;
+            series35.Legend = "Legend1";
+            series35.Name = "Series1";
+            this.chartSalesCustomersOrders.Series.Add(series35);
+            this.chartSalesCustomersOrders.Size = new System.Drawing.Size(242, 192);
+            this.chartSalesCustomersOrders.TabIndex = 28;
+            this.chartSalesCustomersOrders.Text = "chart3";
+            this.chartSalesCustomersOrders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chartSalesCustomersOrders_MouseClick);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGray;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.buttonReset);
+            this.panel1.Controls.Add(this.chartSalesOrdersTrend);
+            this.panel1.Controls.Add(this.chartSalesRevenueTrend);
+            this.panel1.Controls.Add(this.chartSalesProductTrend);
+            this.panel1.Location = new System.Drawing.Point(420, 217);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(642, 245);
+            this.panel1.TabIndex = 42;
+            // 
+            // buttonReset
+            // 
+            this.buttonReset.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.buttonReset.Location = new System.Drawing.Point(510, 191);
+            this.buttonReset.Name = "buttonReset";
+            this.buttonReset.Size = new System.Drawing.Size(120, 42);
+            this.buttonReset.TabIndex = 42;
+            this.buttonReset.Text = "重設";
+            this.buttonReset.UseVisualStyleBackColor = false;
+            this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // chartSalesOrdersTrend
+            // 
+            chartArea36.AxisX.MajorGrid.Enabled = false;
+            chartArea36.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea36.Name = "ChartArea1";
+            this.chartSalesOrdersTrend.ChartAreas.Add(chartArea36);
+            legend36.Name = "Legend1";
+            this.chartSalesOrdersTrend.Legends.Add(legend36);
+            this.chartSalesOrdersTrend.Location = new System.Drawing.Point(5, 7);
+            this.chartSalesOrdersTrend.Name = "chartSalesOrdersTrend";
+            series36.ChartArea = "ChartArea1";
+            series36.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series36.Legend = "Legend1";
+            series36.Name = "Series1";
+            this.chartSalesOrdersTrend.Series.Add(series36);
+            this.chartSalesOrdersTrend.Size = new System.Drawing.Size(489, 227);
+            this.chartSalesOrdersTrend.TabIndex = 39;
+            this.chartSalesOrdersTrend.Text = "chart1";
+            this.chartSalesOrdersTrend.Visible = false;
+            // 
+            // chartSalesRevenueTrend
+            // 
+            chartArea37.AxisX.MajorGrid.Enabled = false;
+            chartArea37.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea37.Name = "ChartArea1";
+            this.chartSalesRevenueTrend.ChartAreas.Add(chartArea37);
+            legend37.Name = "Legend1";
+            this.chartSalesRevenueTrend.Legends.Add(legend37);
+            this.chartSalesRevenueTrend.Location = new System.Drawing.Point(5, 7);
+            this.chartSalesRevenueTrend.Name = "chartSalesRevenueTrend";
+            series37.ChartArea = "ChartArea1";
+            series37.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series37.Legend = "Legend1";
+            series37.Name = "Series1";
+            this.chartSalesRevenueTrend.Series.Add(series37);
+            this.chartSalesRevenueTrend.Size = new System.Drawing.Size(489, 227);
+            this.chartSalesRevenueTrend.TabIndex = 41;
+            this.chartSalesRevenueTrend.Text = "chart1";
+            // 
+            // chartSalesProductTrend
+            // 
+            chartArea38.AxisX.MajorGrid.Enabled = false;
+            chartArea38.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea38.Name = "ChartArea1";
+            this.chartSalesProductTrend.ChartAreas.Add(chartArea38);
+            legend38.Name = "Legend1";
+            this.chartSalesProductTrend.Legends.Add(legend38);
+            this.chartSalesProductTrend.Location = new System.Drawing.Point(5, 7);
+            this.chartSalesProductTrend.Name = "chartSalesProductTrend";
+            series38.ChartArea = "ChartArea1";
+            series38.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series38.Legend = "Legend1";
+            series38.Name = "Series1";
+            this.chartSalesProductTrend.Series.Add(series38);
+            this.chartSalesProductTrend.Size = new System.Drawing.Size(489, 227);
+            this.chartSalesProductTrend.TabIndex = 41;
+            this.chartSalesProductTrend.Text = "chart1";
+            this.chartSalesProductTrend.Visible = false;
             // 
             // panelUpdateMonthlyGrowthRevenue
             // 
@@ -1215,9 +1334,9 @@
             this.panelUpdateMonthlyGrowthRevenue.Controls.Add(this.label16);
             this.panelUpdateMonthlyGrowthRevenue.Controls.Add(this.pictureBoxSalesRevenueArrow);
             this.panelUpdateMonthlyGrowthRevenue.Controls.Add(this.labelSalesRevenueGrowth);
-            this.panelUpdateMonthlyGrowthRevenue.Location = new System.Drawing.Point(548, 209);
+            this.panelUpdateMonthlyGrowthRevenue.Location = new System.Drawing.Point(247, 8);
             this.panelUpdateMonthlyGrowthRevenue.Name = "panelUpdateMonthlyGrowthRevenue";
-            this.panelUpdateMonthlyGrowthRevenue.Size = new System.Drawing.Size(262, 207);
+            this.panelUpdateMonthlyGrowthRevenue.Size = new System.Drawing.Size(262, 178);
             this.panelUpdateMonthlyGrowthRevenue.TabIndex = 35;
             // 
             // labelSalesRevenueLastMonth
@@ -1300,9 +1419,9 @@
             this.panel10.Controls.Add(this.checkedListBoxProducts_sales);
             this.panel10.Controls.Add(this.dateTimePickerChart);
             this.panel10.Controls.Add(this.label5);
-            this.panel10.Location = new System.Drawing.Point(309, 8);
+            this.panel10.Location = new System.Drawing.Point(8, 8);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(233, 195);
+            this.panel10.Size = new System.Drawing.Size(233, 178);
             this.panel10.TabIndex = 33;
             // 
             // checkedListBoxCustomers_sales
@@ -1314,7 +1433,7 @@
             "客戶C",
             "客戶D",
             "客戶E"});
-            this.checkedListBoxCustomers_sales.Location = new System.Drawing.Point(136, 58);
+            this.checkedListBoxCustomers_sales.Location = new System.Drawing.Point(136, 48);
             this.checkedListBoxCustomers_sales.Name = "checkedListBoxCustomers_sales";
             this.checkedListBoxCustomers_sales.Size = new System.Drawing.Size(82, 114);
             this.checkedListBoxCustomers_sales.TabIndex = 31;
@@ -1329,7 +1448,7 @@
             "shampoo",
             "shaver",
             "comb"});
-            this.checkedListBoxProducts_sales.Location = new System.Drawing.Point(14, 58);
+            this.checkedListBoxProducts_sales.Location = new System.Drawing.Point(14, 48);
             this.checkedListBoxProducts_sales.Name = "checkedListBoxProducts_sales";
             this.checkedListBoxProducts_sales.Size = new System.Drawing.Size(116, 114);
             this.checkedListBoxProducts_sales.TabIndex = 32;
@@ -1339,7 +1458,7 @@
             // 
             this.dateTimePickerChart.CustomFormat = "yyyy/MM";
             this.dateTimePickerChart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerChart.Location = new System.Drawing.Point(136, 22);
+            this.dateTimePickerChart.Location = new System.Drawing.Point(136, 12);
             this.dateTimePickerChart.Name = "dateTimePickerChart";
             this.dateTimePickerChart.Size = new System.Drawing.Size(81, 27);
             this.dateTimePickerChart.TabIndex = 29;
@@ -1349,7 +1468,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(10, 24);
+            this.label5.Location = new System.Drawing.Point(10, 14);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 24);
             this.label5.TabIndex = 30;
@@ -1365,9 +1484,9 @@
             this.panelUpdateMonthlyGrowthOrders.Controls.Add(this.label15);
             this.panelUpdateMonthlyGrowthOrders.Controls.Add(this.pictureBoxSalesOrdersArrow);
             this.panelUpdateMonthlyGrowthOrders.Controls.Add(this.labelSalesOrderGrowth);
-            this.panelUpdateMonthlyGrowthOrders.Location = new System.Drawing.Point(548, 8);
+            this.panelUpdateMonthlyGrowthOrders.Location = new System.Drawing.Point(514, 8);
             this.panelUpdateMonthlyGrowthOrders.Name = "panelUpdateMonthlyGrowthOrders";
-            this.panelUpdateMonthlyGrowthOrders.Size = new System.Drawing.Size(262, 195);
+            this.panelUpdateMonthlyGrowthOrders.Size = new System.Drawing.Size(262, 178);
             this.panelUpdateMonthlyGrowthOrders.TabIndex = 34;
             // 
             // labelSalesOrderLastMonth
@@ -1444,87 +1563,6 @@
             this.labelSalesOrderGrowth.TabIndex = 0;
             this.labelSalesOrderGrowth.Text = "訂單成長率:";
             // 
-            // chartMonthlyRevenuePerProduct
-            // 
-            chartArea4.AxisX.MajorGrid.Enabled = false;
-            chartArea4.AxisY.Interval = 1000D;
-            chartArea4.AxisY.IntervalType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea4.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea4.AxisY.Minimum = 0D;
-            chartArea4.Name = "ChartArea1";
-            this.chartMonthlyRevenuePerProduct.ChartAreas.Add(chartArea4);
-            legend4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend4.IsTextAutoFit = false;
-            legend4.Name = "Legend1";
-            this.chartMonthlyRevenuePerProduct.Legends.Add(legend4);
-            this.chartMonthlyRevenuePerProduct.Location = new System.Drawing.Point(281, 422);
-            this.chartMonthlyRevenuePerProduct.Name = "chartMonthlyRevenuePerProduct";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartMonthlyRevenuePerProduct.Series.Add(series4);
-            this.chartMonthlyRevenuePerProduct.Size = new System.Drawing.Size(797, 242);
-            this.chartMonthlyRevenuePerProduct.TabIndex = 1;
-            this.chartMonthlyRevenuePerProduct.Text = "chart2";
-            this.chartMonthlyRevenuePerProduct.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chartMonthlyRevenuePerProduct_MouseClick);
-            // 
-            // chartSalesProducts
-            // 
-            chartArea5.Name = "ChartArea1";
-            this.chartSalesProducts.ChartAreas.Add(chartArea5);
-            legend5.AutoFitMinFontSize = 10;
-            legend5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend5.IsTextAutoFit = false;
-            legend5.Name = "Legend1";
-            this.chartSalesProducts.Legends.Add(legend5);
-            this.chartSalesProducts.Location = new System.Drawing.Point(816, 209);
-            this.chartSalesProducts.Name = "chartSalesProducts";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series5.IsValueShownAsLabel = true;
-            series5.LabelBorderDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dot;
-            series5.LabelBorderWidth = 10;
-            series5.LabelForeColor = System.Drawing.Color.White;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartSalesProducts.Series.Add(series5);
-            this.chartSalesProducts.Size = new System.Drawing.Size(262, 207);
-            this.chartSalesProducts.TabIndex = 0;
-            this.chartSalesProducts.Text = "chart1";
-            this.chartSalesProducts.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chartSalesProducts_MouseClick);
-            // 
-            // chartSalesCustomersOrders
-            // 
-            chartArea6.AxisX.Interval = 1D;
-            chartArea6.AxisX.MajorGrid.Enabled = false;
-            chartArea6.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea6.AxisX.MinorGrid.LineColor = System.Drawing.Color.White;
-            chartArea6.AxisY.Interval = 1D;
-            chartArea6.AxisY.IntervalOffsetType = System.Windows.Forms.DataVisualization.Charting.DateTimeIntervalType.Number;
-            chartArea6.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea6.Name = "ChartArea1";
-            this.chartSalesCustomersOrders.ChartAreas.Add(chartArea6);
-            legend6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend6.IsTextAutoFit = false;
-            legend6.Name = "Legend1";
-            this.chartSalesCustomersOrders.Legends.Add(legend6);
-            this.chartSalesCustomersOrders.Location = new System.Drawing.Point(816, 8);
-            this.chartSalesCustomersOrders.Name = "chartSalesCustomersOrders";
-            this.chartSalesCustomersOrders.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            series6.IsValueShownAsLabel = true;
-            series6.LabelForeColor = System.Drawing.Color.White;
-            series6.Legend = "Legend1";
-            series6.Name = "Series1";
-            this.chartSalesCustomersOrders.Series.Add(series6);
-            this.chartSalesCustomersOrders.Size = new System.Drawing.Size(262, 195);
-            this.chartSalesCustomersOrders.TabIndex = 28;
-            this.chartSalesCustomersOrders.Text = "chart3";
-            this.chartSalesCustomersOrders.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chartSalesCustomersOrders_MouseClick);
-            // 
             // SalesChartPage_Ttl
             // 
             this.SalesChartPage_Ttl.BackColor = System.Drawing.Color.DarkGray;
@@ -1560,35 +1598,39 @@
             // 
             // chartProductPie
             // 
-            chartArea7.Name = "ChartArea1";
-            this.chartProductPie.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartProductPie.Legends.Add(legend7);
-            this.chartProductPie.Location = new System.Drawing.Point(275, 242);
+            chartArea39.Name = "ChartArea1";
+            this.chartProductPie.ChartAreas.Add(chartArea39);
+            legend39.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend39.IsTextAutoFit = false;
+            legend39.Name = "Legend1";
+            this.chartProductPie.Legends.Add(legend39);
+            this.chartProductPie.Location = new System.Drawing.Point(275, 239);
             this.chartProductPie.Name = "chartProductPie";
-            series7.ChartArea = "ChartArea1";
-            series7.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartProductPie.Series.Add(series7);
-            this.chartProductPie.Size = new System.Drawing.Size(258, 192);
+            series39.ChartArea = "ChartArea1";
+            series39.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series39.Legend = "Legend1";
+            series39.Name = "Series1";
+            this.chartProductPie.Series.Add(series39);
+            this.chartProductPie.Size = new System.Drawing.Size(258, 195);
             this.chartProductPie.TabIndex = 17;
             this.chartProductPie.Text = "chart2";
             // 
             // chartCustomerPie
             // 
-            chartArea8.Name = "ChartArea1";
-            this.chartCustomerPie.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartCustomerPie.Legends.Add(legend8);
-            this.chartCustomerPie.Location = new System.Drawing.Point(11, 241);
+            chartArea40.Name = "ChartArea1";
+            this.chartCustomerPie.ChartAreas.Add(chartArea40);
+            legend40.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend40.IsTextAutoFit = false;
+            legend40.Name = "Legend1";
+            this.chartCustomerPie.Legends.Add(legend40);
+            this.chartCustomerPie.Location = new System.Drawing.Point(11, 239);
             this.chartCustomerPie.Name = "chartCustomerPie";
-            series8.ChartArea = "ChartArea1";
-            series8.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartCustomerPie.Series.Add(series8);
-            this.chartCustomerPie.Size = new System.Drawing.Size(257, 193);
+            series40.ChartArea = "ChartArea1";
+            series40.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series40.Legend = "Legend1";
+            series40.Name = "Series1";
+            this.chartCustomerPie.Series.Add(series40);
+            this.chartCustomerPie.Size = new System.Drawing.Size(257, 195);
             this.chartCustomerPie.TabIndex = 16;
             this.chartCustomerPie.Text = "chart1";
             // 
@@ -1601,7 +1643,7 @@
             this.panel8.Controls.Add(this.pictureBox1);
             this.panel8.Controls.Add(this.labelSalesTtlRevenuePatio);
             this.panel8.Controls.Add(this.chartTtlRevenueKPI);
-            this.panel8.Location = new System.Drawing.Point(11, 104);
+            this.panel8.Location = new System.Drawing.Point(11, 101);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(257, 132);
             this.panel8.TabIndex = 15;
@@ -1660,19 +1702,19 @@
             // 
             // chartTtlRevenueKPI
             // 
-            chartArea9.Name = "ChartArea1";
-            this.chartTtlRevenueKPI.ChartAreas.Add(chartArea9);
-            legend9.Enabled = false;
-            legend9.Name = "Legend1";
-            this.chartTtlRevenueKPI.Legends.Add(legend9);
+            chartArea41.Name = "ChartArea1";
+            this.chartTtlRevenueKPI.ChartAreas.Add(chartArea41);
+            legend41.Enabled = false;
+            legend41.Name = "Legend1";
+            this.chartTtlRevenueKPI.Legends.Add(legend41);
             this.chartTtlRevenueKPI.Location = new System.Drawing.Point(205, 3);
             this.chartTtlRevenueKPI.Name = "chartTtlRevenueKPI";
             this.chartTtlRevenueKPI.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Grayscale;
-            series9.ChartArea = "ChartArea1";
-            series9.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series9.Legend = "Legend1";
-            series9.Name = "Series1";
-            this.chartTtlRevenueKPI.Series.Add(series9);
+            series41.ChartArea = "ChartArea1";
+            series41.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series41.Legend = "Legend1";
+            series41.Name = "Series1";
+            this.chartTtlRevenueKPI.Series.Add(series41);
             this.chartTtlRevenueKPI.Size = new System.Drawing.Size(49, 45);
             this.chartTtlRevenueKPI.TabIndex = 8;
             this.chartTtlRevenueKPI.Text = "chart1";
@@ -1687,7 +1729,7 @@
             this.panel2.Controls.Add(this.labelSalesTtlOrdersPct);
             this.panel2.Controls.Add(this.labelSalesTtlOrdersPatio);
             this.panel2.Controls.Add(this.chartTtlOrdersKPI);
-            this.panel2.Location = new System.Drawing.Point(274, 104);
+            this.panel2.Location = new System.Drawing.Point(274, 101);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(259, 132);
             this.panel2.TabIndex = 14;
@@ -1746,18 +1788,18 @@
             // 
             // chartTtlOrdersKPI
             // 
-            chartArea10.Name = "ChartArea1";
-            this.chartTtlOrdersKPI.ChartAreas.Add(chartArea10);
-            legend10.Enabled = false;
-            legend10.Name = "Legend1";
-            this.chartTtlOrdersKPI.Legends.Add(legend10);
+            chartArea42.Name = "ChartArea1";
+            this.chartTtlOrdersKPI.ChartAreas.Add(chartArea42);
+            legend42.Enabled = false;
+            legend42.Name = "Legend1";
+            this.chartTtlOrdersKPI.Legends.Add(legend42);
             this.chartTtlOrdersKPI.Location = new System.Drawing.Point(207, 3);
             this.chartTtlOrdersKPI.Name = "chartTtlOrdersKPI";
-            series10.ChartArea = "ChartArea1";
-            series10.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
-            series10.Legend = "Legend1";
-            series10.Name = "Series1";
-            this.chartTtlOrdersKPI.Series.Add(series10);
+            series42.ChartArea = "ChartArea1";
+            series42.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Doughnut;
+            series42.Legend = "Legend1";
+            series42.Name = "Series1";
+            this.chartTtlOrdersKPI.Series.Add(series42);
             this.chartTtlOrdersKPI.Size = new System.Drawing.Size(49, 45);
             this.chartTtlOrdersKPI.TabIndex = 9;
             this.chartTtlOrdersKPI.Text = "chart2";
@@ -1888,83 +1930,91 @@
             // 
             // chartCustomerOrdersCountTopThree
             // 
-            chartArea11.AxisX.MajorGrid.Enabled = false;
-            chartArea11.AxisY.Interval = 2D;
-            chartArea11.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea11.Name = "ChartArea1";
-            this.chartCustomerOrdersCountTopThree.ChartAreas.Add(chartArea11);
-            legend11.Name = "Legend1";
-            this.chartCustomerOrdersCountTopThree.Legends.Add(legend11);
+            chartArea43.AxisX.MajorGrid.Enabled = false;
+            chartArea43.AxisY.Interval = 2D;
+            chartArea43.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea43.Name = "ChartArea1";
+            this.chartCustomerOrdersCountTopThree.ChartAreas.Add(chartArea43);
+            legend43.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend43.IsTextAutoFit = false;
+            legend43.Name = "Legend1";
+            this.chartCustomerOrdersCountTopThree.Legends.Add(legend43);
             this.chartCustomerOrdersCountTopThree.Location = new System.Drawing.Point(539, 334);
             this.chartCustomerOrdersCountTopThree.Name = "chartCustomerOrdersCountTopThree";
             this.chartCustomerOrdersCountTopThree.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Fire;
-            series11.ChartArea = "ChartArea1";
-            series11.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series11.Legend = "Legend1";
-            series11.Name = "Series1";
-            this.chartCustomerOrdersCountTopThree.Series.Add(series11);
+            series43.ChartArea = "ChartArea1";
+            series43.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series43.Legend = "Legend1";
+            series43.Name = "Series1";
+            this.chartCustomerOrdersCountTopThree.Series.Add(series43);
             this.chartCustomerOrdersCountTopThree.Size = new System.Drawing.Size(278, 156);
             this.chartCustomerOrdersCountTopThree.TabIndex = 7;
             this.chartCustomerOrdersCountTopThree.Text = "chart1";
             // 
             // chartProductsCountTopThree
             // 
-            chartArea12.AxisX.MajorGrid.Enabled = false;
-            chartArea12.AxisY.Interval = 100D;
-            chartArea12.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea12.Name = "ChartArea1";
-            this.chartProductsCountTopThree.ChartAreas.Add(chartArea12);
-            legend12.Name = "Legend1";
-            this.chartProductsCountTopThree.Legends.Add(legend12);
+            chartArea44.AxisX.MajorGrid.Enabled = false;
+            chartArea44.AxisY.Interval = 100D;
+            chartArea44.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea44.Name = "ChartArea1";
+            this.chartProductsCountTopThree.ChartAreas.Add(chartArea44);
+            legend44.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend44.IsTextAutoFit = false;
+            legend44.Name = "Legend1";
+            this.chartProductsCountTopThree.Legends.Add(legend44);
             this.chartProductsCountTopThree.Location = new System.Drawing.Point(539, 496);
             this.chartProductsCountTopThree.Name = "chartProductsCountTopThree";
             this.chartProductsCountTopThree.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series12.ChartArea = "ChartArea1";
-            series12.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series12.Legend = "Legend1";
-            series12.Name = "Series1";
-            this.chartProductsCountTopThree.Series.Add(series12);
+            series44.ChartArea = "ChartArea1";
+            series44.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series44.Legend = "Legend1";
+            series44.Name = "Series1";
+            this.chartProductsCountTopThree.Series.Add(series44);
             this.chartProductsCountTopThree.Size = new System.Drawing.Size(278, 155);
             this.chartProductsCountTopThree.TabIndex = 6;
             this.chartProductsCountTopThree.Text = "chart1";
             // 
             // chartTtlOrdersCount
             // 
-            chartArea13.AxisX.MajorGrid.Enabled = false;
-            chartArea13.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea13.Name = "ChartArea1";
-            this.chartTtlOrdersCount.ChartAreas.Add(chartArea13);
-            legend13.Name = "Legend1";
-            this.chartTtlOrdersCount.Legends.Add(legend13);
+            chartArea45.AxisX.MajorGrid.Enabled = false;
+            chartArea45.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea45.Name = "ChartArea1";
+            this.chartTtlOrdersCount.ChartAreas.Add(chartArea45);
+            legend45.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend45.IsTextAutoFit = false;
+            legend45.Name = "Legend1";
+            this.chartTtlOrdersCount.Legends.Add(legend45);
             this.chartTtlOrdersCount.Location = new System.Drawing.Point(11, 440);
             this.chartTtlOrdersCount.Name = "chartTtlOrdersCount";
-            series13.ChartArea = "ChartArea1";
-            series13.Legend = "Legend1";
-            series13.Name = "Series1";
-            this.chartTtlOrdersCount.Series.Add(series13);
+            series45.ChartArea = "ChartArea1";
+            series45.Legend = "Legend1";
+            series45.Name = "Series1";
+            this.chartTtlOrdersCount.Series.Add(series45);
             this.chartTtlOrdersCount.Size = new System.Drawing.Size(522, 211);
             this.chartTtlOrdersCount.TabIndex = 0;
             this.chartTtlOrdersCount.Text = "chart1";
             // 
             // chartMonthlyRevenueTtl
             // 
-            chartArea14.AxisX.LineColor = System.Drawing.Color.Gray;
-            chartArea14.AxisX.MajorGrid.Enabled = false;
-            chartArea14.AxisY.LineColor = System.Drawing.Color.Gray;
-            chartArea14.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea14.Name = "ChartArea1";
-            this.chartMonthlyRevenueTtl.ChartAreas.Add(chartArea14);
-            legend14.Name = "Legend1";
-            this.chartMonthlyRevenueTtl.Legends.Add(legend14);
-            this.chartMonthlyRevenueTtl.Location = new System.Drawing.Point(539, 11);
+            chartArea46.AxisX.LineColor = System.Drawing.Color.Gray;
+            chartArea46.AxisX.MajorGrid.Enabled = false;
+            chartArea46.AxisY.LineColor = System.Drawing.Color.Gray;
+            chartArea46.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea46.Name = "ChartArea1";
+            this.chartMonthlyRevenueTtl.ChartAreas.Add(chartArea46);
+            legend46.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend46.IsTextAutoFit = false;
+            legend46.Name = "Legend1";
+            this.chartMonthlyRevenueTtl.Legends.Add(legend46);
+            this.chartMonthlyRevenueTtl.Location = new System.Drawing.Point(539, 8);
             this.chartMonthlyRevenueTtl.Name = "chartMonthlyRevenueTtl";
             this.chartMonthlyRevenueTtl.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SeaGreen;
-            series14.ChartArea = "ChartArea1";
-            series14.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series14.Legend = "Legend1";
-            series14.Name = "Series1";
-            this.chartMonthlyRevenueTtl.Series.Add(series14);
-            this.chartMonthlyRevenueTtl.Size = new System.Drawing.Size(522, 317);
+            series46.ChartArea = "ChartArea1";
+            series46.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series46.Legend = "Legend1";
+            series46.Name = "Series1";
+            this.chartMonthlyRevenueTtl.Series.Add(series46);
+            this.chartMonthlyRevenueTtl.Size = new System.Drawing.Size(522, 320);
             this.chartMonthlyRevenueTtl.TabIndex = 2;
             this.chartMonthlyRevenueTtl.Text = "chart1";
             // 
@@ -1973,7 +2023,7 @@
             this.panel5.BackColor = System.Drawing.Color.White;
             this.panel5.Controls.Add(this.labelSalesTtlOrders);
             this.panel5.Controls.Add(this.label12);
-            this.panel5.Location = new System.Drawing.Point(274, 11);
+            this.panel5.Location = new System.Drawing.Point(274, 8);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(259, 87);
             this.panel5.TabIndex = 5;
@@ -2004,7 +2054,7 @@
             this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.labelSalesTtlRevenue);
             this.panel3.Controls.Add(this.label6);
-            this.panel3.Location = new System.Drawing.Point(11, 11);
+            this.panel3.Location = new System.Drawing.Point(11, 8);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(257, 87);
             this.panel3.TabIndex = 3;
@@ -2051,7 +2101,7 @@
             // 
             // buttonSalesA
             // 
-            this.buttonSalesA.BackColor = System.Drawing.Color.DimGray;
+            this.buttonSalesA.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonSalesA.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.buttonSalesA.ForeColor = System.Drawing.Color.White;
             this.buttonSalesA.Location = new System.Drawing.Point(8, 627);
@@ -2064,7 +2114,7 @@
             // 
             // buttonSalesC
             // 
-            this.buttonSalesC.BackColor = System.Drawing.Color.DimGray;
+            this.buttonSalesC.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonSalesC.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.buttonSalesC.ForeColor = System.Drawing.Color.White;
             this.buttonSalesC.Location = new System.Drawing.Point(225, 627);
@@ -2077,7 +2127,7 @@
             // 
             // buttonSalesB
             // 
-            this.buttonSalesB.BackColor = System.Drawing.Color.DimGray;
+            this.buttonSalesB.BackColor = System.Drawing.Color.SaddleBrown;
             this.buttonSalesB.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.buttonSalesB.ForeColor = System.Drawing.Color.White;
             this.buttonSalesB.Location = new System.Drawing.Point(116, 627);
@@ -2332,11 +2382,11 @@
             this.tabControl2.Controls.Add(this.tabPageProduct);
             this.tabControl2.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.tabControl2.ItemSize = new System.Drawing.Size(81, 24);
-            this.tabControl2.Location = new System.Drawing.Point(3, 7);
+            this.tabControl2.Location = new System.Drawing.Point(3, 2);
             this.tabControl2.Name = "tabControl2";
             this.tabControl2.Padding = new System.Drawing.Point(158, 3);
             this.tabControl2.SelectedIndex = 0;
-            this.tabControl2.Size = new System.Drawing.Size(746, 663);
+            this.tabControl2.Size = new System.Drawing.Size(746, 668);
             this.tabControl2.TabIndex = 31;
             // 
             // tabPageSales
@@ -2350,45 +2400,49 @@
             this.tabPageSales.Location = new System.Drawing.Point(4, 28);
             this.tabPageSales.Name = "tabPageSales";
             this.tabPageSales.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageSales.Size = new System.Drawing.Size(738, 631);
+            this.tabPageSales.Size = new System.Drawing.Size(738, 636);
             this.tabPageSales.TabIndex = 0;
             this.tabPageSales.Text = "業務";
             // 
             // chartAdminMonthlyTtlRevenue
             // 
-            chartArea15.AxisX.MajorGrid.Enabled = false;
-            chartArea15.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea15.Name = "ChartArea1";
-            this.chartAdminMonthlyTtlRevenue.ChartAreas.Add(chartArea15);
-            legend15.Name = "Legend1";
-            this.chartAdminMonthlyTtlRevenue.Legends.Add(legend15);
+            chartArea47.AxisX.MajorGrid.Enabled = false;
+            chartArea47.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea47.Name = "ChartArea1";
+            this.chartAdminMonthlyTtlRevenue.ChartAreas.Add(chartArea47);
+            legend47.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend47.IsTextAutoFit = false;
+            legend47.Name = "Legend1";
+            this.chartAdminMonthlyTtlRevenue.Legends.Add(legend47);
             this.chartAdminMonthlyTtlRevenue.Location = new System.Drawing.Point(6, 204);
             this.chartAdminMonthlyTtlRevenue.Name = "chartAdminMonthlyTtlRevenue";
-            series15.ChartArea = "ChartArea1";
-            series15.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series15.Legend = "Legend1";
-            series15.Name = "Series1";
-            this.chartAdminMonthlyTtlRevenue.Series.Add(series15);
+            series47.ChartArea = "ChartArea1";
+            series47.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series47.Legend = "Legend1";
+            series47.Name = "Series1";
+            this.chartAdminMonthlyTtlRevenue.Series.Add(series47);
             this.chartAdminMonthlyTtlRevenue.Size = new System.Drawing.Size(723, 236);
             this.chartAdminMonthlyTtlRevenue.TabIndex = 43;
             this.chartAdminMonthlyTtlRevenue.Text = "chart2";
             // 
             // chartAdminSalesMonthlyOrders
             // 
-            chartArea16.AxisX.MajorGrid.Enabled = false;
-            chartArea16.AxisY.Interval = 2D;
-            chartArea16.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea16.Name = "ChartArea1";
-            this.chartAdminSalesMonthlyOrders.ChartAreas.Add(chartArea16);
-            legend16.Name = "Legend1";
-            this.chartAdminSalesMonthlyOrders.Legends.Add(legend16);
+            chartArea48.AxisX.MajorGrid.Enabled = false;
+            chartArea48.AxisY.Interval = 2D;
+            chartArea48.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea48.Name = "ChartArea1";
+            this.chartAdminSalesMonthlyOrders.ChartAreas.Add(chartArea48);
+            legend48.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend48.IsTextAutoFit = false;
+            legend48.Name = "Legend1";
+            this.chartAdminSalesMonthlyOrders.Legends.Add(legend48);
             this.chartAdminSalesMonthlyOrders.Location = new System.Drawing.Point(500, 6);
             this.chartAdminSalesMonthlyOrders.Name = "chartAdminSalesMonthlyOrders";
-            series16.ChartArea = "ChartArea1";
-            series16.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series16.Legend = "Legend1";
-            series16.Name = "Series1";
-            this.chartAdminSalesMonthlyOrders.Series.Add(series16);
+            series48.ChartArea = "ChartArea1";
+            series48.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series48.Legend = "Legend1";
+            series48.Name = "Series1";
+            this.chartAdminSalesMonthlyOrders.Series.Add(series48);
             this.chartAdminSalesMonthlyOrders.Size = new System.Drawing.Size(229, 192);
             this.chartAdminSalesMonthlyOrders.TabIndex = 42;
             this.chartAdminSalesMonthlyOrders.Text = "chart2";
@@ -2637,37 +2691,42 @@
             // 
             // chartAdminTtlRevenue_sales
             // 
-            chartArea17.AxisX.MajorGrid.Enabled = false;
-            chartArea17.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea17.Name = "ChartArea1";
-            this.chartAdminTtlRevenue_sales.ChartAreas.Add(chartArea17);
-            legend17.Name = "Legend1";
-            this.chartAdminTtlRevenue_sales.Legends.Add(legend17);
+            chartArea49.AxisX.MajorGrid.Enabled = false;
+            chartArea49.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea49.Name = "ChartArea1";
+            this.chartAdminTtlRevenue_sales.ChartAreas.Add(chartArea49);
+            legend49.Enabled = false;
+            legend49.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend49.IsTextAutoFit = false;
+            legend49.Name = "Legend1";
+            this.chartAdminTtlRevenue_sales.Legends.Add(legend49);
             this.chartAdminTtlRevenue_sales.Location = new System.Drawing.Point(299, 446);
             this.chartAdminTtlRevenue_sales.Name = "chartAdminTtlRevenue_sales";
-            series17.ChartArea = "ChartArea1";
-            series17.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series17.Legend = "Legend1";
-            series17.Name = "Series1";
-            this.chartAdminTtlRevenue_sales.Series.Add(series17);
-            this.chartAdminTtlRevenue_sales.Size = new System.Drawing.Size(430, 179);
+            series49.ChartArea = "ChartArea1";
+            series49.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series49.Legend = "Legend1";
+            series49.Name = "Series1";
+            this.chartAdminTtlRevenue_sales.Series.Add(series49);
+            this.chartAdminTtlRevenue_sales.Size = new System.Drawing.Size(430, 182);
             this.chartAdminTtlRevenue_sales.TabIndex = 20;
             this.chartAdminTtlRevenue_sales.Text = "chart3";
             // 
             // chartAdminSalesMonthlyRevenue
             // 
-            chartArea18.Name = "ChartArea1";
-            this.chartAdminSalesMonthlyRevenue.ChartAreas.Add(chartArea18);
-            legend18.Name = "Legend1";
-            this.chartAdminSalesMonthlyRevenue.Legends.Add(legend18);
+            chartArea50.Name = "ChartArea1";
+            this.chartAdminSalesMonthlyRevenue.ChartAreas.Add(chartArea50);
+            legend50.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend50.IsTextAutoFit = false;
+            legend50.Name = "Legend1";
+            this.chartAdminSalesMonthlyRevenue.Legends.Add(legend50);
             this.chartAdminSalesMonthlyRevenue.Location = new System.Drawing.Point(6, 446);
             this.chartAdminSalesMonthlyRevenue.Name = "chartAdminSalesMonthlyRevenue";
-            series18.ChartArea = "ChartArea1";
-            series18.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series18.Legend = "Legend1";
-            series18.Name = "Series1";
-            this.chartAdminSalesMonthlyRevenue.Series.Add(series18);
-            this.chartAdminSalesMonthlyRevenue.Size = new System.Drawing.Size(287, 179);
+            series50.ChartArea = "ChartArea1";
+            series50.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series50.Legend = "Legend1";
+            series50.Name = "Series1";
+            this.chartAdminSalesMonthlyRevenue.Series.Add(series50);
+            this.chartAdminSalesMonthlyRevenue.Size = new System.Drawing.Size(287, 182);
             this.chartAdminSalesMonthlyRevenue.TabIndex = 2;
             this.chartAdminSalesMonthlyRevenue.Text = "chart2";
             // 
@@ -2681,26 +2740,29 @@
             this.tabPageProduct.Location = new System.Drawing.Point(4, 28);
             this.tabPageProduct.Name = "tabPageProduct";
             this.tabPageProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProduct.Size = new System.Drawing.Size(738, 631);
+            this.tabPageProduct.Size = new System.Drawing.Size(738, 636);
             this.tabPageProduct.TabIndex = 1;
             this.tabPageProduct.Text = "產品";
             // 
             // chartAdminMonthlyProductRevenue
             // 
-            chartArea19.AxisX.MajorGrid.Enabled = false;
-            chartArea19.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
-            chartArea19.Name = "ChartArea1";
-            this.chartAdminMonthlyProductRevenue.ChartAreas.Add(chartArea19);
-            legend19.Name = "Legend1";
-            this.chartAdminMonthlyProductRevenue.Legends.Add(legend19);
-            this.chartAdminMonthlyProductRevenue.Location = new System.Drawing.Point(6, 193);
+            chartArea51.AxisX.MajorGrid.Enabled = false;
+            chartArea51.AxisY.MajorGrid.LineColor = System.Drawing.Color.DarkGray;
+            chartArea51.Name = "ChartArea1";
+            this.chartAdminMonthlyProductRevenue.ChartAreas.Add(chartArea51);
+            legend51.Font = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend51.IsTextAutoFit = false;
+            legend51.Name = "Legend1";
+            legend51.TitleFont = new System.Drawing.Font("微軟正黑體", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartAdminMonthlyProductRevenue.Legends.Add(legend51);
+            this.chartAdminMonthlyProductRevenue.Location = new System.Drawing.Point(6, 155);
             this.chartAdminMonthlyProductRevenue.Name = "chartAdminMonthlyProductRevenue";
-            series19.ChartArea = "ChartArea1";
-            series19.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series19.Legend = "Legend1";
-            series19.Name = "Series1";
-            this.chartAdminMonthlyProductRevenue.Series.Add(series19);
-            this.chartAdminMonthlyProductRevenue.Size = new System.Drawing.Size(723, 232);
+            series51.ChartArea = "ChartArea1";
+            series51.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
+            series51.Legend = "Legend1";
+            series51.Name = "Series1";
+            this.chartAdminMonthlyProductRevenue.Series.Add(series51);
+            this.chartAdminMonthlyProductRevenue.Size = new System.Drawing.Size(723, 270);
             this.chartAdminMonthlyProductRevenue.TabIndex = 41;
             this.chartAdminMonthlyProductRevenue.Text = "chart2";
             // 
@@ -2713,7 +2775,7 @@
             this.panel28.Controls.Add(this.panel24);
             this.panel28.Location = new System.Drawing.Point(6, 6);
             this.panel28.Name = "panel28";
-            this.panel28.Size = new System.Drawing.Size(723, 181);
+            this.panel28.Size = new System.Drawing.Size(723, 143);
             this.panel28.TabIndex = 40;
             // 
             // panel21
@@ -2723,12 +2785,11 @@
             this.panel21.Controls.Add(this.labelAdminRevenueLastMonth);
             this.panel21.Controls.Add(this.labelAdminRevenueCurrentMonth);
             this.panel21.Controls.Add(this.labelAdminProductRevenue);
-            this.panel21.Controls.Add(this.label38);
             this.panel21.Controls.Add(this.pictureBoxAdminRevenueArrow);
             this.panel21.Controls.Add(this.labelAdminProductsRevenueGrowth);
-            this.panel21.Location = new System.Drawing.Point(443, 15);
+            this.panel21.Location = new System.Drawing.Point(443, 7);
             this.panel21.Name = "panel21";
-            this.panel21.Size = new System.Drawing.Size(267, 148);
+            this.panel21.Size = new System.Drawing.Size(267, 124);
             this.panel21.TabIndex = 42;
             // 
             // labelAdminRevenueLastMonth
@@ -2736,7 +2797,7 @@
             this.labelAdminRevenueLastMonth.AutoSize = true;
             this.labelAdminRevenueLastMonth.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labelAdminRevenueLastMonth.ForeColor = System.Drawing.Color.Gray;
-            this.labelAdminRevenueLastMonth.Location = new System.Drawing.Point(17, 94);
+            this.labelAdminRevenueLastMonth.Location = new System.Drawing.Point(10, 70);
             this.labelAdminRevenueLastMonth.Name = "labelAdminRevenueLastMonth";
             this.labelAdminRevenueLastMonth.Size = new System.Drawing.Size(76, 17);
             this.labelAdminRevenueLastMonth.TabIndex = 8;
@@ -2747,7 +2808,7 @@
             this.labelAdminRevenueCurrentMonth.AutoSize = true;
             this.labelAdminRevenueCurrentMonth.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labelAdminRevenueCurrentMonth.ForeColor = System.Drawing.Color.Gray;
-            this.labelAdminRevenueCurrentMonth.Location = new System.Drawing.Point(17, 116);
+            this.labelAdminRevenueCurrentMonth.Location = new System.Drawing.Point(10, 92);
             this.labelAdminRevenueCurrentMonth.Name = "labelAdminRevenueCurrentMonth";
             this.labelAdminRevenueCurrentMonth.Size = new System.Drawing.Size(76, 17);
             this.labelAdminRevenueCurrentMonth.TabIndex = 7;
@@ -2758,26 +2819,16 @@
             this.labelAdminProductRevenue.AutoSize = true;
             this.labelAdminProductRevenue.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labelAdminProductRevenue.ForeColor = System.Drawing.Color.Gray;
-            this.labelAdminProductRevenue.Location = new System.Drawing.Point(17, 36);
+            this.labelAdminProductRevenue.Location = new System.Drawing.Point(10, 12);
             this.labelAdminProductRevenue.Name = "labelAdminProductRevenue";
-            this.labelAdminProductRevenue.Size = new System.Drawing.Size(73, 17);
+            this.labelAdminProductRevenue.Size = new System.Drawing.Size(125, 17);
             this.labelAdminProductRevenue.TabIndex = 6;
-            this.labelAdminProductRevenue.Text = "商品：全部";
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label38.Location = new System.Drawing.Point(17, 14);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(63, 17);
-            this.label38.TabIndex = 3;
-            this.label38.Text = "目前篩選:";
+            this.labelAdminProductRevenue.Text = "目前篩選商品：全部";
             // 
             // pictureBoxAdminRevenueArrow
             // 
             this.pictureBoxAdminRevenueArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxAdminRevenueArrow.Location = new System.Drawing.Point(210, 57);
+            this.pictureBoxAdminRevenueArrow.Location = new System.Drawing.Point(203, 33);
             this.pictureBoxAdminRevenueArrow.Name = "pictureBoxAdminRevenueArrow";
             this.pictureBoxAdminRevenueArrow.Size = new System.Drawing.Size(30, 27);
             this.pictureBoxAdminRevenueArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2788,7 +2839,7 @@
             // 
             this.labelAdminProductsRevenueGrowth.AutoSize = true;
             this.labelAdminProductsRevenueGrowth.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelAdminProductsRevenueGrowth.Location = new System.Drawing.Point(13, 60);
+            this.labelAdminProductsRevenueGrowth.Location = new System.Drawing.Point(6, 36);
             this.labelAdminProductsRevenueGrowth.Name = "labelAdminProductsRevenueGrowth";
             this.labelAdminProductsRevenueGrowth.Size = new System.Drawing.Size(110, 24);
             this.labelAdminProductsRevenueGrowth.TabIndex = 0;
@@ -2805,9 +2856,9 @@
             "shampoo",
             "shaver",
             "comb"});
-            this.checkedListBoxProducts_admin.Location = new System.Drawing.Point(11, 15);
+            this.checkedListBoxProducts_admin.Location = new System.Drawing.Point(11, 7);
             this.checkedListBoxProducts_admin.Name = "checkedListBoxProducts_admin";
-            this.checkedListBoxProducts_admin.Size = new System.Drawing.Size(122, 148);
+            this.checkedListBoxProducts_admin.Size = new System.Drawing.Size(122, 124);
             this.checkedListBoxProducts_admin.TabIndex = 39;
             this.checkedListBoxProducts_admin.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxProducts_admin_ItemCheck);
             // 
@@ -2818,12 +2869,11 @@
             this.panel24.Controls.Add(this.labelAdminOrderLastMonth);
             this.panel24.Controls.Add(this.labelAdminOrderCurrentMonth);
             this.panel24.Controls.Add(this.labelAdminProductOrder);
-            this.panel24.Controls.Add(this.label45);
             this.panel24.Controls.Add(this.pictureBoxAdminOrdersArrow);
             this.panel24.Controls.Add(this.labelAdminProductsOrderGrowth);
-            this.panel24.Location = new System.Drawing.Point(139, 15);
+            this.panel24.Location = new System.Drawing.Point(139, 7);
             this.panel24.Name = "panel24";
-            this.panel24.Size = new System.Drawing.Size(298, 148);
+            this.panel24.Size = new System.Drawing.Size(298, 124);
             this.panel24.TabIndex = 41;
             // 
             // labelAdminOrderLastMonth
@@ -2831,7 +2881,7 @@
             this.labelAdminOrderLastMonth.AutoSize = true;
             this.labelAdminOrderLastMonth.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labelAdminOrderLastMonth.ForeColor = System.Drawing.Color.Gray;
-            this.labelAdminOrderLastMonth.Location = new System.Drawing.Point(16, 94);
+            this.labelAdminOrderLastMonth.Location = new System.Drawing.Point(9, 70);
             this.labelAdminOrderLastMonth.Name = "labelAdminOrderLastMonth";
             this.labelAdminOrderLastMonth.Size = new System.Drawing.Size(76, 17);
             this.labelAdminOrderLastMonth.TabIndex = 6;
@@ -2842,7 +2892,7 @@
             this.labelAdminOrderCurrentMonth.AutoSize = true;
             this.labelAdminOrderCurrentMonth.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labelAdminOrderCurrentMonth.ForeColor = System.Drawing.Color.Gray;
-            this.labelAdminOrderCurrentMonth.Location = new System.Drawing.Point(17, 116);
+            this.labelAdminOrderCurrentMonth.Location = new System.Drawing.Point(10, 92);
             this.labelAdminOrderCurrentMonth.Name = "labelAdminOrderCurrentMonth";
             this.labelAdminOrderCurrentMonth.Size = new System.Drawing.Size(76, 17);
             this.labelAdminOrderCurrentMonth.TabIndex = 5;
@@ -2854,26 +2904,16 @@
             this.labelAdminProductOrder.BackColor = System.Drawing.Color.White;
             this.labelAdminProductOrder.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.labelAdminProductOrder.ForeColor = System.Drawing.Color.Gray;
-            this.labelAdminProductOrder.Location = new System.Drawing.Point(17, 36);
+            this.labelAdminProductOrder.Location = new System.Drawing.Point(10, 12);
             this.labelAdminProductOrder.Name = "labelAdminProductOrder";
-            this.labelAdminProductOrder.Size = new System.Drawing.Size(73, 17);
+            this.labelAdminProductOrder.Size = new System.Drawing.Size(125, 17);
             this.labelAdminProductOrder.TabIndex = 4;
-            this.labelAdminProductOrder.Text = "商品：全部";
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label45.Location = new System.Drawing.Point(17, 13);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(63, 17);
-            this.label45.TabIndex = 2;
-            this.label45.Text = "目前篩選:";
+            this.labelAdminProductOrder.Text = "目前篩選商品：全部";
             // 
             // pictureBoxAdminOrdersArrow
             // 
             this.pictureBoxAdminOrdersArrow.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBoxAdminOrdersArrow.Location = new System.Drawing.Point(253, 57);
+            this.pictureBoxAdminOrdersArrow.Location = new System.Drawing.Point(246, 33);
             this.pictureBoxAdminOrdersArrow.Name = "pictureBoxAdminOrdersArrow";
             this.pictureBoxAdminOrdersArrow.Size = new System.Drawing.Size(30, 27);
             this.pictureBoxAdminOrdersArrow.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -2884,7 +2924,7 @@
             // 
             this.labelAdminProductsOrderGrowth.AutoSize = true;
             this.labelAdminProductsOrderGrowth.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelAdminProductsOrderGrowth.Location = new System.Drawing.Point(15, 60);
+            this.labelAdminProductsOrderGrowth.Location = new System.Drawing.Point(8, 36);
             this.labelAdminProductsOrderGrowth.Name = "labelAdminProductsOrderGrowth";
             this.labelAdminProductsOrderGrowth.Size = new System.Drawing.Size(129, 24);
             this.labelAdminProductsOrderGrowth.TabIndex = 0;
@@ -2892,39 +2932,44 @@
             // 
             // chartAdminTtlRevenue_product
             // 
-            chartArea20.AxisX.MajorGrid.Enabled = false;
-            chartArea20.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea20.Name = "ChartArea1";
-            this.chartAdminTtlRevenue_product.ChartAreas.Add(chartArea20);
-            legend20.Name = "Legend1";
-            this.chartAdminTtlRevenue_product.Legends.Add(legend20);
-            this.chartAdminTtlRevenue_product.Location = new System.Drawing.Point(361, 431);
+            chartArea52.AxisX.MajorGrid.Enabled = false;
+            chartArea52.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea52.Name = "ChartArea1";
+            this.chartAdminTtlRevenue_product.ChartAreas.Add(chartArea52);
+            legend52.Enabled = false;
+            legend52.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend52.IsTextAutoFit = false;
+            legend52.Name = "Legend1";
+            this.chartAdminTtlRevenue_product.Legends.Add(legend52);
+            this.chartAdminTtlRevenue_product.Location = new System.Drawing.Point(322, 431);
             this.chartAdminTtlRevenue_product.Name = "chartAdminTtlRevenue_product";
-            series20.ChartArea = "ChartArea1";
-            series20.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series20.Legend = "Legend1";
-            series20.Name = "Series1";
-            this.chartAdminTtlRevenue_product.Series.Add(series20);
-            this.chartAdminTtlRevenue_product.Size = new System.Drawing.Size(368, 197);
+            series52.ChartArea = "ChartArea1";
+            series52.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series52.Legend = "Legend1";
+            series52.Name = "Series1";
+            this.chartAdminTtlRevenue_product.Series.Add(series52);
+            this.chartAdminTtlRevenue_product.Size = new System.Drawing.Size(407, 197);
             this.chartAdminTtlRevenue_product.TabIndex = 27;
             this.chartAdminTtlRevenue_product.Text = "chart1";
             // 
             // chartAdminMonthlyProducts
             // 
-            chartArea21.AxisX.MajorGrid.Enabled = false;
-            chartArea21.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea21.Name = "ChartArea1";
-            this.chartAdminMonthlyProducts.ChartAreas.Add(chartArea21);
-            legend21.Name = "Legend1";
-            this.chartAdminMonthlyProducts.Legends.Add(legend21);
+            chartArea53.AxisX.MajorGrid.Enabled = false;
+            chartArea53.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea53.Name = "ChartArea1";
+            this.chartAdminMonthlyProducts.ChartAreas.Add(chartArea53);
+            legend53.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend53.IsTextAutoFit = false;
+            legend53.Name = "Legend1";
+            this.chartAdminMonthlyProducts.Legends.Add(legend53);
             this.chartAdminMonthlyProducts.Location = new System.Drawing.Point(6, 431);
             this.chartAdminMonthlyProducts.Name = "chartAdminMonthlyProducts";
-            series21.ChartArea = "ChartArea1";
-            series21.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series21.Legend = "Legend1";
-            series21.Name = "Series1";
-            this.chartAdminMonthlyProducts.Series.Add(series21);
-            this.chartAdminMonthlyProducts.Size = new System.Drawing.Size(349, 197);
+            series53.ChartArea = "ChartArea1";
+            series53.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series53.Legend = "Legend1";
+            series53.Name = "Series1";
+            this.chartAdminMonthlyProducts.Series.Add(series53);
+            this.chartAdminMonthlyProducts.Size = new System.Drawing.Size(310, 197);
             this.chartAdminMonthlyProducts.TabIndex = 21;
             this.chartAdminMonthlyProducts.Text = "chart5";
             // 
@@ -2961,6 +3006,304 @@
             this.dateTimePickerAdmin_SP.Value = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
             this.dateTimePickerAdmin_SP.ValueChanged += new System.EventHandler(this.dateTimePickerAdmin_ValueChanged);
             // 
+            // AdminChartPage_region
+            // 
+            this.AdminChartPage_region.BackColor = System.Drawing.Color.Silver;
+            this.AdminChartPage_region.Controls.Add(this.chartRegionTtlRevenuePct);
+            this.AdminChartPage_region.Controls.Add(this.panel36);
+            this.AdminChartPage_region.Controls.Add(this.chartAdminMonthlyRevenueByRegion);
+            this.AdminChartPage_region.Controls.Add(this.chartCustomerRegionTtlRader);
+            this.AdminChartPage_region.Controls.Add(this.panel31);
+            this.AdminChartPage_region.Location = new System.Drawing.Point(4, 28);
+            this.AdminChartPage_region.Name = "AdminChartPage_region";
+            this.AdminChartPage_region.Size = new System.Drawing.Size(1085, 671);
+            this.AdminChartPage_region.TabIndex = 7;
+            this.AdminChartPage_region.Text = "統計圖表(地區) - admin";
+            // 
+            // chartRegionTtlRevenuePct
+            // 
+            chartArea54.Name = "ChartArea1";
+            this.chartRegionTtlRevenuePct.ChartAreas.Add(chartArea54);
+            legend54.Enabled = false;
+            legend54.Name = "Legend1";
+            this.chartRegionTtlRevenuePct.Legends.Add(legend54);
+            this.chartRegionTtlRevenuePct.Location = new System.Drawing.Point(521, 464);
+            this.chartRegionTtlRevenuePct.Name = "chartRegionTtlRevenuePct";
+            series54.ChartArea = "ChartArea1";
+            series54.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series54.Legend = "Legend1";
+            series54.Name = "Series1";
+            this.chartRegionTtlRevenuePct.Series.Add(series54);
+            this.chartRegionTtlRevenuePct.Size = new System.Drawing.Size(229, 200);
+            this.chartRegionTtlRevenuePct.TabIndex = 4;
+            this.chartRegionTtlRevenuePct.Text = "chart1";
+            // 
+            // panel36
+            // 
+            this.panel36.BackColor = System.Drawing.Color.White;
+            this.panel36.Controls.Add(this.labelAdminRRegion);
+            this.panel36.Controls.Add(this.pictureBox13);
+            this.panel36.Controls.Add(this.labelAdminRTtlRevenue);
+            this.panel36.Controls.Add(this.label30);
+            this.panel36.Location = new System.Drawing.Point(521, 341);
+            this.panel36.Name = "panel36";
+            this.panel36.Size = new System.Drawing.Size(229, 117);
+            this.panel36.TabIndex = 3;
+            // 
+            // labelAdminRRegion
+            // 
+            this.labelAdminRRegion.AutoSize = true;
+            this.labelAdminRRegion.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelAdminRRegion.Location = new System.Drawing.Point(54, 45);
+            this.labelAdminRRegion.Name = "labelAdminRRegion";
+            this.labelAdminRRegion.Size = new System.Drawing.Size(86, 31);
+            this.labelAdminRRegion.TabIndex = 7;
+            this.labelAdminRRegion.Text = "臺北市";
+            // 
+            // pictureBox13
+            // 
+            this.pictureBox13.Image = global::SalesDashboard.Properties.Resources.gold_medal;
+            this.pictureBox13.Location = new System.Drawing.Point(16, 45);
+            this.pictureBox13.Name = "pictureBox13";
+            this.pictureBox13.Size = new System.Drawing.Size(32, 32);
+            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox13.TabIndex = 6;
+            this.pictureBox13.TabStop = false;
+            // 
+            // labelAdminRTtlRevenue
+            // 
+            this.labelAdminRTtlRevenue.AutoSize = true;
+            this.labelAdminRTtlRevenue.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelAdminRTtlRevenue.ForeColor = System.Drawing.Color.Gray;
+            this.labelAdminRTtlRevenue.Location = new System.Drawing.Point(54, 75);
+            this.labelAdminRTtlRevenue.Name = "labelAdminRTtlRevenue";
+            this.labelAdminRTtlRevenue.Size = new System.Drawing.Size(127, 26);
+            this.labelAdminRTtlRevenue.TabIndex = 1;
+            this.labelAdminRTtlRevenue.Text = "($ 100,000)";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.ForeColor = System.Drawing.Color.DimGray;
+            this.label30.Location = new System.Drawing.Point(12, 13);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(118, 19);
+            this.label30.TabIndex = 0;
+            this.label30.Text = "總營收最高地區:";
+            // 
+            // chartAdminMonthlyRevenueByRegion
+            // 
+            chartArea55.AxisX.MajorGrid.Enabled = false;
+            chartArea55.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea55.Name = "ChartArea1";
+            this.chartAdminMonthlyRevenueByRegion.ChartAreas.Add(chartArea55);
+            legend55.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            legend55.IsTextAutoFit = false;
+            legend55.Name = "Legend1";
+            this.chartAdminMonthlyRevenueByRegion.Legends.Add(legend55);
+            this.chartAdminMonthlyRevenueByRegion.Location = new System.Drawing.Point(8, 341);
+            this.chartAdminMonthlyRevenueByRegion.Name = "chartAdminMonthlyRevenueByRegion";
+            series55.ChartArea = "ChartArea1";
+            series55.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series55.Legend = "Legend1";
+            series55.Name = "Series1";
+            this.chartAdminMonthlyRevenueByRegion.Series.Add(series55);
+            this.chartAdminMonthlyRevenueByRegion.Size = new System.Drawing.Size(507, 323);
+            this.chartAdminMonthlyRevenueByRegion.TabIndex = 2;
+            this.chartAdminMonthlyRevenueByRegion.Text = "chart1";
+            // 
+            // chartCustomerRegionTtlRader
+            // 
+            chartArea56.AxisX.IsLabelAutoFit = false;
+            chartArea56.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            chartArea56.AxisY.IsLabelAutoFit = false;
+            chartArea56.AxisY.LabelStyle.Angle = 10;
+            chartArea56.AxisY.LabelStyle.Enabled = false;
+            chartArea56.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea56.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
+            chartArea56.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea56.AxisY.LineWidth = 2;
+            chartArea56.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea56.AxisY.MajorGrid.LineWidth = 2;
+            chartArea56.Name = "ChartArea1";
+            this.chartCustomerRegionTtlRader.ChartAreas.Add(chartArea56);
+            legend56.Enabled = false;
+            legend56.Name = "Legend1";
+            this.chartCustomerRegionTtlRader.Legends.Add(legend56);
+            this.chartCustomerRegionTtlRader.Location = new System.Drawing.Point(756, 341);
+            this.chartCustomerRegionTtlRader.Name = "chartCustomerRegionTtlRader";
+            this.chartCustomerRegionTtlRader.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            series56.ChartArea = "ChartArea1";
+            series56.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
+            series56.Legend = "Legend1";
+            series56.Name = "Series1";
+            this.chartCustomerRegionTtlRader.Series.Add(series56);
+            this.chartCustomerRegionTtlRader.Size = new System.Drawing.Size(322, 323);
+            this.chartCustomerRegionTtlRader.TabIndex = 0;
+            this.chartCustomerRegionTtlRader.Text = " ";
+            // 
+            // panel31
+            // 
+            this.panel31.BackColor = System.Drawing.Color.LightSlateGray;
+            this.panel31.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel31.Controls.Add(this.label27);
+            this.panel31.Controls.Add(this.dateTimePickerAdmin_region);
+            this.panel31.Controls.Add(this.chartAdminMonthlyTop3RevenueByRegion);
+            this.panel31.Controls.Add(this.checkedListBoxRegion_region_admin);
+            this.panel31.Controls.Add(this.checkedListBoxRegion_product_admin);
+            this.panel31.Controls.Add(this.chartProductRevenuePctByRegion);
+            this.panel31.Controls.Add(this.chartCustomerRegionMthRader);
+            this.panel31.Location = new System.Drawing.Point(3, 3);
+            this.panel31.Name = "panel31";
+            this.panel31.Size = new System.Drawing.Size(1079, 332);
+            this.panel31.TabIndex = 0;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label27.ForeColor = System.Drawing.Color.White;
+            this.label27.Location = new System.Drawing.Point(5, 8);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(110, 24);
+            this.label27.TabIndex = 35;
+            this.label27.Text = "請選擇月份:";
+            // 
+            // dateTimePickerAdmin_region
+            // 
+            this.dateTimePickerAdmin_region.Location = new System.Drawing.Point(52, 35);
+            this.dateTimePickerAdmin_region.MaxDate = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
+            this.dateTimePickerAdmin_region.MinDate = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
+            this.dateTimePickerAdmin_region.Name = "dateTimePickerAdmin_region";
+            this.dateTimePickerAdmin_region.Size = new System.Drawing.Size(145, 27);
+            this.dateTimePickerAdmin_region.TabIndex = 0;
+            this.dateTimePickerAdmin_region.Value = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
+            this.dateTimePickerAdmin_region.ValueChanged += new System.EventHandler(this.dateTimePickerAdmin_region_ValueChanged);
+            // 
+            // chartAdminMonthlyTop3RevenueByRegion
+            // 
+            chartArea57.AxisX.IsLabelAutoFit = false;
+            chartArea57.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea57.AxisX.LineColor = System.Drawing.Color.White;
+            chartArea57.AxisX.MajorGrid.Enabled = false;
+            chartArea57.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
+            chartArea57.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea57.AxisY.Interval = 5000D;
+            chartArea57.AxisY.IsLabelAutoFit = false;
+            chartArea57.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea57.AxisY.LineColor = System.Drawing.Color.White;
+            chartArea57.AxisY.MajorGrid.Enabled = false;
+            chartArea57.AxisY.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea57.Name = "ChartArea1";
+            this.chartAdminMonthlyTop3RevenueByRegion.ChartAreas.Add(chartArea57);
+            legend57.Enabled = false;
+            legend57.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend57.IsTextAutoFit = false;
+            legend57.Name = "Legend1";
+            legend57.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chartAdminMonthlyTop3RevenueByRegion.Legends.Add(legend57);
+            this.chartAdminMonthlyTop3RevenueByRegion.Location = new System.Drawing.Point(3, 68);
+            this.chartAdminMonthlyTop3RevenueByRegion.Name = "chartAdminMonthlyTop3RevenueByRegion";
+            series57.ChartArea = "ChartArea1";
+            series57.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
+            series57.Legend = "Legend1";
+            series57.Name = "Series1";
+            this.chartAdminMonthlyTop3RevenueByRegion.Series.Add(series57);
+            this.chartAdminMonthlyTop3RevenueByRegion.Size = new System.Drawing.Size(197, 252);
+            this.chartAdminMonthlyTop3RevenueByRegion.TabIndex = 1;
+            this.chartAdminMonthlyTop3RevenueByRegion.Text = "chart1";
+            // 
+            // checkedListBoxRegion_region_admin
+            // 
+            this.checkedListBoxRegion_region_admin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.checkedListBoxRegion_region_admin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBoxRegion_region_admin.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkedListBoxRegion_region_admin.FormattingEnabled = true;
+            this.checkedListBoxRegion_region_admin.Items.AddRange(new object[] {
+            "基隆",
+            "新北",
+            "桃園",
+            "臺中",
+            "高雄"});
+            this.checkedListBoxRegion_region_admin.Location = new System.Drawing.Point(532, 176);
+            this.checkedListBoxRegion_region_admin.Name = "checkedListBoxRegion_region_admin";
+            this.checkedListBoxRegion_region_admin.Size = new System.Drawing.Size(70, 120);
+            this.checkedListBoxRegion_region_admin.TabIndex = 34;
+            this.checkedListBoxRegion_region_admin.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRegion_region_admin_ItemCheck);
+            // 
+            // checkedListBoxRegion_product_admin
+            // 
+            this.checkedListBoxRegion_product_admin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.checkedListBoxRegion_product_admin.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.checkedListBoxRegion_product_admin.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.checkedListBoxRegion_product_admin.FormattingEnabled = true;
+            this.checkedListBoxRegion_product_admin.Items.AddRange(new object[] {
+            "toothbrush",
+            "toothpaste",
+            "shampoo",
+            "shaver",
+            "comb"});
+            this.checkedListBoxRegion_product_admin.Location = new System.Drawing.Point(949, 176);
+            this.checkedListBoxRegion_product_admin.Name = "checkedListBoxRegion_product_admin";
+            this.checkedListBoxRegion_product_admin.Size = new System.Drawing.Size(118, 110);
+            this.checkedListBoxRegion_product_admin.TabIndex = 33;
+            this.checkedListBoxRegion_product_admin.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRegion_product_admin_ItemCheck);
+            // 
+            // chartProductRevenuePctByRegion
+            // 
+            chartArea58.AxisX.MajorGrid.Enabled = false;
+            chartArea58.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea58.Name = "ChartArea1";
+            this.chartProductRevenuePctByRegion.ChartAreas.Add(chartArea58);
+            legend58.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend58.IsTextAutoFit = false;
+            legend58.Name = "Legend1";
+            this.chartProductRevenuePctByRegion.Legends.Add(legend58);
+            this.chartProductRevenuePctByRegion.Location = new System.Drawing.Point(206, 8);
+            this.chartProductRevenuePctByRegion.Name = "chartProductRevenuePctByRegion";
+            series58.ChartArea = "ChartArea1";
+            series58.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series58.Legend = "Legend1";
+            series58.Name = "Series1";
+            this.chartProductRevenuePctByRegion.Series.Add(series58);
+            this.chartProductRevenuePctByRegion.Size = new System.Drawing.Size(416, 312);
+            this.chartProductRevenuePctByRegion.TabIndex = 4;
+            this.chartProductRevenuePctByRegion.Text = "chart2";
+            // 
+            // chartCustomerRegionMthRader
+            // 
+            chartArea59.AxisX.IsLabelAutoFit = false;
+            chartArea59.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            chartArea59.AxisX.LineColor = System.Drawing.Color.Silver;
+            chartArea59.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
+            chartArea59.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea59.AxisY.IsLabelAutoFit = false;
+            chartArea59.AxisY.LabelStyle.Angle = 10;
+            chartArea59.AxisY.LabelStyle.Enabled = false;
+            chartArea59.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            chartArea59.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
+            chartArea59.AxisY.LineColor = System.Drawing.Color.Silver;
+            chartArea59.AxisY.LineWidth = 2;
+            chartArea59.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea59.AxisY.MajorGrid.LineWidth = 2;
+            chartArea59.Name = "ChartArea1";
+            this.chartCustomerRegionMthRader.ChartAreas.Add(chartArea59);
+            legend59.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend59.IsTextAutoFit = false;
+            legend59.Name = "Legend1";
+            this.chartCustomerRegionMthRader.Legends.Add(legend59);
+            this.chartCustomerRegionMthRader.Location = new System.Drawing.Point(628, 8);
+            this.chartCustomerRegionMthRader.Name = "chartCustomerRegionMthRader";
+            this.chartCustomerRegionMthRader.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
+            series59.ChartArea = "ChartArea1";
+            series59.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
+            series59.Legend = "Legend1";
+            series59.Name = "Series1";
+            this.chartCustomerRegionMthRader.Series.Add(series59);
+            this.chartCustomerRegionMthRader.Size = new System.Drawing.Size(439, 312);
+            this.chartCustomerRegionMthRader.TabIndex = 3;
+            this.chartCustomerRegionMthRader.Text = "chart1";
+            // 
             // AdminChartPage_Ttl
             // 
             this.AdminChartPage_Ttl.BackColor = System.Drawing.Color.DarkGray;
@@ -2992,95 +3335,102 @@
             // 
             // chartAdminMonthlySalesRevenue
             // 
-            chartArea22.AxisX.MajorGrid.Enabled = false;
-            chartArea22.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea22.Name = "ChartArea1";
-            this.chartAdminMonthlySalesRevenue.ChartAreas.Add(chartArea22);
-            legend22.Name = "Legend1";
-            this.chartAdminMonthlySalesRevenue.Legends.Add(legend22);
+            chartArea60.AxisX.MajorGrid.Enabled = false;
+            chartArea60.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea60.Name = "ChartArea1";
+            this.chartAdminMonthlySalesRevenue.ChartAreas.Add(chartArea60);
+            legend60.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            legend60.IsTextAutoFit = false;
+            legend60.Name = "Legend1";
+            this.chartAdminMonthlySalesRevenue.Legends.Add(legend60);
             this.chartAdminMonthlySalesRevenue.Location = new System.Drawing.Point(468, 382);
             this.chartAdminMonthlySalesRevenue.Name = "chartAdminMonthlySalesRevenue";
             this.chartAdminMonthlySalesRevenue.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series22.ChartArea = "ChartArea1";
-            series22.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
-            series22.Legend = "Legend1";
-            series22.Name = "Series1";
-            this.chartAdminMonthlySalesRevenue.Series.Add(series22);
+            series60.ChartArea = "ChartArea1";
+            series60.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.StackedColumn100;
+            series60.Legend = "Legend1";
+            series60.Name = "Series1";
+            this.chartAdminMonthlySalesRevenue.Series.Add(series60);
             this.chartAdminMonthlySalesRevenue.Size = new System.Drawing.Size(596, 269);
             this.chartAdminMonthlySalesRevenue.TabIndex = 22;
             this.chartAdminMonthlySalesRevenue.Text = "chart2";
             // 
             // chartAdminTtlRevenue
             // 
-            chartArea23.AxisX.MajorGrid.Enabled = false;
-            chartArea23.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea23.Name = "ChartArea1";
-            this.chartAdminTtlRevenue.ChartAreas.Add(chartArea23);
-            legend23.Name = "Legend1";
-            this.chartAdminTtlRevenue.Legends.Add(legend23);
+            chartArea61.AxisX.MajorGrid.Enabled = false;
+            chartArea61.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea61.Name = "ChartArea1";
+            this.chartAdminTtlRevenue.ChartAreas.Add(chartArea61);
+            legend61.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            legend61.IsTextAutoFit = false;
+            legend61.Name = "Legend1";
+            this.chartAdminTtlRevenue.Legends.Add(legend61);
             this.chartAdminTtlRevenue.Location = new System.Drawing.Point(6, 476);
             this.chartAdminTtlRevenue.Name = "chartAdminTtlRevenue";
-            series23.ChartArea = "ChartArea1";
-            series23.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series23.Legend = "Legend1";
-            series23.Name = "Series1";
-            this.chartAdminTtlRevenue.Series.Add(series23);
+            series61.ChartArea = "ChartArea1";
+            series61.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series61.Legend = "Legend1";
+            series61.Name = "Series1";
+            this.chartAdminTtlRevenue.Series.Add(series61);
             this.chartAdminTtlRevenue.Size = new System.Drawing.Size(456, 175);
             this.chartAdminTtlRevenue.TabIndex = 21;
             this.chartAdminTtlRevenue.Text = "chart1";
             // 
             // chartAdminProductRevenuePct
             // 
-            chartArea24.Name = "ChartArea1";
-            this.chartAdminProductRevenuePct.ChartAreas.Add(chartArea24);
-            legend24.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend24.IsTextAutoFit = false;
-            legend24.Name = "Legend1";
-            this.chartAdminProductRevenuePct.Legends.Add(legend24);
-            this.chartAdminProductRevenuePct.Location = new System.Drawing.Point(776, 6);
+            chartArea62.Name = "ChartArea1";
+            this.chartAdminProductRevenuePct.ChartAreas.Add(chartArea62);
+            legend62.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend62.IsTextAutoFit = false;
+            legend62.Name = "Legend1";
+            this.chartAdminProductRevenuePct.Legends.Add(legend62);
+            this.chartAdminProductRevenuePct.Location = new System.Drawing.Point(739, 6);
             this.chartAdminProductRevenuePct.Name = "chartAdminProductRevenuePct";
-            series24.ChartArea = "ChartArea1";
-            series24.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series24.Legend = "Legend1";
-            series24.Name = "Series1";
-            this.chartAdminProductRevenuePct.Series.Add(series24);
-            this.chartAdminProductRevenuePct.Size = new System.Drawing.Size(288, 276);
+            series62.ChartArea = "ChartArea1";
+            series62.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series62.Legend = "Legend1";
+            series62.Name = "Series1";
+            this.chartAdminProductRevenuePct.Series.Add(series62);
+            this.chartAdminProductRevenuePct.Size = new System.Drawing.Size(325, 276);
             this.chartAdminProductRevenuePct.TabIndex = 20;
             this.chartAdminProductRevenuePct.Text = "chart3";
             // 
             // chartAdminSalesRevenuePct
             // 
-            chartArea25.Name = "ChartArea1";
-            this.chartAdminSalesRevenuePct.ChartAreas.Add(chartArea25);
-            legend25.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend25.IsTextAutoFit = false;
-            legend25.Name = "Legend1";
-            this.chartAdminSalesRevenuePct.Legends.Add(legend25);
+            chartArea63.Name = "ChartArea1";
+            this.chartAdminSalesRevenuePct.ChartAreas.Add(chartArea63);
+            legend63.Enabled = false;
+            legend63.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend63.IsTextAutoFit = false;
+            legend63.Name = "Legend1";
+            this.chartAdminSalesRevenuePct.Legends.Add(legend63);
             this.chartAdminSalesRevenuePct.Location = new System.Drawing.Point(531, 6);
             this.chartAdminSalesRevenuePct.Name = "chartAdminSalesRevenuePct";
-            series25.ChartArea = "ChartArea1";
-            series25.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series25.Legend = "Legend1";
-            series25.Name = "Series1";
-            this.chartAdminSalesRevenuePct.Series.Add(series25);
-            this.chartAdminSalesRevenuePct.Size = new System.Drawing.Size(239, 276);
+            series63.ChartArea = "ChartArea1";
+            series63.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series63.Legend = "Legend1";
+            series63.Name = "Series1";
+            this.chartAdminSalesRevenuePct.Series.Add(series63);
+            this.chartAdminSalesRevenuePct.Size = new System.Drawing.Size(202, 276);
             this.chartAdminSalesRevenuePct.TabIndex = 19;
             this.chartAdminSalesRevenuePct.Text = "chart2";
             // 
             // chartAdminQtrRevenue
             // 
-            chartArea26.AxisX.MajorGrid.Enabled = false;
-            chartArea26.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea26.Name = "ChartArea1";
-            this.chartAdminQtrRevenue.ChartAreas.Add(chartArea26);
-            legend26.Name = "Legend1";
-            this.chartAdminQtrRevenue.Legends.Add(legend26);
+            chartArea64.AxisX.MajorGrid.Enabled = false;
+            chartArea64.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
+            chartArea64.Name = "ChartArea1";
+            this.chartAdminQtrRevenue.ChartAreas.Add(chartArea64);
+            legend64.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            legend64.IsTextAutoFit = false;
+            legend64.Name = "Legend1";
+            this.chartAdminQtrRevenue.Legends.Add(legend64);
             this.chartAdminQtrRevenue.Location = new System.Drawing.Point(227, 6);
             this.chartAdminQtrRevenue.Name = "chartAdminQtrRevenue";
-            series26.ChartArea = "ChartArea1";
-            series26.Legend = "Legend1";
-            series26.Name = "Series1";
-            this.chartAdminQtrRevenue.Series.Add(series26);
+            series64.ChartArea = "ChartArea1";
+            series64.Legend = "Legend1";
+            series64.Name = "Series1";
+            this.chartAdminQtrRevenue.Series.Add(series64);
             this.chartAdminQtrRevenue.Size = new System.Drawing.Size(297, 370);
             this.chartAdminQtrRevenue.TabIndex = 18;
             this.chartAdminQtrRevenue.Text = "chart1";
@@ -3423,296 +3773,6 @@
             this.label19.TabIndex = 0;
             this.label19.Text = "總營收:";
             // 
-            // AdminChartPage_region
-            // 
-            this.AdminChartPage_region.BackColor = System.Drawing.Color.DimGray;
-            this.AdminChartPage_region.Controls.Add(this.chartRegionTtlRevenuePct);
-            this.AdminChartPage_region.Controls.Add(this.panel36);
-            this.AdminChartPage_region.Controls.Add(this.chartAdminMonthlyRevenueByRegion);
-            this.AdminChartPage_region.Controls.Add(this.chartCustomerRegionTtlRader);
-            this.AdminChartPage_region.Controls.Add(this.panel31);
-            this.AdminChartPage_region.Location = new System.Drawing.Point(4, 28);
-            this.AdminChartPage_region.Name = "AdminChartPage_region";
-            this.AdminChartPage_region.Size = new System.Drawing.Size(1085, 671);
-            this.AdminChartPage_region.TabIndex = 7;
-            this.AdminChartPage_region.Text = "統計圖表(地區) - admin";
-            // 
-            // chartRegionTtlRevenuePct
-            // 
-            chartArea27.Name = "ChartArea1";
-            this.chartRegionTtlRevenuePct.ChartAreas.Add(chartArea27);
-            legend27.Enabled = false;
-            legend27.Name = "Legend1";
-            this.chartRegionTtlRevenuePct.Legends.Add(legend27);
-            this.chartRegionTtlRevenuePct.Location = new System.Drawing.Point(521, 464);
-            this.chartRegionTtlRevenuePct.Name = "chartRegionTtlRevenuePct";
-            series27.ChartArea = "ChartArea1";
-            series27.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series27.Legend = "Legend1";
-            series27.Name = "Series1";
-            this.chartRegionTtlRevenuePct.Series.Add(series27);
-            this.chartRegionTtlRevenuePct.Size = new System.Drawing.Size(229, 200);
-            this.chartRegionTtlRevenuePct.TabIndex = 4;
-            this.chartRegionTtlRevenuePct.Text = "chart1";
-            // 
-            // panel36
-            // 
-            this.panel36.BackColor = System.Drawing.Color.White;
-            this.panel36.Controls.Add(this.labelAdminRRegion);
-            this.panel36.Controls.Add(this.pictureBox13);
-            this.panel36.Controls.Add(this.labelAdminRTtlRevenue);
-            this.panel36.Controls.Add(this.label30);
-            this.panel36.Location = new System.Drawing.Point(521, 341);
-            this.panel36.Name = "panel36";
-            this.panel36.Size = new System.Drawing.Size(229, 117);
-            this.panel36.TabIndex = 3;
-            // 
-            // labelAdminRRegion
-            // 
-            this.labelAdminRRegion.AutoSize = true;
-            this.labelAdminRRegion.Font = new System.Drawing.Font("微軟正黑體", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelAdminRRegion.Location = new System.Drawing.Point(54, 45);
-            this.labelAdminRRegion.Name = "labelAdminRRegion";
-            this.labelAdminRRegion.Size = new System.Drawing.Size(86, 31);
-            this.labelAdminRRegion.TabIndex = 7;
-            this.labelAdminRRegion.Text = "臺北市";
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::SalesDashboard.Properties.Resources.gold_medal;
-            this.pictureBox13.Location = new System.Drawing.Point(16, 45);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox13.TabIndex = 6;
-            this.pictureBox13.TabStop = false;
-            // 
-            // labelAdminRTtlRevenue
-            // 
-            this.labelAdminRTtlRevenue.AutoSize = true;
-            this.labelAdminRTtlRevenue.Font = new System.Drawing.Font("微軟正黑體", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelAdminRTtlRevenue.ForeColor = System.Drawing.Color.Gray;
-            this.labelAdminRTtlRevenue.Location = new System.Drawing.Point(54, 75);
-            this.labelAdminRTtlRevenue.Name = "labelAdminRTtlRevenue";
-            this.labelAdminRTtlRevenue.Size = new System.Drawing.Size(127, 26);
-            this.labelAdminRTtlRevenue.TabIndex = 1;
-            this.labelAdminRTtlRevenue.Text = "($ 100,000)";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.ForeColor = System.Drawing.Color.DimGray;
-            this.label30.Location = new System.Drawing.Point(12, 13);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(118, 19);
-            this.label30.TabIndex = 0;
-            this.label30.Text = "總營收最高地區:";
-            // 
-            // chartAdminMonthlyRevenueByRegion
-            // 
-            chartArea28.AxisX.MajorGrid.Enabled = false;
-            chartArea28.AxisY.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea28.Name = "ChartArea1";
-            this.chartAdminMonthlyRevenueByRegion.ChartAreas.Add(chartArea28);
-            legend28.Name = "Legend1";
-            this.chartAdminMonthlyRevenueByRegion.Legends.Add(legend28);
-            this.chartAdminMonthlyRevenueByRegion.Location = new System.Drawing.Point(8, 341);
-            this.chartAdminMonthlyRevenueByRegion.Name = "chartAdminMonthlyRevenueByRegion";
-            series28.ChartArea = "ChartArea1";
-            series28.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series28.Legend = "Legend1";
-            series28.Name = "Series1";
-            this.chartAdminMonthlyRevenueByRegion.Series.Add(series28);
-            this.chartAdminMonthlyRevenueByRegion.Size = new System.Drawing.Size(507, 323);
-            this.chartAdminMonthlyRevenueByRegion.TabIndex = 2;
-            this.chartAdminMonthlyRevenueByRegion.Text = "chart1";
-            // 
-            // chartCustomerRegionTtlRader
-            // 
-            chartArea29.AxisX.IsLabelAutoFit = false;
-            chartArea29.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            chartArea29.AxisY.IsLabelAutoFit = false;
-            chartArea29.AxisY.LabelStyle.Angle = 10;
-            chartArea29.AxisY.LabelStyle.Enabled = false;
-            chartArea29.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea29.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
-            chartArea29.AxisY.LineColor = System.Drawing.Color.Silver;
-            chartArea29.AxisY.LineWidth = 2;
-            chartArea29.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea29.AxisY.MajorGrid.LineWidth = 2;
-            chartArea29.Name = "ChartArea1";
-            this.chartCustomerRegionTtlRader.ChartAreas.Add(chartArea29);
-            legend29.Enabled = false;
-            legend29.Name = "Legend1";
-            this.chartCustomerRegionTtlRader.Legends.Add(legend29);
-            this.chartCustomerRegionTtlRader.Location = new System.Drawing.Point(756, 341);
-            this.chartCustomerRegionTtlRader.Name = "chartCustomerRegionTtlRader";
-            this.chartCustomerRegionTtlRader.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series29.ChartArea = "ChartArea1";
-            series29.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
-            series29.Legend = "Legend1";
-            series29.Name = "Series1";
-            this.chartCustomerRegionTtlRader.Series.Add(series29);
-            this.chartCustomerRegionTtlRader.Size = new System.Drawing.Size(322, 323);
-            this.chartCustomerRegionTtlRader.TabIndex = 0;
-            this.chartCustomerRegionTtlRader.Text = " ";
-            // 
-            // panel31
-            // 
-            this.panel31.BackColor = System.Drawing.Color.Silver;
-            this.panel31.Controls.Add(this.label27);
-            this.panel31.Controls.Add(this.dateTimePickerAdmin_region);
-            this.panel31.Controls.Add(this.chartAdminMonthlyTop3RevenueByRegion);
-            this.panel31.Controls.Add(this.checkedListBoxRegion_region_admin);
-            this.panel31.Controls.Add(this.checkedListBoxRegion_product_admin);
-            this.panel31.Controls.Add(this.chartProductRevenuePctByRegion);
-            this.panel31.Controls.Add(this.chartCustomerRegionMthRader);
-            this.panel31.Location = new System.Drawing.Point(8, 7);
-            this.panel31.Name = "panel31";
-            this.panel31.Size = new System.Drawing.Size(1070, 328);
-            this.panel31.TabIndex = 0;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label27.Location = new System.Drawing.Point(5, 8);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(110, 24);
-            this.label27.TabIndex = 35;
-            this.label27.Text = "請選擇月份:";
-            // 
-            // dateTimePickerAdmin_region
-            // 
-            this.dateTimePickerAdmin_region.Location = new System.Drawing.Point(52, 35);
-            this.dateTimePickerAdmin_region.MaxDate = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
-            this.dateTimePickerAdmin_region.MinDate = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
-            this.dateTimePickerAdmin_region.Name = "dateTimePickerAdmin_region";
-            this.dateTimePickerAdmin_region.Size = new System.Drawing.Size(145, 27);
-            this.dateTimePickerAdmin_region.TabIndex = 0;
-            this.dateTimePickerAdmin_region.Value = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
-            this.dateTimePickerAdmin_region.ValueChanged += new System.EventHandler(this.dateTimePickerAdmin_region_ValueChanged);
-            // 
-            // chartAdminMonthlyTop3RevenueByRegion
-            // 
-            chartArea30.AxisX.IsLabelAutoFit = false;
-            chartArea30.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea30.AxisX.LineColor = System.Drawing.Color.White;
-            chartArea30.AxisX.MajorGrid.Enabled = false;
-            chartArea30.AxisX.MajorGrid.LineColor = System.Drawing.Color.White;
-            chartArea30.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea30.AxisY.Interval = 5000D;
-            chartArea30.AxisY.IsLabelAutoFit = false;
-            chartArea30.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea30.AxisY.LineColor = System.Drawing.Color.White;
-            chartArea30.AxisY.MajorGrid.Enabled = false;
-            chartArea30.AxisY.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea30.Name = "ChartArea1";
-            this.chartAdminMonthlyTop3RevenueByRegion.ChartAreas.Add(chartArea30);
-            legend30.Enabled = false;
-            legend30.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            legend30.IsTextAutoFit = false;
-            legend30.Name = "Legend1";
-            legend30.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chartAdminMonthlyTop3RevenueByRegion.Legends.Add(legend30);
-            this.chartAdminMonthlyTop3RevenueByRegion.Location = new System.Drawing.Point(9, 68);
-            this.chartAdminMonthlyTop3RevenueByRegion.Name = "chartAdminMonthlyTop3RevenueByRegion";
-            series30.ChartArea = "ChartArea1";
-            series30.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Bar;
-            series30.Legend = "Legend1";
-            series30.Name = "Series1";
-            this.chartAdminMonthlyTop3RevenueByRegion.Series.Add(series30);
-            this.chartAdminMonthlyTop3RevenueByRegion.Size = new System.Drawing.Size(188, 252);
-            this.chartAdminMonthlyTop3RevenueByRegion.TabIndex = 1;
-            this.chartAdminMonthlyTop3RevenueByRegion.Text = "chart1";
-            // 
-            // checkedListBoxRegion_region_admin
-            // 
-            this.checkedListBoxRegion_region_admin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.checkedListBoxRegion_region_admin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBoxRegion_region_admin.Font = new System.Drawing.Font("微軟正黑體", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkedListBoxRegion_region_admin.FormattingEnabled = true;
-            this.checkedListBoxRegion_region_admin.Items.AddRange(new object[] {
-            "基隆",
-            "新北",
-            "桃園",
-            "臺中",
-            "高雄"});
-            this.checkedListBoxRegion_region_admin.Location = new System.Drawing.Point(536, 176);
-            this.checkedListBoxRegion_region_admin.Name = "checkedListBoxRegion_region_admin";
-            this.checkedListBoxRegion_region_admin.Size = new System.Drawing.Size(70, 144);
-            this.checkedListBoxRegion_region_admin.TabIndex = 34;
-            this.checkedListBoxRegion_region_admin.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRegion_region_admin_ItemCheck);
-            // 
-            // checkedListBoxRegion_product_admin
-            // 
-            this.checkedListBoxRegion_product_admin.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.checkedListBoxRegion_product_admin.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.checkedListBoxRegion_product_admin.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.checkedListBoxRegion_product_admin.FormattingEnabled = true;
-            this.checkedListBoxRegion_product_admin.Items.AddRange(new object[] {
-            "toothbrush",
-            "toothpaste",
-            "shampoo",
-            "shaver",
-            "comb"});
-            this.checkedListBoxRegion_product_admin.Location = new System.Drawing.Point(944, 176);
-            this.checkedListBoxRegion_product_admin.Name = "checkedListBoxRegion_product_admin";
-            this.checkedListBoxRegion_product_admin.Size = new System.Drawing.Size(118, 132);
-            this.checkedListBoxRegion_product_admin.TabIndex = 33;
-            this.checkedListBoxRegion_product_admin.ItemCheck += new System.Windows.Forms.ItemCheckEventHandler(this.checkedListBoxRegion_product_admin_ItemCheck);
-            // 
-            // chartProductRevenuePctByRegion
-            // 
-            chartArea31.AxisX.MajorGrid.Enabled = false;
-            chartArea31.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea31.Name = "ChartArea1";
-            this.chartProductRevenuePctByRegion.ChartAreas.Add(chartArea31);
-            legend31.Name = "Legend1";
-            this.chartProductRevenuePctByRegion.Legends.Add(legend31);
-            this.chartProductRevenuePctByRegion.Location = new System.Drawing.Point(203, 8);
-            this.chartProductRevenuePctByRegion.Name = "chartProductRevenuePctByRegion";
-            series31.ChartArea = "ChartArea1";
-            series31.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series31.Legend = "Legend1";
-            series31.Name = "Series1";
-            this.chartProductRevenuePctByRegion.Series.Add(series31);
-            this.chartProductRevenuePctByRegion.Size = new System.Drawing.Size(416, 312);
-            this.chartProductRevenuePctByRegion.TabIndex = 4;
-            this.chartProductRevenuePctByRegion.Text = "chart2";
-            // 
-            // chartCustomerRegionMthRader
-            // 
-            chartArea32.AxisX.IsLabelAutoFit = false;
-            chartArea32.AxisX.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            chartArea32.AxisX.LineColor = System.Drawing.Color.Silver;
-            chartArea32.AxisX.MajorGrid.LineColor = System.Drawing.Color.Silver;
-            chartArea32.AxisX.TitleFont = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea32.AxisY.IsLabelAutoFit = false;
-            chartArea32.AxisY.LabelStyle.Angle = 10;
-            chartArea32.AxisY.LabelStyle.Enabled = false;
-            chartArea32.AxisY.LabelStyle.Font = new System.Drawing.Font("微軟正黑體", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            chartArea32.AxisY.LabelStyle.ForeColor = System.Drawing.Color.DimGray;
-            chartArea32.AxisY.LineColor = System.Drawing.Color.Silver;
-            chartArea32.AxisY.LineWidth = 2;
-            chartArea32.AxisY.MajorGrid.LineColor = System.Drawing.Color.Gainsboro;
-            chartArea32.AxisY.MajorGrid.LineWidth = 2;
-            chartArea32.Name = "ChartArea1";
-            this.chartCustomerRegionMthRader.ChartAreas.Add(chartArea32);
-            legend32.Name = "Legend1";
-            this.chartCustomerRegionMthRader.Legends.Add(legend32);
-            this.chartCustomerRegionMthRader.Location = new System.Drawing.Point(625, 8);
-            this.chartCustomerRegionMthRader.Name = "chartCustomerRegionMthRader";
-            this.chartCustomerRegionMthRader.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Chocolate;
-            series32.ChartArea = "ChartArea1";
-            series32.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Radar;
-            series32.Legend = "Legend1";
-            series32.Name = "Series1";
-            this.chartCustomerRegionMthRader.Series.Add(series32);
-            this.chartCustomerRegionMthRader.Size = new System.Drawing.Size(437, 312);
-            this.chartCustomerRegionMthRader.TabIndex = 3;
-            this.chartCustomerRegionMthRader.Text = "chart1";
-            // 
             // labelMonthlyOrders
             // 
             this.labelMonthlyOrders.AutoSize = true;
@@ -3791,13 +3851,18 @@
             this.paneladmin.PerformLayout();
             this.SalesChartPage_Monthly.ResumeLayout(false);
             this.panelSalesMonthly.ResumeLayout(false);
-            this.panelSalesMonthly.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMonthlyOrders)).EndInit();
+            this.panel37.ResumeLayout(false);
+            this.panelPie.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesProducts)).EndInit();
+            this.panelColumn.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyRevenuePerProduct)).EndInit();
+            this.panelBar.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesCustomersOrders)).EndInit();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesRevenueTrend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesProductTrend)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).EndInit();
-            this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewMonthlyOrders)).EndInit();
             this.panelUpdateMonthlyGrowthRevenue.ResumeLayout(false);
             this.panelUpdateMonthlyGrowthRevenue.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSalesRevenueArrow)).EndInit();
@@ -3806,9 +3871,6 @@
             this.panelUpdateMonthlyGrowthOrders.ResumeLayout(false);
             this.panelUpdateMonthlyGrowthOrders.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSalesOrdersArrow)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartMonthlyRevenuePerProduct)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesCustomersOrders)).EndInit();
             this.SalesChartPage_Ttl.ResumeLayout(false);
             this.panelTotal.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartProductPie)).EndInit();
@@ -3877,6 +3939,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyProducts)).EndInit();
             this.panel26.ResumeLayout(false);
             this.panel26.PerformLayout();
+            this.AdminChartPage_region.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.chartRegionTtlRevenuePct)).EndInit();
+            this.panel36.ResumeLayout(false);
+            this.panel36.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).EndInit();
+            this.panel31.ResumeLayout(false);
+            this.panel31.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyTop3RevenueByRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProductRevenuePctByRegion)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionMthRader)).EndInit();
             this.AdminChartPage_Ttl.ResumeLayout(false);
             this.panel14.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlySalesRevenue)).EndInit();
@@ -3902,18 +3976,6 @@
             this.panel15.ResumeLayout(false);
             this.panel15.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            this.AdminChartPage_region.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartRegionTtlRevenuePct)).EndInit();
-            this.panel36.ResumeLayout(false);
-            this.panel36.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyRevenueByRegion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionTtlRader)).EndInit();
-            this.panel31.ResumeLayout(false);
-            this.panel31.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartAdminMonthlyTop3RevenueByRegion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartProductRevenuePctByRegion)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartCustomerRegionMthRader)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -4045,13 +4107,10 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chartCustomerPie;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
-        private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.DataGridView dataGridViewMonthlyOrders;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSalesOrdersTrend;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSalesRevenueTrend;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartSalesProductTrend;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TabPage AdminChartPage_Ttl;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel15;
@@ -4153,14 +4212,12 @@
         private System.Windows.Forms.Label labelAdminRevenueLastMonth;
         private System.Windows.Forms.Label labelAdminRevenueCurrentMonth;
         private System.Windows.Forms.Label labelAdminProductRevenue;
-        private System.Windows.Forms.Label label38;
         private System.Windows.Forms.PictureBox pictureBoxAdminRevenueArrow;
         private System.Windows.Forms.Label labelAdminProductsRevenueGrowth;
         private System.Windows.Forms.Panel panel24;
         private System.Windows.Forms.Label labelAdminOrderLastMonth;
         private System.Windows.Forms.Label labelAdminOrderCurrentMonth;
         private System.Windows.Forms.Label labelAdminProductOrder;
-        private System.Windows.Forms.Label label45;
         private System.Windows.Forms.PictureBox pictureBoxAdminOrdersArrow;
         private System.Windows.Forms.Label labelAdminProductsOrderGrowth;
         private System.Windows.Forms.ToolTip toolTipAdmin;
@@ -4190,5 +4247,11 @@
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.Label labelAdminRRegion;
         private System.Windows.Forms.DataVisualization.Charting.Chart chartRegionTtlRevenuePct;
+        private System.Windows.Forms.Panel panel37;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelBar;
+        private System.Windows.Forms.Panel panelColumn;
+        private System.Windows.Forms.Panel panelPie;
+        private System.Windows.Forms.Button buttonReset;
     }
 }

@@ -895,6 +895,18 @@ namespace SalesDashboard
             chartSalesRevenueTrend.Titles[0].Font = new Font("微軟正黑體", 14, FontStyle.Bold);
             chartSalesRevenueTrend.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
             chartSalesRevenueTrend.Visible = true;
+            chartSalesOrdersTrend.Series.Clear();
+            chartSalesOrdersTrend.Titles.Clear();
+            chartSalesOrdersTrend.Titles.Add("請點選任意表格的標籤查看趨勢圖");
+            chartSalesOrdersTrend.Titles[0].Font = new Font("微軟正黑體", 14, FontStyle.Bold);
+            chartSalesOrdersTrend.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
+            chartSalesOrdersTrend.Visible = true;
+            chartSalesProductTrend.Series.Clear();
+            chartSalesProductTrend.Titles.Clear();
+            chartSalesProductTrend.Titles.Add("請點選任意表格的標籤查看趨勢圖");
+            chartSalesProductTrend.Titles[0].Font = new Font("微軟正黑體", 14, FontStyle.Bold);
+            chartSalesProductTrend.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
+            chartSalesProductTrend.Visible = true;
         }
 
         // 將選到的圖表高亮
@@ -2879,7 +2891,7 @@ namespace SalesDashboard
         // tabPage5, 左下3個按鈕 -- 切換到業務員的月報表頁面
         private void SwitchToSalesPage(string username)
         {
-
+            MessageBox.Show($"切換到 {username} 的月報表頁面", "切換頁面", MessageBoxButtons.OK, MessageBoxIcon.Information);
             // 彈出一個 Dialog，裡面放 SalesMonthlyUserControl
             var dialog = new Form();
             dialog.Text = $"{username} 的月報表";

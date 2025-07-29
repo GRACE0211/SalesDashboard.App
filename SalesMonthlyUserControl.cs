@@ -441,6 +441,18 @@ namespace SalesDashboard
             chartSalesRevenueTrend.Titles[0].Font = new Font("微軟正黑體", 14, FontStyle.Bold);
             chartSalesRevenueTrend.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
             chartSalesRevenueTrend.Visible = true;
+            chartSalesOrdersTrend.Series.Clear();
+            chartSalesOrdersTrend.Titles.Clear();
+            chartSalesOrdersTrend.Titles.Add("請點選任意表格的標籤查看趨勢圖");
+            chartSalesOrdersTrend.Titles[0].Font = new Font("微軟正黑體", 14, FontStyle.Bold);
+            chartSalesOrdersTrend.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
+            chartSalesOrdersTrend.Visible = true;
+            chartSalesProductTrend.Series.Clear();
+            chartSalesProductTrend.Titles.Clear();
+            chartSalesProductTrend.Titles.Add("請點選任意表格的標籤查看趨勢圖");
+            chartSalesProductTrend.Titles[0].Font = new Font("微軟正黑體", 14, FontStyle.Bold);
+            chartSalesProductTrend.Titles[0].ForeColor = Color.Firebrick; // 設定標題字體顏色
+            chartSalesProductTrend.Visible = true;
         }
 
         // 將選到的圖表高亮

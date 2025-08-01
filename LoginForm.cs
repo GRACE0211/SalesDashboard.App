@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
@@ -7,8 +8,10 @@ using MySql.Data.MySqlClient;
 
 namespace SalesDashboard
 {
+    // 因為有兩個檔案Designer.cs和這個，所以要用partial，C#最後會將兩個檔案合併成一個完整的 LoginForm class
     public partial class LoginForm : Form
     {
+        // 外部只能讀，只有內部可以更改值
         public string LoginUsername { get; private set; }
         public string LoginRole { get; private set; }
         public LoginForm()
@@ -29,11 +32,14 @@ namespace SalesDashboard
             }
         }
 
+        // 登入按鈕
         private void LoginButton_Click(object sender, EventArgs e)
         {
             string connectionString = "server=127.0.0.1;user=root;password=0905656870;database=sales_dashboard;port=3306;";
 
-        string username = UsernameTextBox.Text.Trim();
+            // .Trim()-> 把這個文字前面和後面的空白字元（例如空格、Tab、換行）去掉
+            // 	空白可能是密碼的一部分所以密碼不用
+            string username = UsernameTextBox.Text.Trim();
             string password = PasswordTextBox.Text; // 不要Trim密碼
 
             // hash 用戶輸入的密碼
@@ -61,7 +67,8 @@ namespace SalesDashboard
                                 // 你可以把 role、user_id等資訊傳給 MainForm
                                 LoginUsername = username;
                                 LoginRole = role;
-                                MainForm mainForm = new MainForm(username, role); // 假設有這建構子
+                                // 把username和role傳到MainForm
+                                MainForm mainForm = new MainForm(username, role);
                                 this.DialogResult = DialogResult.OK;
                                 this.Close();
 
@@ -80,6 +87,7 @@ namespace SalesDashboard
             }
         }
 
+        // 顯示密碼
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             PasswordTextBox.PasswordChar = checkBox1.Checked ? '\0' : '*'; // 顯示或隱藏密碼

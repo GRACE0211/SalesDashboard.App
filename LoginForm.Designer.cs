@@ -78,7 +78,7 @@
             this.LoginButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.LoginButton.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.LoginButton.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.LoginButton.Location = new System.Drawing.Point(125, 154);
+            this.LoginButton.Location = new System.Drawing.Point(123, 156);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(74, 43);
             this.LoginButton.TabIndex = 5;

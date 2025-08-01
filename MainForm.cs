@@ -57,7 +57,7 @@ namespace SalesDashboard
                 tabControl1.TabPages.Remove(AdminChartPage_Ttl); // 移除 AdminChartPage_Ttl
                 tabControl1.TabPages.Remove(AdminChartPage_region); // 移除 AdminChartPage_region
             }
-            else if (role == "admin")
+            else if (_role == "admin")
             {
                 tabControl1.TabPages.Remove(SalesSearchPage); // 移除 SalesSearchPage (原本就存在AdminSearchPage所以不用Add)
                 tabControl1.TabPages.Remove(SalesChartPage_Monthly); // 移除 SalesChartPage_Monthly (原本就存在SalesChartPage_Ttl所以不用Add)
@@ -107,11 +107,13 @@ namespace SalesDashboard
 
 
         }
+
+        // 判斷選到哪個tabPage -> 當選擇的頁面改變時，根據選擇的頁面載入相應的內容
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<string> selectedProducts_sales = checkedListBoxProducts_sales.CheckedItems.Cast<string>().ToList();
             List<string> selectedCustomers = checkedListBoxCustomers_sales.CheckedItems.Cast<string>().ToList();
-            List<string> selectedProducts_admin = checkedListBoxProducts_admin.CheckedItems.Cast<string>().ToList();
+            List<string> selectedProducts_admin = checkedListBoxProducts_admin_monthlyPage.CheckedItems.Cast<string>().ToList();
             List<string> selectedRegion_admin = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
             List<string> selectedRProducts_admin = checkedListBoxRegion_product_admin.CheckedItems.Cast<string>().ToList();
             List<string> selectedRRegion_admin = checkedListBoxRegion_region_admin.CheckedItems.Cast<string>().ToList();
@@ -243,49 +245,124 @@ namespace SalesDashboard
             }
         }
 
+        /*
+         ------------------------------------ SalesSearchPage -- tabPage1 ------------------------------------
+         */
+        private void ApplyFilter_salesSearchPage()
+        {
+            // 客戶條件
+            List<string> customers = new List<string>();
+            foreach (var item in checkedListBoxCustomer_salesSearchPage.CheckedItems)
+            {
+                customers.Add($"'{item.ToString()}'");
+            }
+
+            // 商品條件
+            List<string> products = new List<string>();
+            foreach (var item in checkedListBoxProduct_salesSearchPage.CheckedItems)
+            {
+                products.Add($"'{item.ToString()}'");
+            }
+
+            // 時間與 SQL 查詢條件組合
+            DateTime startDate = dateTimePickerSearch_SalesStart.Value.Date;
+            DateTime endDate = dateTimePickerSearch_SalesEnd.Value.Date;
+            string dateFilter = "Date(o.order_date) BETWEEN @startDate AND @endDate";
+            string loginUser = "u.username = @username";
+            string customerFilter = customers.Count > 0 ? $"c.name IN ({string.Join(",", customers)})" : "1=1";
+            string productFilter = products.Count > 0 ? $"p.name IN ({string.Join(",", products)})" : "1=1";
+
+            string query = $@"
+                SELECT 
+                    p.name as product_name,
+                    c.name as customer_name,
+                    DATE(o.order_date) as order_date,
+                    sum(o.amount) as total_amount,
+                    CONCAT('$',sum(p.price*o.amount)) as revenue,
+                    u.username as sales_name
+                FROM orders o 
+                LEFT JOIN products p ON o.product_id = p.product_id
+                LEFT JOIN customers c ON o.customer_id = c.customer_id
+                LEFT JOIN users u ON o.sales_user_id = u.user_id
+                WHERE {loginUser} AND {customerFilter} AND {productFilter} AND {dateFilter}
+                GROUP BY o.product_id, o.customer_id, o.sales_user_id, o.order_date 
+                ORDER BY o.customer_id, o.sales_user_id;";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@username", _username);
+                cmd.Parameters.AddWithValue("@startDate", startDate);
+                cmd.Parameters.AddWithValue("@endDate", endDate);
+
+                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                adapter.Fill(dataTable);
+                dataGridView3.DataSource = dataTable;
+                dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            }
+        }
+
+
+
+        private void checkedListBoxCustomer_salesSearchPage_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            // 因為 ItemCheck 還沒更新 CheckedItems，所以要用 BeginInvoke 確保資料更新後再跑篩選
+            this.BeginInvoke((MethodInvoker)delegate {
+                ApplyFilter_salesSearchPage();
+            });
+        }
+
+        private void checkedListBoxProduct_salesSearchPage_ItemCheck(object sender, ItemCheckEventArgs e)
+        {
+            this.BeginInvoke((MethodInvoker)delegate {
+                ApplyFilter_salesSearchPage();
+            });
+        }
+
+        private void dateTimePickerSearch_SalesStart_ValueChanged(object sender, EventArgs e)
+        {
+            ApplyFilter_salesSearchPage();
+        }
+        private void dateTimePickerSearch_SalesEnd_ValueChanged(object sender, EventArgs e)
+        {
+            ApplyFilter_salesSearchPage();
+        }
+
+
+        // ------------------ AdminSearchPage -- tabPage2 ------------------
+
+
         private void ApplyFilter_adminSearchPage()
         {
-            List<string> customers = new List<string>();
-            if (chkCustomerA_AdminSearch.Checked)
-                customers.Add("'客戶A'");
-            if (chkCustomerB_AdminSearch.Checked)
-                customers.Add("'客戶B'");
-            if (chkCustomerC_AdminSearch.Checked)
-                customers.Add("'客戶C'");
-            if (chkCustomerD_AdminSearch.Checked)
-                customers.Add("'客戶D'");
-            if (chkCustomerE_AdminSearch.Checked)
-                customers.Add("'客戶E'");
+            List<string> region = new List<string>();
+            foreach (var item in checkedListBoxRegion_adminSearchPage.CheckedItems)
+            {
+                region.Add($"'{item.ToString()}'");
+            }
 
             List<string> products = new List<string>();
-            if (chkToothpaste_AdminSearch.Checked)
-                products.Add("'toothpaste'");
-            if (chkToothbrush_AdminSearch.Checked)
-                products.Add("'toothbrush'");
-            if (chkShampoo_AdminSearch.Checked)
-                products.Add("'shampoo'");
-            if (chkShaver_AdminSearch.Checked)
-                products.Add("'shaver'");
-            if (chkComb_AdminSearch.Checked)
-                products.Add("'comb'");
+            foreach (var item in checkedListBoxProduct_adminSearchPage.CheckedItems)
+            {
+                products.Add($"'{item.ToString()}'");
+            }
 
             List<string> salesUsers = new List<string>();
-            if (chkSalesA_AdminSearch.Checked)
-                salesUsers.Add("'salesA'");
-            if (chkSalesB_AdminSearch.Checked)
-                salesUsers.Add("'salesB'");
-            if (chkSalesC_AdminSearch.Checked)
-                salesUsers.Add("'salesC'");
+            foreach (var item in checkedListBoxSales_adminSearchPage.CheckedItems)
+            {
+                salesUsers.Add($"'{item.ToString()}'");
+            }
 
             DateTime startDate = dateTimePickerSearch_AdminStart.Value.Date;
             DateTime endDate = dateTimePickerSearch_AdminEnd.Value.Date;
             string dateFilter = "Date(o.order_date) BETWEEN  @startDate AND @endDate";
             string salesUserFilter = salesUsers.Count > 0 ? $"u.username IN ({string.Join(",", salesUsers)})" : "1=1";
-            string customerFilter = customers.Count > 0 ? $"c.name IN ({string.Join(",", customers)})" : "1=1";
+            string regionFilter = region.Count > 0 ? $" SUBSTRING_INDEX(c.address,'市',1) IN ({string.Join(",", region)})" : "1=1";
             string productFilter = products.Count > 0 ? $"p.name IN ({string.Join(",", products)})" : "1=1";
             string query = $@"SELECT 
                 p.name as product_name,
-                c.name as customer_name,
+                SUBSTRING_INDEX(c.address,'市',1) as region,
                 DATE(o.order_date) as order_date,
                 sum(o.amount) as total_amount,
                 CONCAT('$',sum(p.price*o.amount)) as revenue,
@@ -294,7 +371,7 @@ namespace SalesDashboard
                 left join products p on o.product_id = p.product_id
                 left join customers c on o.customer_id = c.customer_id
                 left join users u on o.sales_user_id = u.user_id
-                where {salesUserFilter} AND {customerFilter} AND {productFilter} AND {dateFilter}
+                where {salesUserFilter} AND {regionFilter} AND {productFilter} AND {dateFilter}
                 group by o.product_id,o.customer_id,o.sales_user_id,o.order_date 
                 order by o.customer_id,o.sales_user_id;";
             using (MySqlConnection connection = new MySqlConnection(connectionString))
@@ -311,177 +388,31 @@ namespace SalesDashboard
             }
         }
 
-        private void chkSalesA_AdminSearch_CheckedChanged(object sender, EventArgs e)
+        private void checkedListBoxRegion_adminSearchPage_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            ApplyFilter_adminSearchPage();
+            this.BeginInvoke((MethodInvoker)delegate {
+                ApplyFilter_adminSearchPage();
+            });
         }
-        private void chkSalesB_AdminSearch_CheckedChanged(object sender, EventArgs e)
+
+        private void checkedListBoxProduct_adminSearchPage_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            ApplyFilter_adminSearchPage();
+            this.BeginInvoke((MethodInvoker)delegate {
+                ApplyFilter_adminSearchPage();
+            });
         }
-        private void chkSalesC_AdminSearch_CheckedChanged(object sender, EventArgs e)
+
+        private void checkedListBoxSales_adminSearchPage_ItemCheck(object sender, ItemCheckEventArgs e)
         {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkCustomerA_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkCustomerB_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkCustomerC_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkCustomerD_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkCustomerE_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkToothpaste_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkToothbrush_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkShampoo_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkShaver_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void chkComb_AdminSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
+            this.BeginInvoke((MethodInvoker)delegate {
+                ApplyFilter_adminSearchPage();
+            });
         }
         private void dateTimePickerSearch_AdminStart_ValueChanged(object sender, EventArgs e)
         {
             ApplyFilter_adminSearchPage();
         }
         private void dateTimePickerSearch_AdminEnd_ValueChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-
-        private void ApplyFilter_salesSearchPage()
-        {
-
-            List<string> customers = new List<string>();
-            if (chkCustomerA_SalesSearch.Checked)
-                customers.Add("'客戶A'");
-            if (chkCustomerB_SalesSearch.Checked)
-                customers.Add("'客戶B'");
-            if (chkCustomerC_SalesSearch.Checked)
-                customers.Add("'客戶C'");
-            if (chkCustomerD_SalesSearch.Checked)
-                customers.Add("'客戶D'");
-            if (chkCustomerE_SalesSearch.Checked)
-                customers.Add("'客戶E'");
-
-            List<string> products = new List<string>();
-            if (chkToothpaste_SalesSearch.Checked)
-                products.Add("'toothpaste'");
-            if (chkToothbrush_SalesSearch.Checked)
-                products.Add("'toothbrush'");
-            if (chkShampoo_SalesSearch.Checked)
-                products.Add("'shampoo'");
-            if (chkShaver_SalesSearch.Checked)
-                products.Add("'shaver'");
-            if (chkComb_SalesSearch.Checked)
-                products.Add("'comb'");
-
-            DateTime startDate = dateTimePickerSearch_SalesStart.Value.Date;
-            DateTime endDate = dateTimePickerSearch_SalesEnd.Value.Date;
-            string dateFilter = "Date(o.order_date) BETWEEN  @startDate AND @endDate";
-            string loginUser = "u.username = @username";
-            string customerFilter = customers.Count > 0 ? $"c.name IN ({string.Join(",", customers)})" : "1=1";
-            string productFilter = products.Count > 0 ? $"p.name IN ({string.Join(",", products)})" : "1=1";
-            string query = $@"SELECT 
-                p.name as product_name,
-                c.name as customer_name,
-                DATE(o.order_date) as order_date,
-                sum(o.amount) as total_amount,
-                CONCAT('$',sum(p.price*o.amount)) as revenue,
-                u.username as sales_name
-                FROM orders o 
-                left join products p on o.product_id = p.product_id
-                left join customers c on o.customer_id = c.customer_id
-                left join users u on o.sales_user_id = u.user_id
-                where {loginUser} AND {customerFilter} AND {productFilter} AND {dateFilter}
-                group by o.product_id,o.customer_id,o.sales_user_id,o.order_date 
-                order by o.customer_id,o.sales_user_id;";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
-                connection.Open();
-                MySqlCommand cmd = new MySqlCommand(query, connection);
-                if (_role == "sales")
-                {
-                    cmd.Parameters.AddWithValue("@username", _username); // 添加參數以防止 SQL 注入
-                }
-                cmd.Parameters.AddWithValue("@startDate", startDate);
-                cmd.Parameters.AddWithValue("@endDate", endDate);
-                MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                adapter.Fill(dataTable);
-                dataGridView3.DataSource = dataTable; // 將查詢結果綁定到 DataGridView
-                dataGridView3.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill; // 自動調整列寬
-            }
-        }
-
-        private void chkCustomerA_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkCustomerB_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkCustomerC_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkCustomerD_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkCustomerE_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkToothpaste_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkToothbrush_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkShampoo_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkShaver_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void chkComb_SalesSearch_CheckedChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_salesSearchPage();
-        }
-        private void dateTimePickerSearch_SalesStart_ValueChanged(object sender, EventArgs e)
-        {
-            ApplyFilter_adminSearchPage();
-        }
-        private void dateTimePickerSearch_SalesEnd_ValueChanged(object sender, EventArgs e)
         {
             ApplyFilter_adminSearchPage();
         }
@@ -1325,7 +1256,27 @@ namespace SalesDashboard
         // MainForm_Load 設定預設內容, for panel 的 ToolTip, 滑鼠移入會顯示完整內容
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+            for (int i = 0; i < checkedListBoxProduct_salesSearchPage.Items.Count; i++)
+            {
+                checkedListBoxProduct_salesSearchPage.SetItemChecked(i, true); // 預設全選產品
+            }
+            for (int i = 0; i < checkedListBoxCustomer_salesSearchPage.Items.Count; i++)
+            {
+                checkedListBoxCustomer_salesSearchPage.SetItemChecked(i, true); // 預設全選產品
+            }
+            for (int i = 0; i < checkedListBoxSales_adminSearchPage.Items.Count; i++)
+            {
+                checkedListBoxSales_adminSearchPage.SetItemChecked(i, true); // 預設全選產品
+            }
+            for (int i = 0; i < checkedListBoxProduct_adminSearchPage.Items.Count; i++)
+            {
+                checkedListBoxProduct_adminSearchPage.SetItemChecked(i, true); // 預設全選產品
+            }
+            for (int i = 0; i < checkedListBoxRegion_adminSearchPage.Items.Count; i++)
+            {
+                checkedListBoxRegion_adminSearchPage.SetItemChecked(i, true); // 預設全選產品
+            }
+
             toolTip2.SetToolTip(labelSalesOrderCustomer, "客戶：全部");
             toolTip2.SetToolTip(labelSalesOrderProduct, "商品：全部");
             toolTip2.SetToolTip(labelSalesRevenueCustomer, "客戶：全部");
@@ -1349,11 +1300,11 @@ namespace SalesDashboard
             InitTrendChart();
 
             // 初始化 checkedListBoxProducts_admin 為全選
-            for (int i = 0; i < checkedListBoxProducts_admin.Items.Count; i++)
+            for (int i = 0; i < checkedListBoxProducts_admin_monthlyPage.Items.Count; i++)
             {
-                checkedListBoxProducts_admin.SetItemChecked(i, true); // 預設全選產品
+                checkedListBoxProducts_admin_monthlyPage.SetItemChecked(i, true); // 預設全選產品
             }
-            var checkedProducts_admin = checkedListBoxProducts_admin.CheckedItems.Cast<string>().ToList();
+            var checkedProducts_admin = checkedListBoxProducts_admin_monthlyPage.CheckedItems.Cast<string>().ToList();
             LoadProductRevenueLineChart(checkedProducts_admin);
 
             for (int i = 0; i < checkedListBoxRegion_product_admin.Items.Count; i++)
@@ -2674,14 +2625,14 @@ namespace SalesDashboard
         }
 
 
-        private void checkedListBoxProducts_admin_ItemCheck(object sender, ItemCheckEventArgs e)
+        private void checkedListBoxProducts_adminMonthlyPage_ItemCheck(object sender, ItemCheckEventArgs e)
         {
             // 取得當前選擇的年月
             int year = dateTimePickerAdmin_SP.Value.Year;
             int month = dateTimePickerAdmin_SP.Value.Month;
             // 預測本次操作後的產品勾選清單
-            List<string> checkedProducts = checkedListBoxProducts_admin.CheckedItems.Cast<string>().ToList();
-            string currentProduct = checkedListBoxProducts_admin.Items[e.Index].ToString();
+            List<string> checkedProducts = checkedListBoxProducts_admin_monthlyPage.CheckedItems.Cast<string>().ToList();
+            string currentProduct = checkedListBoxProducts_admin_monthlyPage.Items[e.Index].ToString();
             if (e.NewValue == CheckState.Checked)
             {
                 if (!checkedProducts.Contains(currentProduct))

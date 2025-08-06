@@ -2847,8 +2847,8 @@ namespace SalesDashboard
             var dialog = new Form();
             dialog.Text = $"{username} 的月報表";
             dialog.Width = 1118;
-            dialog.Height = 800;
-            dialog.StartPosition = FormStartPosition.CenterParent;
+            dialog.Height = 750;
+            dialog.StartPosition = FormStartPosition.CenterScreen; // 彈出視窗在螢幕中央
             dialog.FormBorderStyle = FormBorderStyle.Sizable;
             dialog.MaximizeBox = false;
             dialog.MinimizeBox = false;

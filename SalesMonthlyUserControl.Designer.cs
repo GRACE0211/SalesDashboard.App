@@ -38,12 +38,12 @@
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea5 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend5 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea6 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
             System.Windows.Forms.DataVisualization.Charting.Legend legend6 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
@@ -58,8 +58,8 @@
             this.chartSalesCustomersOrders = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel1 = new System.Windows.Forms.Panel();
             this.buttonReset = new System.Windows.Forms.Button();
-            this.chartSalesOrdersTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartSalesRevenueTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartSalesOrdersTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chartSalesProductTrend = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panelUpdateMonthlyGrowthRevenue = new System.Windows.Forms.Panel();
             this.labelSalesRevenueLastMonth = new System.Windows.Forms.Label();
@@ -94,8 +94,8 @@
             this.panelBar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesCustomersOrders)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesRevenueTrend)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesProductTrend)).BeginInit();
             this.panelUpdateMonthlyGrowthRevenue.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxSalesRevenueArrow)).BeginInit();
@@ -274,33 +274,13 @@
             // 
             this.buttonReset.BackColor = System.Drawing.Color.LightSteelBlue;
             this.buttonReset.Font = new System.Drawing.Font("微軟正黑體", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.buttonReset.Location = new System.Drawing.Point(510, 191);
+            this.buttonReset.Location = new System.Drawing.Point(103, 201);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(120, 42);
+            this.buttonReset.Size = new System.Drawing.Size(427, 37);
             this.buttonReset.TabIndex = 42;
             this.buttonReset.Text = "重設";
             this.buttonReset.UseVisualStyleBackColor = false;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
-            // 
-            // chartSalesOrdersTrend
-            // 
-            chartArea5.AxisX.MajorGrid.Enabled = false;
-            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
-            chartArea5.Name = "ChartArea1";
-            this.chartSalesOrdersTrend.ChartAreas.Add(chartArea5);
-            legend5.Name = "Legend1";
-            this.chartSalesOrdersTrend.Legends.Add(legend5);
-            this.chartSalesOrdersTrend.Location = new System.Drawing.Point(5, 7);
-            this.chartSalesOrdersTrend.Name = "chartSalesOrdersTrend";
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series5.Legend = "Legend1";
-            series5.Name = "Series1";
-            this.chartSalesOrdersTrend.Series.Add(series5);
-            this.chartSalesOrdersTrend.Size = new System.Drawing.Size(489, 227);
-            this.chartSalesOrdersTrend.TabIndex = 39;
-            this.chartSalesOrdersTrend.Text = "chart1";
-            this.chartSalesOrdersTrend.Visible = false;
             // 
             // chartSalesRevenueTrend
             // 
@@ -317,9 +297,29 @@
             series4.Legend = "Legend1";
             series4.Name = "Series1";
             this.chartSalesRevenueTrend.Series.Add(series4);
-            this.chartSalesRevenueTrend.Size = new System.Drawing.Size(489, 227);
+            this.chartSalesRevenueTrend.Size = new System.Drawing.Size(630, 188);
             this.chartSalesRevenueTrend.TabIndex = 41;
             this.chartSalesRevenueTrend.Text = "chart1";
+            // 
+            // chartSalesOrdersTrend
+            // 
+            chartArea5.AxisX.MajorGrid.Enabled = false;
+            chartArea5.AxisY.MajorGrid.LineColor = System.Drawing.Color.LightGray;
+            chartArea5.Name = "ChartArea1";
+            this.chartSalesOrdersTrend.ChartAreas.Add(chartArea5);
+            legend5.Name = "Legend1";
+            this.chartSalesOrdersTrend.Legends.Add(legend5);
+            this.chartSalesOrdersTrend.Location = new System.Drawing.Point(5, 7);
+            this.chartSalesOrdersTrend.Name = "chartSalesOrdersTrend";
+            series5.ChartArea = "ChartArea1";
+            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series5.Legend = "Legend1";
+            series5.Name = "Series1";
+            this.chartSalesOrdersTrend.Series.Add(series5);
+            this.chartSalesOrdersTrend.Size = new System.Drawing.Size(630, 188);
+            this.chartSalesOrdersTrend.TabIndex = 39;
+            this.chartSalesOrdersTrend.Text = "chart1";
+            this.chartSalesOrdersTrend.Visible = false;
             // 
             // chartSalesProductTrend
             // 
@@ -336,7 +336,7 @@
             series6.Legend = "Legend1";
             series6.Name = "Series1";
             this.chartSalesProductTrend.Series.Add(series6);
-            this.chartSalesProductTrend.Size = new System.Drawing.Size(489, 227);
+            this.chartSalesProductTrend.Size = new System.Drawing.Size(630, 188);
             this.chartSalesProductTrend.TabIndex = 41;
             this.chartSalesProductTrend.Text = "chart1";
             this.chartSalesProductTrend.Visible = false;
@@ -618,8 +618,8 @@
             this.panelBar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesCustomersOrders)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesRevenueTrend)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartSalesOrdersTrend)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartSalesProductTrend)).EndInit();
             this.panelUpdateMonthlyGrowthRevenue.ResumeLayout(false);
             this.panelUpdateMonthlyGrowthRevenue.PerformLayout();

@@ -50,13 +50,14 @@ namespace SalesDashboard
             }
             var checkedCustomers_sales = checkedListBoxCustomers_sales.CheckedItems.Cast<string>().ToList();
 
+            // 將頁面下方動態載入表格區塊退回預設
             InitTrendChart();
 
 
 
         }
 
-
+        // 進入頁面時呼叫
         private void SalesMonthlyUserControl_Load(object sender, EventArgs e)
         {
             labelSales.Text = $"{username} 的月報表"; // 顯示使用者名稱
@@ -81,7 +82,7 @@ namespace SalesDashboard
         }
 
 
-        // ------------------ SalesChartPage_Monthly -- tabPage3 ------------------
+        // ------------------ SalesChartPage_Monthly ------------------
 
 
         // tabPage3, 右中圓餅圖 -- 計算某月某產品的總銷售量
@@ -431,7 +432,7 @@ namespace SalesDashboard
 
         }
 
-        // tabPage3, 趨勢圖表 -- 點擊產品跳出產品數量趨勢圖
+        // 重設所有趨勢圖表功能
 
         private void InitTrendChart()
         {
@@ -458,15 +459,17 @@ namespace SalesDashboard
         // 將選到的圖表高亮
         private void HighlightPanel(Panel panelToHighlight)
         {
-            panelBar.BackColor = Color.Transparent; // 恢復其他面板背景色
-            panelColumn.BackColor = Color.Transparent; // 恢復其他面板背景色
-            panelPie.BackColor = Color.Transparent; // 恢復其他面板背景色
-            panelToHighlight.BackColor = Color.Brown; // 高亮選中的面板
+            // 先重設所有面板背景色
+            panelBar.BackColor = Color.Transparent;
+            panelColumn.BackColor = Color.Transparent;
+            panelPie.BackColor = Color.Transparent;
+            // 再高亮選中的面板
+            panelToHighlight.BackColor = Color.Brown;
 
         }
 
 
-
+        // 重設按鈕
         private void buttonReset_Click(object sender, EventArgs e)
         {
             List<string> checkedProducts = checkedListBoxProducts_sales.CheckedItems.Cast<string>().ToList();
@@ -476,6 +479,7 @@ namespace SalesDashboard
 
         }
 
+        // 趨勢圖表 -- 點擊客戶訂單跳出訂單趨勢圖
         private void chartSalesProducts_MouseClick(object sender, MouseEventArgs e)
         {
             var hit = chartSalesProducts.HitTest(e.X, e.Y);
@@ -490,7 +494,7 @@ namespace SalesDashboard
                 highlightedRowIndex = -1;
                 HighlightPanel(panelPie);
 
-                LoadMonthlyProductsChart(username, selectedProducts, selectedCustomers); LoadMonthlyProductsChart(username, selectedProducts, selectedCustomers);
+                LoadMonthlyProductsChart(username, selectedProducts, selectedCustomers);
                 LoadMonthlyOrdersChartByCustomer(username, selectedProducts, selectedCustomers);
                 LoadMonthlyRevenueDetailsChart(username, selectedProducts, selectedCustomers);
                 chartSalesOrdersTrend.Visible = false;
@@ -563,7 +567,7 @@ namespace SalesDashboard
             return result;
         }
 
-        // tabPage3, 趨勢圖表 -- 點擊客戶訂單跳出訂單趨勢圖
+        // 趨勢圖表 -- 點擊客戶訂單跳出訂單趨勢圖
         private void chartSalesCustomersOrders_MouseClick(object sender, MouseEventArgs e)
         {
             List<string> selectedProducts = checkedListBoxProducts_sales.CheckedItems.Cast<string>().ToList();

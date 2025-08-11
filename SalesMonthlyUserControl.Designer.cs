@@ -451,7 +451,7 @@
             "客戶C",
             "客戶D",
             "客戶E"});
-            this.checkedListBoxCustomers_sales.Location = new System.Drawing.Point(136, 48);
+            this.checkedListBoxCustomers_sales.Location = new System.Drawing.Point(136, 54);
             this.checkedListBoxCustomers_sales.Name = "checkedListBoxCustomers_sales";
             this.checkedListBoxCustomers_sales.Size = new System.Drawing.Size(82, 104);
             this.checkedListBoxCustomers_sales.TabIndex = 31;
@@ -467,7 +467,7 @@
             "shampoo",
             "shaver",
             "comb"});
-            this.checkedListBoxProducts_sales.Location = new System.Drawing.Point(14, 48);
+            this.checkedListBoxProducts_sales.Location = new System.Drawing.Point(14, 54);
             this.checkedListBoxProducts_sales.Name = "checkedListBoxProducts_sales";
             this.checkedListBoxProducts_sales.Size = new System.Drawing.Size(116, 104);
             this.checkedListBoxProducts_sales.TabIndex = 32;
@@ -478,7 +478,7 @@
             this.dateTimePickerChart.CustomFormat = "yyyy/MM";
             this.dateTimePickerChart.Font = new System.Drawing.Font("微軟正黑體", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.dateTimePickerChart.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePickerChart.Location = new System.Drawing.Point(136, 12);
+            this.dateTimePickerChart.Location = new System.Drawing.Point(136, 18);
             this.dateTimePickerChart.MaxDate = new System.DateTime(2025, 6, 30, 0, 0, 0, 0);
             this.dateTimePickerChart.MinDate = new System.DateTime(2024, 12, 1, 0, 0, 0, 0);
             this.dateTimePickerChart.Name = "dateTimePickerChart";
@@ -491,7 +491,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("微軟正黑體", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.label5.Location = new System.Drawing.Point(10, 14);
+            this.label5.Location = new System.Drawing.Point(10, 20);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(110, 24);
             this.label5.TabIndex = 30;

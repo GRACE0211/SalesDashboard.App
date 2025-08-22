@@ -181,7 +181,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="SalesDashboard_TemporaryKey.pfx" />
-    <None Include="sales_dashboard.md" />
+    <None Include="README.md" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

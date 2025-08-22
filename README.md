@@ -14,6 +14,7 @@
 + User 身份 可根據「產品」與「客戶」進行篩選,快速定位目標交易資料。
 + Admin 身份 則可進一步使用「產品」、「地區」與「業務人員」等條件進行多維篩選,
  方便針對特定區域或負責人做績效追蹤。
+
 ![Dashboard loginForm](screenshot/loginForm.jpg)
 ![Dashboard hash](screenshot/hash.png)
 
@@ -22,6 +23,7 @@
 + User 身份 可根據「產品」與「客戶」進行篩選,快速定位目標交易資料。
 + Admin 身份 則可進一步使用「產品」、「地區」與「業務人員」等條件進行多維篩選,
  方便針對特定區域或負責人做績效追蹤。
+
 ![Dashboard lookup page sales](screenshot/lookup_sales.jpg)
 ![Dashboard lookup page admin](screenshot/lookup_admin.jpg)
 
@@ -30,6 +32,7 @@
   - 銷售數據可依「產品」與「客戶」篩選查看,並即時呈現營收與訂單的月成長率。
   - 下方圖表可視化顯示訂單數量、銷售金額與產品佔比,點選圖表項目可查看趨勢折線
 圖。
+
 ![Dashboard sales monthlyPage](screenshot/page_monthly_sales.jpg)
   
 + 整體統計圖表
@@ -37,6 +40,7 @@
   - 顯示客戶與產品銷售佔比圓餅圖,掌握主要貢獻來源。
   - 透過月營收折線圖與月訂單數直條圖,追蹤銷售成長趨勢。
   - 排名前三的客戶訂單量與產品銷售量以長條圖呈現,快速辨識主力客群與熱銷品。 - 額外列出最大客戶、營收最高產品、最熱銷產品等指標資訊。
+
 ![Dashboard sales totalPage](screenshot/total_sales.jpg)
  
 ## 🛠 Admin Dashboard(管理者介面)
@@ -49,18 +53,21 @@
   - 中:呈現「產品月營收百分比趨勢圖」,比較不同產品在每月的營收占比變化。
   - 下:顯示所選月份的產品銷售數量(橫條圖)與總營業額(折線圖),方便掌握整體銷售
 動能。
+
 ![Dashboard admin monthly product](screenshot/page_monthlyProduct_admin.jpg)
   
 + 👤 業務
   - 上:可選擇月份查看各業務員的當月營收與成長率,並顯示對應的訂單數量橫條圖。 - 中:顯示每月各業務營收占比的 100% 堆疊直條圖,清楚比較各人在不同月份的貢獻比 - 例。
   - 下:呈現當月各業務的銷售占比圓餅圖,快速看出主力貢獻者,以及整合顯示全體每月
  總營業額變化,方便觀察整體營運走勢。
+
 ![Dashboard admin monthly sales](screenshot/page_monthlySales_admin.jpg)
   
 + 👤 指定的 Sales 月報表頁面
   - 根據所點選的按鈕載入不同業務的月報表頁面。
   - 銷售數據可依「產品」與「客戶」篩選查看,並即時呈現營收與訂單的月成長率。
   - 下方圖表可視化顯示訂單數量、銷售金額與產品佔比,點選圖表項目可查看趨勢折線圖。
+
 ![Dashboard admin switch to sales](screenshot/switch_to_sales.jpg)
 
 + 🗺 地區統計圖表
@@ -70,6 +77,7 @@
   - 示多維分布可保留雷達圖。
   - 下方折線圖追蹤各地區每月營收變化趨勢,掌握成長或衰退情形。
  彙總顯示總營收最高地區、各地區總營收雷達圖及營收占比,便於掌握主力市場。
+
 ![Dashboard admin page region](screenshot/page_region_admin.jpg)
   
 + 整體統計圖表
@@ -79,6 +87,7 @@
   - 顯示產品營收第一名、最熱銷產品、銷售王業務員與最大客戶等重點指標。
   - 提供每月營收折線圖與每月業務銷售占比(100%堆疊直條圖),掌握營收趨勢與人員貢
 獻分布。
+
 ![Dashboard admin totalPage](screenshot/total_admin.jpg)
 
 當初的設計主軸,是打造一套專為企業內部使用的入門級數據分析與決策支援系統。整體著
